@@ -8,10 +8,17 @@
 
 // Task
 // Open the file index.html in your browser. Open the index.html file in VS Code, right-click the tab and select "Open in Browser"
-// If you are working locally, navigate to the excercise directory and start a python http server `python3 -m http.server 900`, press Control-c to stop the server 
+// If you are working locally, navigate to the excercise directory and start a python http server `python3 -m http.server 900`, press Control-c to stop the server
 
 // Task
 // Delete the div with the class rectangle from index.html and refresh the preview.
+
+//querySelector read by more browsers
+const element2 = document.querySelector(".rectangle");
+element2.remove();
+//OR
+// const element = document.getElementsByClassName("rectangle");
+// element[0].remove();
 
 // Task
 // What does the following code do?
@@ -20,12 +27,21 @@ const button = document.body.querySelector("#button");
 
 console.log(viz, viz.children);
 
-const addChildToViz = () => {
+// const addChildToViz = () => {
+//   const newChild = document.createElement("div");
+//   newChild.className = "rectangle";
+//   newChild.style.height = Math.random() * 100 + "px";
+//   viz.appendChild(newChild);
+// };
+
+//OR
+
+function addChildToViz(len) {
   const newChild = document.createElement("div");
   newChild.className = "rectangle";
-  newChild.style.height = Math.random() * 100 + "px";
+  newChild.style.height = len * 1 + "px";
   viz.appendChild(newChild);
-};
+}
 
 // Task
 // Modify index.html to make this event listener work
@@ -37,8 +53,8 @@ button.addEventListener("click", addChildToViz);
 function drawIrisData() {
   window
     .fetch("./iris_json.json")
-    .then(data => data.json())
-    .then(data => {
+    .then((data) => data.json())
+    .then((data) => {
       console.log(data);
     });
 }

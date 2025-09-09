@@ -44,3 +44,11 @@ var p = w + x;
 var q = z - x;
 
 var r = y - w;
+
+console.log("p is", p, "q is", q, "r is", r);
+
+console.log("r is", r.toFixed(1));
+
+console.log("q is", q.toFixed(1));
+
+console.log("r is", p.toFixed(1));

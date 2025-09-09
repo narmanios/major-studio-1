@@ -21,32 +21,27 @@ var URLs = [
   "amnh.org",
 ];
 
-var years = [
-  2004,
-  1896,
-  1924,
-  1930,
-  1935,
-  1869
-];
+var years = [2004, 1896, 1924, 1930, 1935, 1869];
 
 // Task 1
 // Console log the length of each Array
-console.log(/* COMPLETE ME */)
-console.log(/* COMPLETE ME */)
-console.log(/* COMPLETE ME */)
-
-
+console.log(names.length);
+console.log(URLs.length);
+console.log(years.length);
 
 // Task 2
 // add a new item to an array
-var newName = "The International Center of Photography"
-var newURL = "icp.org"
-var newYear = 1974
+var newName = "The International Center of Photography";
+var newURL = "icp.org";
+var newYear = "1974";
 
-names.push(/* COMPLETE ME */);
-URLs[/* COMPLETE ME */] = newURL;
-years = years.concat(/* COMPLETE ME */);
+names.push(newName);
+URLs.push(newURL);
+years = years.concat(newYear);
+
+console.log(names);
+console.log(URLs);
+console.log(years);
 
 // Task 3
 // construct an Object out of our three Arrays
@@ -54,44 +49,48 @@ years = years.concat(/* COMPLETE ME */);
 var result = {
   "Museum Name 1": {
     URL: "www.museumwebsite.com",
-    year: 2019
-  }
-}
+    year: 2019,
+  },
+};
 
 var museums = {};
 for (var i = 0; i < names.length; i++) {
-  var currentName = names[/* COMPLETE ME */];
-  /* COMPLETE ME */ = URLs[i];
-  var currentYear = /* COMPLETE ME */;
+  var currentName = names[i];
+  var currentURL = URLs[i];
+  var currentYear = years[i];
 
-  museums[currentName] = {};
-  museums[currentName]["URL"] = currentURL;
-  museums[currentName].year = currentYear;
+  museums[currentName] = {
+    currentURL: URLs[i],
+    currentYear: years[i],
+  };
 }
 
-console.log('museums', museums)
+console.log("museums", museums);
 
 var museums2 = {};
-names.forEach(function(/* COMPLETE ME*/) {
+names.forEach(function (n, i) {
   museums2[n] = {};
 
   var currentURL = URLs[i];
   var currentYear = years[i];
 
   museums2[n].URL = currentURL;
-  museums2[n]["year"] = currentYear;
+  museums2[n].years = currentYear;
 });
 
-console.log('museums2', museums2)
+console.log("museums2", museums2);
 
 // Task
 // Write a function to add a new museum object, with properties URL and year, to an existing museums object. Call it on museums2
-function addAMuseum(museums, newName, newURL, newYear){
-  /* COMPLETE ME */
+function addAMuseum(museums, newName, newURL, newYear) {
+  museums2[newName] = {
+    URL: newURL,
+    year: newYear,
+  };
 
   return museums;
 }
 
-addAMuseum(/* COMPLETE ME */);
+addAMuseum(museums2, "New-York Historical Society", "nyhistory.org", "1804");
 
-console.log('museums2', museums2);
+console.log("museums2", museums2);
