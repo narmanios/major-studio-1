@@ -4,7 +4,7 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 // === tiny knobs ===
 const SIZE = 50; // circle diameter (px)
 const GAP = 12; // spacing (px)
-const PER_ROW = 15; // wrap after 30 per line
+const PER_ROW = 18; // wrap after 30 per line
 const RED = "#a00202ff"; // border for 1770–1775
 const BLUE = "#19218eff"; // border for other years
 const ROW_RED_BG = "#a00202ff"; // row background (1770–1775)
@@ -43,11 +43,11 @@ d3.json("data/dates_binned_start_year_upto_1810.json").then((raw) => {
     .style("padding-top", "50px")
     .style("padding-left", "50px")
     .style("padding-bottom", "20px")
-    .style("font-size", "1.5rem")
+    .style("font-size", "1.75rem")
     .style("font-weight", 700)
     .style("color", "#333")
     .html(
-      "Revolutionary War (1770-1810): <br> Sitters with Known Portraits by Year"
+      'Revolutionary War (1770-1810): <br>"Sitters" with Known Portraits by Year'
     )
     .style("max-width", "600px");
   title.style("line-height", "1.5");
@@ -70,7 +70,7 @@ d3.json("data/dates_binned_start_year_upto_1810.json").then((raw) => {
     //   d.year >= 1770 && d.year <= 1775 ? ROW_RED_BG : ROW_BLUE_BG
     // )
 
-    .style("margin", "6px 0");
+    .style("margin", "6px 50px");
 
   row
     .append("div")
@@ -91,14 +91,29 @@ d3.json("data/dates_binned_start_year_upto_1810.json").then((raw) => {
     // )
     .style("pointer-events", "none");
 
+  const borderStyle = "stroke";
   row
     .append("div")
     .style("position", "relative") // (optional) ensure on top
     .style("z-index", 1)
-    .style("width", "125px")
-    // .style("height", "5px")
-    .style("text-align", "right")
-    .style("font", "14px system-ui, sans-serif")
+    .style("width", "80px")
+    .style("height", "60px")
+    // .style("text-align", "right")
+    .style("font", "16px, sans-serif")
+    .style("font-weight", "600")
+    .style("line-height", "1.5")
+    // .style("padding-right", "12px")
+    .style("padding-top", "18px")
+    .style("text-align", "center")
+    .style("color", "white")
+    .style("border-radius", "6px")
+    .style("box-shadow", "0 2px 4px rgba(0,0,0,0.2)")
+    // .style("border", "2px", (d) =>
+    //   d.year >= 1770 && d.year <= 1775 ? ROW_RED_BG : ROW_BLUE_BG
+    // )
+    .style("background-color", (d) =>
+      d.year >= 1770 && d.year <= 1775 ? ROW_RED_BG : ROW_BLUE_BG
+    )
     .text((d) => d.year);
 
   // right: fixed 20-per-row grid
