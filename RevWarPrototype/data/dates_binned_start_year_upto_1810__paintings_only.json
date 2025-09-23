@@ -1,0 +1,1913 @@
+[
+  {
+    "year": 1770,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_2006.12.1",
+        "title": "Robert Hooper",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Gift of Diane and Norman Bernstein",
+        "date": "ca. 1770-1772",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 50 x 40 in. (127.0 x 101.6 cm)",
+        "topic": "Topic: OccupationindustryfishingnPortrait male",
+        "name.Artist": "John Singleton Copley, born Boston, MA 1738-died 1815 London, England",
+        "name.Maker": null,
+        "sitter_list": [
+          "Jr. Robert Hooper"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-2006.12.1_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:saam_1929.8.352",
+        "title": "Nur Jahan",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Gift of John Gellatly",
+        "date": "ca. 1770",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: opaque watercolor on paper, Dimensions: 11 3/8 x 7 5/8 in. (28.9 x 19.3 cm)",
+        "topic": "Topic: IndiannPortrait femaleprofile",
+        "name.Artist": "Unidentified",
+        "name.Maker": null,
+        "sitter_list": [
+          "Nur Jahan"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1929.8.352_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.81.117",
+        "title": "Henry Cruger",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution Conserved with funds from the Smithsonian Women's Committee",
+        "date": "1770",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Watercolor on ivory, Dimensions: 2.8cm x 2.5cm (1 1/8 x 1), Accurate",
+        "topic": "Topic: MiniaturenHenry Cruger: MalenHenry Cruger: Business and FinanceBusinesspersonMerchantnHenry Cruger: Politics and GovernmentGovernment officialState SenatorNew YorknHenry Cruger: Politics and GovernmentBritish government officialnHenry Cruger: Politics and GovernmentParliamentariannHenry Cruger: Politics and GovernmentGovernment officialPublic officialMayorBristol, EnglandnPortrait",
+        "name.Artist": null,
+        "name.Maker": null,
+        "sitter_list": [
+          "Henry Cruger, 22 Nov 1739 - 24 Apr 1827"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_81_117Cruger-000001/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.80.136",
+        "title": "Benjamin West",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of the Margaret Hall Foundation",
+        "date": "1770",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 54 x 47cm (21 1/4 x 18 1/2)nFrame: 67 x 59.8 x 5.7cm (26 3/8 x 23 9/16 x 2 1/4)",
+        "topic": "Topic: Benjamin West: MalenBenjamin West: Arts and CultureVisual ArtsArtistPortraitistnBenjamin West: Arts and CultureVisual ArtsArt instructornBenjamin West: Arts and CultureVisual ArtsArtistPainterHistory painternPortrait",
+        "name.Artist": null,
+        "name.Maker": null,
+        "sitter_list": [
+          "Benjamin West, 10 Oct 1738 - 11 Mar 1820"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_80_136West-000004/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2010.49",
+        "title": "William Carmichael",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Grace Carmichael Moore and Janet Moore Ewing",
+        "date": "1770s",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Watercolor on ivory, Dimensions: Frame: 6 x 3.8cm (2 3/8 x 1 1/2)",
+        "topic": "Topic: MiniaturenWilliam Carmichael: MalenWilliam Carmichael: Law and CrimeLawyernWilliam Carmichael: Politics and GovernmentGovernment officialCongressmanContinental congressmannWilliam Carmichael: Politics and GovernmentDiplomatnPortrait",
+        "name.Artist": "Unidentified Artist",
+        "name.Maker": null,
+        "sitter_list": [
+          "William Carmichael, ? - Feb 1795"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2010_49_int/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2008.1",
+        "title": "Daniel Leonard",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution Conserved with funds from the Smithsonian Women's Committee",
+        "date": "c. 1770",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Watercolor on ivory, Dimensions: 3.8 x 3.5 x 0.6cm (1 1/2 x 1 3/8 x 1/4)",
+        "topic": "Topic: CostumeDress AccessoryButtonnDaniel Leonard: MalenDaniel Leonard: Law and CrimeLawyernDaniel Leonard: Arts and CultureLiteratureWriternDaniel Leonard: Politics and GovernmentLoyalistnDaniel Leonard: Law and CrimeJudgeJusticenPortrait",
+        "name.Artist": "Unidentified Artist",
+        "name.Maker": null,
+        "sitter_list": [
+          "Daniel Leonard, 18 May 1740 - 27 Jun 1829"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-A8000002A_1/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1771,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_2006.12.2",
+        "title": "The Wiley Family",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Gift of Diane and Norman Bernstein",
+        "date": "1771",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 36 x 47 1/2 in. (91.4 x 120.7 cm)",
+        "topic": "Topic: LandscaperivernPortrait groupfamilynObjectflowernObjectwritten matterbooknArchitecture ExteriorindustrywindmillnArchitecture ExteriordetailwallnPortrait malefull length",
+        "name.Artist": "William Williams, born Bristol, England 1727-died Bristol, England 1791",
+        "name.Maker": null,
+        "sitter_list": [
+          "John Wiley"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-2006.12.2_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2014.80",
+        "title": "David Ramsay",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Pattison and Carolyn Fulton",
+        "date": "1771",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 53.7 u00d7 48.6 u00d7 2.9 cm (21 1/8 u00d7 19 1/8 u00d7 1 1/8)nFrame: 76.2 u00d7 72.1 u00d7 10.2 cm (30 u00d7 28 3/8 u00d7 4)",
+        "topic": "Topic: InteriornDavid Ramsay: MalenDavid Ramsay: Politics and GovernmentGovernment officialCongressmanContinental congressmannDavid Ramsay: Medicine and HealthPhysiciannDavid Ramsay: Arts and CultureEducation and ScholarshipScholarHistoriannDavid Ramsay: Politics and GovernmentGovernment officialState LegislatorSouth CarolinanDavid Ramsay: Politics and GovernmentGovernment officialState SenatorSouth CarolinanPortrait",
+        "name.Artist": "Charles Willson Peale, 15 Apr 1741 - 22 Feb 1827",
+        "name.Maker": null,
+        "sitter_list": [
+          "David Ramsay, 2 Apr 1749 - 8 May 1815"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-B4000160A_2/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1772,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_1906.9.17",
+        "title": "Miss Kirkpatrick",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Bequest of Harriet Lane Johnston",
+        "date": "ca. 1772",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 29 x 24 in. (73.6 x 60.9 cm)",
+        "topic": "Topic: Portrait female",
+        "name.Artist": "George Romney, English, born Dalton-le-Furness, England 1734-died Kendal, England 1802",
+        "name.Maker": null,
+        "sitter_list": [
+          "Miss Kirkpatrick"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1906.9.17_1/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1773,
+    "records": [
+      {
+        "EDANurl": "edanmdm:npg_NPG.67.1",
+        "title": "Charles Cotesworth Pinckney",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; frame conserved with funds from the Smithsonian Women's Committee",
+        "date": "c. 1773",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 76.7 x 64 x 3.8cm (30 3/16 x 25 3/16 x 1 1/2)nFrame: 92.7 x 79.4 x 6.7cm (36 1/2 x 31 1/4 x 2 5/8)",
+        "topic": "Topic: CostumeHeadgearMilitarynExteriorForestnCharles Cotesworth Pinckney: MalenCharles Cotesworth Pinckney: Law and CrimeLawyernCharles Cotesworth Pinckney: Politics and GovernmentPresidential candidatenCharles Cotesworth Pinckney: Military and IntelligenceArmyOfficerRevolutionary WarnCharles Cotesworth Pinckney: Politics and GovernmentDiplomatnCharles Cotesworth Pinckney: Military and IntelligenceArmyOfficerGeneralnCharles Cotesworth Pinckney: Politics and GovernmentDiplomatMinisternCharles Cotesworth Pinckney: Politics and GovernmentGovernment officialUS CongressmanSouth CarolinanCharles Cotesworth Pinckney: Politics and GovernmentGovernment officialGovernorSouth CarolinanCharles Cotesworth Pinckney: Politics and GovernmentStatesmanSigner of ConstitutionnCharles Cotesworth Pinckney: Politics and GovernmentGovernment officialState SenatorSouth CarolinanCharles Cotesworth Pinckney: Military and IntelligencePrisoner of WarnPortrait",
+        "name.Artist": "Henry Benbridge, 20 Oct 1743 - 25 Jan 1812",
+        "name.Maker": null,
+        "sitter_list": [
+          "Charles Cotesworth Pinckney, 25 Feb 1746 - 25 Aug 1825"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_67_1Pinckney_d1/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1775,
+    "records": [
+      {
+        "EDANurl": "edanmdm:npg_NPG.98.33",
+        "title": "Carter Braxton",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "c. 1775",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Watercolor on ivory, Dimensions: Frame: 6 x 4.1 x 0.8cm (2 3/8 x 1 5/8 x 5/16)",
+        "topic": "Topic: MiniaturenCarter Braxton: MalenCarter Braxton: Politics and GovernmentStatesmanColonial statesmanSigner of DeclarationnCarter Braxton: Business and FinanceNatural resources commerceAgriculturistPlanternPortrait",
+        "name.Artist": "Unidentified Artist",
+        "name.Maker": null,
+        "sitter_list": [
+          "Carter Braxton, 10 Sep 1736 - 10 Oct 1797"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_98_33Braxton-000001/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.92.33",
+        "title": "Joseph Galloway",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "c. 1775",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Watercolor on ivory, Dimensions: 4 x 3cm (1 9/16 x 1 3/16)nLocket: 5.1 x 3.5 x 0.5cm (2 x 1 3/8 x 3/16)",
+        "topic": "Topic: MiniaturenJoseph Galloway: MalenJoseph Galloway: Law and CrimeLawyernJoseph Galloway: Politics and GovernmentStatesmanColonial statesmannJoseph Galloway: Politics and GovernmentGovernment officialCongressmanContinental congressmannJoseph Galloway: Politics and GovernmentLoyalistnPortrait",
+        "name.Artist": null,
+        "name.Maker": null,
+        "sitter_list": [
+          "Joseph Galloway, 1731 - 29 Aug 1803"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_92_33_int-000001/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1776,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_1980.93",
+        "title": "Mrs. James Smith and Grandson",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Gift of Mr. and Mrs. Wilson Levering Smith, Jr. and museum purchase",
+        "date": "1776",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 36 3/8 x 29 1/4 in. (92.4 x 74.3 cm.)",
+        "topic": "Topic: RecreationleisurereadingnHistoryUnited StatesRevolutionnPortrait femalewaist lengthnPortrait femaleelderlynPortrait maleChild",
+        "name.Artist": "Charles Willson Peale, born Queen Anne's County, MD 1741-died Philadelphia, PA 1827",
+        "name.Maker": null,
+        "sitter_list": [
+          "Mrs. James Smith",
+          "Mrs. James Smith",
+          "Campbell Smith"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1980.93_1/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1780,
+    "records": [
+      {
+        "EDANurl": "edanmdm:npg_NPG.73.10",
+        "title": "John Paul Jones",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution Conserved with funds from the Smithsonian Women's Committee",
+        "date": "1780",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Watercolor on ivory, Dimensions: Sight: 7.3 x 5.4cm (2 7/8 x 2 1/8)nFrame: 7.3 x 5.1 x 0.3cm (2 7/8 x 2 x 1/8)",
+        "topic": "Topic: CostumeHair AccessoryWignCostumeDress AccessoryEpauletnMiniaturenJohn Paul Jones: MalenJohn Paul Jones: Politics and GovernmentGovernment officialnJohn Paul Jones: Military and IntelligenceNavyOfficernJohn Paul Jones: Civilian awardsCongressional Gold MedalnPortrait",
+        "name.Artist": "Unidentified Artist",
+        "name.Maker": null,
+        "sitter_list": [
+          "John Paul Jones, 6 Jul 1747 - 18 Jul 1792"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_73_10Jones_int/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2009.111",
+        "title": "John Laurens",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; acquired with the generous support of an anonymous donor. Conserved with funds from the Smithsonian Women's Committee",
+        "date": "1780",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Watercolor on ivory, Dimensions: Ivory: 3.8 x 2.9cm (1 1/2 x 1 1/8)",
+        "topic": "Topic: MiniaturenJohn Laurens: MalenJohn Laurens: Military and IntelligenceArmyOfficerRevolutionary WarnJohn Laurens: Politics and GovernmentDiplomatDiplomatic agentnPortrait",
+        "name.Artist": "Charles Willson Peale, 15 Apr 1741 - 22 Feb 1827",
+        "name.Maker": null,
+        "sitter_list": [
+          "John Laurens, 28 Oct 1754 - 27 Aug 1782"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2009_111/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2001.3",
+        "title": "Daniel Morgan",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "c. 1780",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: 76.2 x 61cm (30 x 24)nFrame: 92.7 x 78.1 x 6.7cm (36 1/2 x 30 3/4 x 2 5/8)",
+        "topic": "Topic: Daniel Morgan: MalenDaniel Morgan: Military and IntelligenceArmyOfficerRevolutionary WarnDaniel Morgan: Politics and GovernmentGovernment officialUS CongressmanVirginianDaniel Morgan: Civilian awardsCongressional Gold MedalnPortrait",
+        "name.Artist": "Unidentified Artist",
+        "name.Maker": null,
+        "sitter_list": [
+          "Daniel Morgan, 1736 - 6 Jul 1802"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2001_3Morgan-000002/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.77.22",
+        "title": "John Singleton Copley Self-Portrait",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of the Morris and Gwendolyn Cafritz Foundation with matching funds from the Smithsonian Institution; frame conserved with funds from the Smithsonian Women's Committee",
+        "date": "c. 1780-84",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 56.5 u00d7 2.5 cm (22 1/4 u00d7 1)nFrame: 81.3 u00d7 82.6 u00d7 13.3 cm (32 u00d7 32 1/2 u00d7 5 1/4)",
+        "topic": "Topic: Self-portraitnJohn Singleton Copley: MalenJohn Singleton Copley: Arts and CultureVisual ArtsArtistPortraitistnJohn Singleton Copley: Arts and CultureVisual ArtsArtistPainterHistory painternJohn Singleton Copley: Politics and GovernmentLoyalistnPortrait",
+        "name.Artist": "John Singleton Copley, 3 Jul 1738 - 9 Sep 1815",
+        "name.Maker": null,
+        "sitter_list": [
+          "John Singleton Copley, 3 Jul 1738 - 9 Sep 1815"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_77_22-000001/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1782,
+    "records": [
+      {
+        "EDANurl": "edanmdm:npg_NPG.65.57",
+        "title": "William Moultrie",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; transfer from the National Gallery of Art; gift of the A.W. Mellon Educational and Charitable Trust, 1942",
+        "date": "1782",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 67.6 x 57.2 x 2.5cm (26 5/8 x 22 1/2 x 1)nFrame: 75.6 x 65.4 x 6.4cm (29 3/4 x 25 3/4 x 2 1/2)",
+        "topic": "Topic: William Moultrie: MalenWilliam Moultrie: Military and IntelligenceArmyOfficerRevolutionary WarnWilliam Moultrie: Politics and GovernmentGovernment officialGovernorSouth CarolinanPortrait",
+        "name.Artist": "Charles Willson Peale, 15 Apr 1741 - 22 Feb 1827",
+        "name.Maker": null,
+        "sitter_list": [
+          "William Moultrie, 1730 - 27 Sep 1805"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_65_57/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.65.45",
+        "title": "Henry Laurens",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; transfer from the National Gallery of Art; gift of the A.W. Mellon Educational and Charitable Trust, 1942",
+        "date": "1782",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: 137.5 u00d7 103 cm (54 1/8 u00d7 40 9/16)nFrame: 155.9 u00d7 121.9 u00d7 9.2 cm (61 3/8 u00d7 48 u00d7 3 5/8)",
+        "topic": "Topic: Printed MaterialDocumentnInteriorInterior with Exterior ViewnWeaponSwordnHome FurnishingsFurnitureCarpetnEquipmentDrafting & Writing ImplementsWriting implementPenQuillnHenry Laurens: MalenHenry Laurens: Politics and GovernmentGovernment officialCongressmanContinental congressmannHenry Laurens: Politics and GovernmentGovernment officialnHenry Laurens: Business and FinanceBusinesspersonMerchantnHenry Laurens: Military and IntelligenceMilitiaOfficernHenry Laurens: Business and FinanceNatural resources commerceAgriculturistPlanternPortrait",
+        "name.Artist": "John Singleton Copley, 3 Jul 1738 - 9 Sep 1815",
+        "name.Maker": null,
+        "sitter_list": [
+          "Henry Laurens, 6 Mar 1724 - 8 Dec 1792"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_65_45Laurens_d1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.86.168",
+        "title": "Patience Lovell Wright",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "c. 1782",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Sight: 125.7 x 100.2cm (49 1/2 x 39 7/16)nFrame: 147 x 121 x 7.9cm (57 7/8 x 47 5/8 x 3 1/8)",
+        "topic": "Topic: Patience Lovell Wright: FemalenPatience Lovell Wright: Arts and CultureVisual ArtsArtistSculptornPatience Lovell Wright: Military and IntelligenceIntelligence agentSpynPatience Lovell Wright: Arts and CultureVisual ArtsArtistSculptorWax modelernPortrait",
+        "name.Artist": null,
+        "name.Maker": null,
+        "sitter_list": [
+          "Patience Lovell Wright, 1725 - 23 Mar 1786"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-8600336A_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.69.50",
+        "title": "Horatio Gates",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; partial gift of Mr. Lawrence A. Fleischman",
+        "date": "c. 1782",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 58.4 x 48.3 x 2.5cm (23 x 19 x 1)nFrame: 77.5 x 67.3 x 5.1cm (30 1/2 x 26 1/2 x 2)",
+        "topic": "Topic: CostumeDress AccessoryEpauletnHoratio Gates: MalenHoratio Gates: Politics and GovernmentGovernment officialState LegislatorNew YorknHoratio Gates: Military and IntelligenceArmyOfficerRevolutionary WarnHoratio Gates: Civilian awardsCongressional Gold MedalnPortrait",
+        "name.Artist": "James Peale, 1749 - 24 May 1831",
+        "name.Maker": null,
+        "sitter_list": [
+          "Horatio Gates, 1727 - 1806"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_69_50/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1783,
+    "records": [
+      {
+        "EDANurl": "edanmdm:npg_S_NPG.65.109",
+        "title": "Benjamin Harrison, Jr.",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; transfer from the National Gallery of Art; gift of the A.W. Mellon Educational and Charitable Trust, 1942",
+        "date": "1783",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 76.2 x 33cm (30 x 13)nFrame: 90.2 x 76.8 x 6.4cm (35 1/2 x 30 1/4 x 2 1/2)",
+        "topic": "Topic: InteriornHome FurnishingsFurnitureSeatingChairnPrinted MaterialBooknHome FurnishingsFurnitureTablenEquipmentDrafting & Writing ImplementsWriting implementPenQuillnEquipmentDrafting & Writing ImplementsInkstandnPrinted MaterialPapersEnvelopenBenjamin Harrison, Jr.: MalenBenjamin Harrison, Jr.: Social Welfare and ReformReformerRevolutionarynPortrait",
+        "name.Artist": "Charles Willson Peale, 15 Apr 1741 - 22 Feb 1827",
+        "name.Maker": null,
+        "sitter_list": [
+          "Benjamin Harrison, Jr., 1750? - 1799"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-S_NPG_65_109Harrison-000004/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.73.11",
+        "title": "Henry Knox",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "after 1783",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 55.9 x 47.6 x 2.5cm (22 x 18 3/4 x 1)nFrame: 73 x 63.5 x 7.6cm (28 3/4 x 25 x 3)",
+        "topic": "Topic: Symbols & MotifsMedalnCostumeDress AccessoryEpauletnHenry Knox: MalenHenry Knox: Military and IntelligenceArmyOfficerRevolutionary WarnHenry Knox: Politics and GovernmentGovernment officialCabinet memberSecretary of WarnHenry Knox: Business and FinanceBusinesspersonMerchantBooksellernPortrait",
+        "name.Artist": "Charles Peale Polk, 17 Mar 1767 - 6 May 1822",
+        "name.Maker": null,
+        "sitter_list": [
+          "Henry Knox, 25 Jul 1750 - 25 Oct 1806"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_73_11/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1784,
+    "records": [
+      {
+        "EDANurl": "edanmdm:npg_NPG.72.4",
+        "title": "George Read",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of W.B. Shubrick Clymer",
+        "date": "1784",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: 91.5cm x 73.5cm (36 x 28 15/16), Accurate",
+        "topic": "Topic: Printed MaterialDocumentnInteriorInterior with Exterior ViewnHome FurnishingsDrapenGeorge Read: MalenGeorge Read: Law and CrimeLawyernGeorge Read: Politics and GovernmentGovernment officialCongressmanContinental congressmannGeorge Read: Politics and GovernmentStatesmanColonial statesmanSigner of DeclarationnGeorge Read: Law and CrimeJudgeJusticeState Supreme Court JusticeDelawarenGeorge Read: Politics and GovernmentStatesmanSigner of ConstitutionnGeorge Read: Politics and GovernmentGovernment officialState SenatorDelawarenPortrait",
+        "name.Artist": "Robert Edge Pine, c. 1730 - 1788",
+        "name.Maker": null,
+        "sitter_list": [
+          "George Read, 18 Sep 1733 - 21 Sep 1798"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_72_4/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2013.29",
+        "title": "Samuel Blodget",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "c. 1784",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 91.8 x 71.1cm (36 1/8 x 28)nFrame: 110.5 x 90.2 x 5.1cm (43 1/2 x 35 1/2 x 2)",
+        "topic": "Topic: VehicleShipnPrinted MaterialDocumentnInteriorInterior with Exterior ViewnArchitectureArchnHome FurnishingsDrapenHome FurnishingsFurnitureTableWriting tablenCostumeRobeBanyannSamuel Blodget, Jr.: MalenSamuel Blodget, Jr.: Arts and CultureVisual ArtsArchitectnSamuel Blodget, Jr.: Business and FinanceBusinesspersonEntrepreneurnSamuel Blodget, Jr.: Business and FinanceEconomistnPortrait",
+        "name.Artist": "John Trumbull, 6 Jun 1756 - 10 Nov 1843",
+        "name.Maker": null,
+        "sitter_list": [
+          "Samuel Blodget, Jr., 28 Aug 1757 - 11 Apr 1814"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2013_29Blodget-000001/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1785,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_1975.75",
+        "title": "Portrait of General Giles",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Gift of Mrs. David C. Acheson and John W. Castles III",
+        "date": "ca. 1785",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 29 5/8 x 25 1/8 in. (75.2 x 63.9 cm)",
+        "topic": "Topic: OccupationmilitarygeneralnPortrait malewaist length",
+        "name.Artist": "Joseph Wright, born Bordentown, NJ 1756-died Philadelphia, PA 1793",
+        "name.Maker": null,
+        "sitter_list": [
+          "General Giles"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1975.75_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_S_NPG.71.8",
+        "title": "Margaret Brown Stone",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Judith March Clement",
+        "date": "c. 1785",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Accurate: 67.3 x 53.3 cm (26 1/2 x 21)nFrame: 78.7 u00d7 66.7 u00d7 5.4 cm (31 u00d7 26 1/4 u00d7 2 1/8)",
+        "topic": "Topic: Margaret Brown Stone: FemalenPortrait",
+        "name.Artist": "Robert Edge Pine, c. 1730 - 1788",
+        "name.Maker": null,
+        "sitter_list": [
+          "Margaret Brown Stone, 1753 - 1787"
+        ],
+        "thumbnail": null
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.87.43",
+        "title": "Benjamin Franklin",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of the Morris and Gwendolyn Cafritz Foundation",
+        "date": "c. 1785",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 72.4 x 59.7 x 3.8cm (28 1/2 x 23 1/2 x 1 1/2)nFrame: 92.7 x 80 x 8.3cm (36 1/2 x 31 1/2 x 3 1/4)",
+        "topic": "Topic: Home FurnishingsFurnitureSeatingChairnBenjamin Franklin: MalenBenjamin Franklin: Arts and CultureLiteratureWriternBenjamin Franklin: Politics and GovernmentStatesmanColonial statesmannBenjamin Franklin: Politics and GovernmentGovernment officialCongressmanContinental congressmannBenjamin Franklin: Politics and GovernmentStatesmanColonial statesmanSigner of DeclarationnBenjamin Franklin: Science and TechnologyScientistnBenjamin Franklin: Politics and GovernmentDiplomatnBenjamin Franklin: Social Welfare and ReformPhilanthropistnBenjamin Franklin: Science and TechnologyInventornBenjamin Franklin: Business and FinanceTradesmanPrinternBenjamin Franklin: Politics and GovernmentGovernment officialPostmasternPortrait",
+        "name.Artist": "Joseph Siffred Duplessis, 22 Sep 1725 - 1 Apr 1802",
+        "name.Maker": null,
+        "sitter_list": [
+          "Benjamin Franklin, 17 Jan 1706 - 17 Apr 1790"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_87_43/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.73.20",
+        "title": "Robert Morris",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "c. 1785",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 92.4 x 74.6 x 3.8cm (36 3/8 x 29 3/8 x 1 1/2)nFrame: 113 x 95.3 x 8.9cm (44 1/2 x 37 1/2 x 3 1/2)",
+        "topic": "Topic: Printed MaterialBooknPrinted MaterialDocumentnRobert Morris: MalenRobert Morris: Politics and GovernmentGovernment officialCongressmanContinental congressmannRobert Morris: Politics and GovernmentStatesmanColonial statesmanSigner of DeclarationnRobert Morris: Business and FinanceFinanciernRobert Morris: Business and FinanceBusinesspersonMerchantnRobert Morris: Politics and GovernmentGovernment officialState LegislatorPennsylvanianRobert Morris: Politics and GovernmentStatesmanSigner of ConstitutionnPortrait",
+        "name.Artist": "Robert Edge Pine, c. 1730 - 1788",
+        "name.Maker": null,
+        "sitter_list": [
+          "Robert Morris, 31 Jan 1734 - 8 May 1806"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_73_20/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.71.44",
+        "title": "Thomas Stone",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Judith March Clement",
+        "date": "c. 1785",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: 67.5cm x 53.3cm (26 9/16 x 21), Accurate",
+        "topic": "Topic: Thomas Stone: MalenThomas Stone: Law and CrimeLawyernThomas Stone: Politics and GovernmentGovernment officialCongressmanContinental congressmannThomas Stone: Politics and GovernmentStatesmanColonial statesmanSigner of DeclarationnThomas Stone: Politics and GovernmentGovernment officialState SenatorMarylandnPortrait",
+        "name.Artist": "Robert Edge Pine, c. 1730 - 1788",
+        "name.Maker": null,
+        "sitter_list": [
+          "Thomas Stone, 1743 - 5 Oct 1787"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_71_44/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.84.171",
+        "title": "Samuel Seabury",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; bequest of Lispenard Seabury Crocker",
+        "date": "1785",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 91.4 x 71.1 x 2.5cm (36 x 28 x 1)nFrame: 109.2 x 90.2 x 8.9cm (43 x 35 1/2 x 3 1/2)",
+        "topic": "Topic: Printed MaterialBooknSamuel Seabury: MalenSamuel Seabury: Religion and SpiritualityClergyPrelateBishopnPortrait",
+        "name.Artist": "Ralph Earl, 11 May 1751 - 16 Aug 1801",
+        "name.Maker": null,
+        "sitter_list": [
+          "Samuel Seabury, 30 Nov 1729 - 25 Feb 1796"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_84_171/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.80.16",
+        "title": "George Washington",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "1785",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Sight: 90.2 x 69.9cm (35 1/2 x 27 1/2)nFrame: 101.6 x 81.6 x 6.4cm (40 x 32 1/8 x 2 1/2)",
+        "topic": "Topic: ExteriornEquipmentWalking stickCanenCostumeDress AccessoryEpauletnCostumeDress AccessoryButtonBrassnGeorge Washington: MalenGeorge Washington: Military and IntelligenceArmyOfficerRevolutionary WarnGeorge Washington: Politics and GovernmentStatesmanColonial statesmannGeorge Washington: Business and FinanceNatural resources commerceAgriculturistFarmernGeorge Washington: Military and IntelligenceArmyOfficerGeneralnGeorge Washington: Politics and GovernmentGovernment officialPresident of USnGeorge Washington: Science and TechnologySurveyornGeorge Washington: Civilian awardsCongressional Gold MedalnPortrait",
+        "name.Artist": "Robert Edge Pine, c. 1730 - 1788",
+        "name.Maker": null,
+        "sitter_list": [
+          "George Washington, 22 Feb 1732 - 14 Dec 1799"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_80_16GW-000001/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1786,
+    "records": [
+      {
+        "EDANurl": "edanmdm:npg_NPG.99.66",
+        "title": "Thomas Jefferson",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; bequest of Charles Francis Adams; frame conserved with funds from the Smithsonian Women's Committee",
+        "date": "1786",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 90.8 u00d7 72.4 cm (35 3/4 u00d7 28 1/2)nFrame: 102.4 u00d7 81.9 u00d7 8.3 cm (40 5/16 u00d7 32 1/4 u00d7 3 1/4)",
+        "topic": "Topic: InteriornPrinted MaterialPapersnArtworkSculptureStatuenCostumeHeadgearHatCapPhrygian capnSymbols & MotifsSymbolic FigureLibertynThomas Jefferson: MalenThomas Jefferson: Law and CrimeLawyernThomas Jefferson: Politics and GovernmentGovernment officialCongressmanContinental congressmannThomas Jefferson: Politics and GovernmentStatesmanColonial statesmanSigner of DeclarationnThomas Jefferson: Politics and GovernmentVice-President of USnThomas Jefferson: Business and FinanceNatural resources commerceAgriculturistFarmernThomas Jefferson: Arts and CultureVisual ArtsArchitectnThomas Jefferson: Politics and GovernmentGovernment officialPresident of USnThomas Jefferson: Politics and GovernmentGovernment officialCabinet memberSecretary of StatenThomas Jefferson: Politics and GovernmentDiplomatMinisternThomas Jefferson: Science and TechnologyInventornThomas Jefferson: Politics and GovernmentGovernment officialUS CongressmanVirginianThomas Jefferson: Politics and GovernmentGovernment officialGovernorVirginianThomas Jefferson: Arts and CultureEducation and ScholarshipFounderUniversitynPortrait",
+        "name.Artist": "Mather Brown, 7 Oct 1761 - 25 May 1831",
+        "name.Maker": null,
+        "sitter_list": [
+          "Thomas Jefferson, 13 Apr 1743 - 4 Jul 1826"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_99_66Jefferson_d1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.96.28",
+        "title": "James Smithson",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "1786",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Frame: 59.7 x 47 x 7.6cm (23 1/2 x 18 1/2 x 3)",
+        "topic": "Topic: Home FurnishingsFurnitureSeatingChairnPrinted MaterialBooknExteriorLandscapenCostumeAcademicCap and gownnJames Smithson: MalenJames Smithson: Arts and CultureEducation and ScholarshipFoundernJames Smithson: Science and TechnologyScientistChemistnPortrait",
+        "name.Artist": "James Roberts, 1753 - c. 1809",
+        "name.Maker": null,
+        "sitter_list": [
+          "James Smithson, c. 1765 - 1829"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_96_28Smithson1L-000001/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1787,
+    "records": [
+      {
+        "EDANurl": "edanmdm:npg_NPG.66.63",
+        "title": "Thomas McKean",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; transfer from the Smithsonian American Art Museum; gift of the collection of George Buchanan Coale, 1926",
+        "date": "after 1787",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Sight: 69.9 x 55.9cm (27 1/2 x 22)nFrame: 82.9 x 70.2 x 5.1cm (32 5/8 x 27 5/8 x 2)",
+        "topic": "Topic: Printed MaterialBooknHome FurnishingsFurnitureBookcasenCostumeHair AccessoryWignThomas McKean: MalenThomas McKean: Law and CrimeLawyernThomas McKean: Politics and GovernmentGovernment officialCongressmanContinental congressmannThomas McKean: Politics and GovernmentStatesmanColonial statesmanSigner of DeclarationnThomas McKean: Politics and GovernmentGovernment officialGovernorPennsylvanianThomas McKean: Politics and GovernmentGovernment officialState LegislatorDelawarenThomas McKean: Law and CrimeJudgeJusticeState Supreme Court JusticePennsylvanianPortrait",
+        "name.Artist": null,
+        "name.Maker": null,
+        "sitter_list": [
+          "Thomas McKean, 19 Mar 1734 - 24 Jun 1817"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_66_63McKean-000003/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1788,
+    "records": [
+      {
+        "EDANurl": "edanmdm:npg_NPG.2001.5",
+        "title": "John Ewing",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; partial gift of Dean Emerson and Maisie Emerson Macy",
+        "date": "1788",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Sight: 95.3 x 69.9 x 3.8 cm (37 1/2 x 27 1/2 x 1 1/2)nFrame: 105.4 x 82.6 x 8.9 cm (41 1/2 x 32 1/2 x 3 1/2)nStretcher: 92.1 u00d7 69.4 u00d7 3 cm (36 1/4 u00d7 27 5/16 u00d7 1 3/16)",
+        "topic": "Topic: Printed MaterialPapersnHome FurnishingsDrapenCostumeHair AccessoryWignEquipmentDrafting & Writing ImplementsWriting implementPenQuillnEquipmentOptical DevicesTelescopenJohn Ewing: MalenJohn Ewing: Religion and SpiritualityClergynJohn Ewing: Arts and CultureEducation and ScholarshipAdministratorUniversity administratornPortrait",
+        "name.Artist": "Charles Willson Peale, 15 Apr 1741 - 22 Feb 1827",
+        "name.Maker": null,
+        "sitter_list": [
+          "John Ewing, 1732 - 1802"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2001_15/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1789,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_1977.101.1",
+        "title": "Jeremiah Williams",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Museum purchase",
+        "date": "ca. 1789-1790",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 29 5/8 x 24 3/4 in. (75.4 x 62.9 cm)",
+        "topic": "Topic: Portrait malewaist length",
+        "name.Artist": "Christian Gullager, born Copenhagen, Denmark 1759-died Philadelphia, PA 1826",
+        "name.Maker": null,
+        "sitter_list": [
+          "Jeremiah Williams"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1977.101.1_2/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1790,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_1979.5.10",
+        "title": "Portrait of a Man",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Transfer from the National Museum of American History, Smithsonian Institution",
+        "date": "ca. 1790",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas mounted on wood, Dimensions: 12 x 9 3/4 in. (30.5 x 24.9 cm) oval",
+        "topic": "Topic: Portrait male",
+        "name.Artist": "Unidentified (European)",
+        "name.Maker": null,
+        "sitter_list": [
+          "unidentified"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1979.5.10_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:saam_1970.76",
+        "title": "Portrait of Mrs. Robert Kermit",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Gift of Kermit Roosevelt",
+        "date": "ca. 1790",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 12 x 9 7/8 in. (30.4 x 25.1 cm) oval",
+        "topic": "Topic: Portrait female",
+        "name.Artist": null,
+        "name.Maker": null,
+        "sitter_list": [
+          "Mrs. Robert Kermit"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1970.76_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:saam_1957.11.2",
+        "title": "James Rumsey",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Bequest of Eugene A. Rumsey and Brothers",
+        "date": "ca. 1790",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on wood, Dimensions: 4 7/8 x 4 1/8 in. (12.4 x 10.5 cm) rectangle",
+        "topic": "Topic: OccupationindustryengineeringnPortrait malebust",
+        "name.Artist": null,
+        "name.Maker": null,
+        "sitter_list": [
+          "James Rumsey"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1957.11.2_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.74.1",
+        "title": "Frederick Augustus Conrad Muhlenberg",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "1790",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas with applied wood strip, Dimensions: 119.5cm x 94cm (47 1/16 x 37), AccuratenFrame: 133.4 x 108 x 7.6cm (52 1/2 x 42 1/2 x 3)",
+        "topic": "Topic: Printed MaterialDocumentnHome FurnishingsFurnitureDesknEquipmentDrafting & Writing ImplementsWriting implementPenQuillnFrederick Augustus Conrad Muhlenberg: MalenFrederick Augustus Conrad Muhlenberg: Politics and GovernmentGovernment officialCongressmanContinental congressmannFrederick Augustus Conrad Muhlenberg: Politics and GovernmentGovernment officialUS CongressmanSpeaker of the HousenFrederick Augustus Conrad Muhlenberg: Politics and GovernmentGovernment officialUS CongressmanPennsylvanianFrederick Augustus Conrad Muhlenberg: Religion and SpiritualityClergyPastornFrederick Augustus Conrad Muhlenberg: Business and FinanceBusinesspersonImporternPortrait",
+        "name.Artist": "Joseph Wright, 16 Jul 1756 - c. 11 Oct 1793",
+        "name.Maker": null,
+        "sitter_list": [
+          "Frederick Augustus Conrad Muhlenberg, 1 Jan 1750 - 4 Jun 1801"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_74_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.97.189",
+        "title": "Jonas Phillips",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "c. 1790",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on wood panel, Dimensions: 35.6 x 27.3 cm (14 x 10 3/4)nFrame: 53.3 u00d7 45.1 u00d7 5.7 cm (21 u00d7 17 3/4 u00d7 2 1/4)",
+        "topic": "Topic: Jonas Phillips: MalenJonas Phillips: Business and FinanceBusinesspersonMerchantnPortrait",
+        "name.Artist": "Unidentified Artist",
+        "name.Maker": null,
+        "sitter_list": [
+          "Jonas Phillips, 1736 - 29 Jan 1803"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_97_189-000001/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2011.64",
+        "title": "Benjamin Latrobe",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "c. 1790",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 18.1 u00d7 13.3 cm (7 1/8 u00d7 5 1/4)nFrame (estimate): 24.1 u00d7 20.3 u00d7 3.8 cm (9 1/2 u00d7 8 u00d7 1 1/2)",
+        "topic": "Topic: InteriornHome FurnishingsFurnitureSeatingChairnPrinted MaterialBooknCostumeDress AccessoryEyeglassesnEquipmentDrafting & Writing ImplementsWriting implementPenQuillnHome FurnishingsCurtainnBenjamin Henry Latrobe: MalenBenjamin Henry Latrobe: Arts and CultureVisual ArtsArchitectnBenjamin Henry Latrobe: Science and TechnologyEngineerCivil engineernPortrait",
+        "name.Artist": "Charles Frederick Von Breda, 16 Aug 1759 - 1 Dec 1818",
+        "name.Maker": null,
+        "sitter_list": [
+          "Benjamin Henry Latrobe, 1 May 1764 - 3 Sep 1820"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2011_64Latrobe_int/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1791,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_1977.101.2",
+        "title": "Matilda Davis Williams",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Museum purchase",
+        "date": "ca. 1791-1792",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 29 5/8 x 24 3/4 in. (75.3 x 63.0 cm)",
+        "topic": "Topic: DressaccessoryjewelrynPortrait femalewaist length",
+        "name.Artist": "Christian Gullager, born Copenhagen, Denmark 1759-died Philadelphia, PA 1826",
+        "name.Maker": null,
+        "sitter_list": [
+          "Matilda Davis Williams"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1977.101.2_2/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2007.212",
+        "title": "Charles Cotesworth Pinckney",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Elise Pinckney",
+        "date": "1791",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on wood panel, Dimensions: Frame: 15.9 x 14cm (6 1/4 x 5 1/2)nSight: 8.6 x 7cm (3 3/8 x 2 3/4)",
+        "topic": "Topic: MiniaturenCharles Cotesworth Pinckney: MalenCharles Cotesworth Pinckney: Law and CrimeLawyernCharles Cotesworth Pinckney: Politics and GovernmentPresidential candidatenCharles Cotesworth Pinckney: Military and IntelligenceArmyOfficerRevolutionary WarnCharles Cotesworth Pinckney: Politics and GovernmentDiplomatnCharles Cotesworth Pinckney: Military and IntelligenceArmyOfficerGeneralnCharles Cotesworth Pinckney: Politics and GovernmentDiplomatMinisternCharles Cotesworth Pinckney: Politics and GovernmentGovernment officialUS CongressmanSouth CarolinanCharles Cotesworth Pinckney: Politics and GovernmentGovernment officialGovernorSouth CarolinanCharles Cotesworth Pinckney: Politics and GovernmentStatesmanSigner of ConstitutionnCharles Cotesworth Pinckney: Politics and GovernmentGovernment officialState SenatorSouth CarolinanCharles Cotesworth Pinckney: Military and IntelligencePrisoner of WarnPortrait",
+        "name.Artist": "John Trumbull, 6 Jun 1756 - 10 Nov 1843",
+        "name.Maker": null,
+        "sitter_list": [
+          "Charles Cotesworth Pinckney, 25 Feb 1746 - 25 Aug 1825"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2007_212/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2007.211",
+        "title": "Thomas Pinckney",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Elise Pinckney",
+        "date": "1791",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on wood panel, Dimensions: Sight: 8.6 x 7cm (3 3/8 x 2 3/4)nFrame: 15.9 x 14.6cm (6 1/4 x 5 3/4)",
+        "topic": "Topic: MiniaturenThomas Pinckney: MalenThomas Pinckney: Law and CrimeLawyernThomas Pinckney: Military and IntelligenceArmyOfficerRevolutionary WarnThomas Pinckney: Politics and GovernmentDiplomatMinisternThomas Pinckney: Politics and GovernmentGovernment officialGovernorSouth CarolinanPortrait",
+        "name.Artist": "John Trumbull, 6 Jun 1756 - 10 Nov 1843",
+        "name.Maker": null,
+        "sitter_list": [
+          "Thomas Pinckney, 23 Oct 1750 - 2 Nov 1828"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2007_211/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_S_NPG.97.191",
+        "title": "Elizabeth Grimké Rutledge",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "c. 1791",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on mahogany panel, Dimensions: 10.3 x 7.6 x .3 cm (4 1/16 x 3 x 1/8 )",
+        "topic": "Topic: MiniaturenElizabeth Grimku00e9 Rutledge: FemalenPortrait",
+        "name.Artist": null,
+        "name.Maker": null,
+        "sitter_list": [
+          "Elizabeth Grimké Rutledge, ? - 1792"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-S_NPG_97_191Rutledgealt-000002/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.97.190",
+        "title": "John Rutledge",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "c. 1791",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on mahogany panel, Dimensions: Sight: 8.6 x 7.6cm (3 3/8 x 3)nFrame: 17.5 x 16.5 x 3.8cm (6 7/8 x 6 1/2 x 1 1/2)",
+        "topic": "Topic: MiniaturenJohn Rutledge: MalenJohn Rutledge: Politics and GovernmentStatesmanSigner of ConstitutionnJohn Rutledge: Law and CrimeJudgeJusticeUS Supreme Court JusticeChief Justice of USnPortrait",
+        "name.Artist": null,
+        "name.Maker": null,
+        "sitter_list": [
+          "John Rutledge, 1739 - 18 Jul 1800"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-9700390A_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.89.205",
+        "title": "Charles Willson Peale Self-Portrait",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; frame conserved with funds from the Smithsonian Women's Committee",
+        "date": "c. 1791",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Frame: 84.8 x 72.1 x 7.3cm (33 3/8 x 28 3/8 x 2 7/8)",
+        "topic": "Topic: Self-portraitnCharles Willson Peale: MalenCharles Willson Peale: Arts and CultureLiteratureWriternCharles Willson Peale: Arts and CultureVisual ArtsArtistPainternCharles Willson Peale: Arts and CultureVisual ArtsArtistPortraitistnCharles Willson Peale: Arts and CultureVisual ArtsFounderArt museum foundernCharles Willson Peale: Military and IntelligenceMilitiaOfficernCharles Willson Peale: Science and TechnologyScientistNaturalistnCharles Willson Peale: Politics and GovernmentGovernment officialState LegislatorPennsylvanianPortrait",
+        "name.Artist": "Charles Willson Peale, 15 Apr 1741 - 22 Feb 1827",
+        "name.Maker": null,
+        "sitter_list": [
+          "Charles Willson Peale, 15 Apr 1741 - 22 Feb 1827"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_89_205/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1792,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_1975.49.2",
+        "title": "Mrs. Joseph Wright",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Museum purchase and gift of Joseph Alsop",
+        "date": "1792",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 46 in. x 36 1/8 in. (116.8 x 91.8 cm)",
+        "topic": "Topic: LandscaperivernDressaccessoryhatnDressaccessoryeye wearnPortrait femaleknee lengthnPortrait femaleknee lengthnObjectwritten matterbook",
+        "name.Artist": "Ralph Earl, born Worcester County, MA 1751-died Bolton, CT 1801",
+        "name.Maker": null,
+        "sitter_list": [
+          "Mrs. Joseph Wright",
+          "Hannah Wright"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1975.49.2_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:saam_1975.49.1",
+        "title": "Mrs. Richard Alsop",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Museum purchase and gift of Joseph Alsop",
+        "date": "1792",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 45 5/8 x 36 1/8 in. (115.8 x 91.8 cm)",
+        "topic": "Topic: LandscaperivernDressaccessoryhatnPortrait femaleknee lengthnPortrait femaleknee length",
+        "name.Artist": "Ralph Earl, born Worcester County, MA 1751-died Bolton, CT 1801",
+        "name.Maker": null,
+        "sitter_list": [
+          "Mary Alsop",
+          "Mrs. Richard Alsop"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1975.49.1_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2008.5",
+        "title": "Thomas Paine",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "c. 1792",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 34 x 26cm (13 3/8 x 10 1/4)nFrame: 50.8 x 43.5cm (20 x 17 1/8)",
+        "topic": "Topic: Home FurnishingsFurnitureSeatingChairnThomas Paine: MalenThomas Paine: Arts and CultureLiteratureWriternThomas Paine: Politics and GovernmentStatesmannThomas Paine: Arts and CultureJournalism and MediaMagazine editornThomas Paine: Science and TechnologyInventornThomas Paine: Social Welfare and ReformReformerHumanitariannPortrait",
+        "name.Artist": "Laurent Dabos, 1761 - 1835",
+        "name.Maker": null,
+        "sitter_list": [
+          "Thomas Paine, 29 Jan 1737 - 8 Jun 1809"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2008_5/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2011.145",
+        "title": "Richard Bache",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of the Richard Bache Duane Family",
+        "date": "1792-93",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 76.2 u00d7 63.5 u00d7 1.9 cm (30 u00d7 25 u00d7 3/4)nFrame: 96.5 x 84 x 7.6 cm (38 x 33 1/16 x 3)",
+        "topic": "Topic: ExteriorLandscapenCostumeDress AccessoryRibbonnRichard Bache: MalenRichard Bache: Business and FinanceBusinesspersonnRichard Bache: Politics and GovernmentGovernment officialPostmasterPostmaster GeneralnPortrait",
+        "name.Artist": "John Hoppner, 1758 - 1810",
+        "name.Maker": null,
+        "sitter_list": [
+          "Richard Bache, 1737 - 1811"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2011_145Bache-000001/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1793,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_1977.104",
+        "title": "Emily Smiley Snowden",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Gift of Mr. Frederick E. Kline",
+        "date": "1793",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 35 5/8 x 30 7/8 in. (90.5 x 78.4 cm)",
+        "topic": "Topic: DressaccessoryfannPortrait femalewaist length",
+        "name.Artist": "Charles Peale Polk, born Annapolis, MD 1767-died Richmond Courthouse, VA 1822",
+        "name.Maker": null,
+        "sitter_list": [
+          "Emily Snowden"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1977.104_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.75.52",
+        "title": "John Adams",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "1793",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 65.1 u00d7 54.9 u00d7 2.5cm (25 5/8 u00d7 21 5/8 u00d7 1)nFrame: 78.7 x 69.2 x 6cm (31 x 27 1/4 x 2 3/8)",
+        "topic": "Topic: John Adams: MalenJohn Adams: Arts and CultureLiteratureWriternJohn Adams: Politics and GovernmentGovernment officialCongressmanContinental congressmannJohn Adams: Politics and GovernmentStatesmanColonial statesmanSigner of DeclarationnJohn Adams: Politics and GovernmentVice-President of USnJohn Adams: Politics and GovernmentDiplomatnJohn Adams: Politics and GovernmentGovernment officialPresident of USnJohn Adams: Politics and GovernmentGovernment officialState LegislatorMassachusettsnPortrait",
+        "name.Artist": "John Trumbull, 6 Jun 1756 - 10 Nov 1843",
+        "name.Maker": null,
+        "sitter_list": [
+          "John Adams, 30 Oct 1735 - 4 Jul 1826"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_75_52/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1794,
+    "records": [
+      {
+        "EDANurl": "edanmdm:npg_NPG.91.81",
+        "title": "John Witherspoon",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; partial gift of Mrs. Samuel Matthews",
+        "date": "1794",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 76.2 x 64.8 x 3.8cm (30 x 25 1/2 x 1 1/2)nFrame: 83.8 x 71.8 x 5.1cm (33 x 28 1/4 x 2)",
+        "topic": "Topic: Printed MaterialBooknArchitectureColumnnJohn Witherspoon: MalenJohn Witherspoon: Religion and SpiritualityClergynJohn Witherspoon: Politics and GovernmentGovernment officialCongressmanContinental congressmannJohn Witherspoon: Politics and GovernmentStatesmanColonial statesmanSigner of DeclarationnJohn Witherspoon: Arts and CultureEducation and ScholarshipAdministratorCollege administratorPresidentnPortrait",
+        "name.Artist": "Rembrandt Peale, 22 Feb 1778 - 3 Oct 1860",
+        "name.Maker": null,
+        "sitter_list": [
+          "John Witherspoon, 5 Feb 1723 - 15 Nov 1794"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_91_81Witherspoon_d1/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1795,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_2019.6.12",
+        "title": "The Davis Children (Eliza Cheever Davis and John Derby Davis)",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Gift of Ralph and Bobbi Terkowitz",
+        "date": "1795",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 48 1/2 x 38 1/2 in.",
+        "topic": "Topic: LandscapenObjectflowerlilynPortrait femalechildnPortrait malechild",
+        "name.Artist": "Edward Savage, born Princeton, MA 1761-died Princeton, MA 1817",
+        "name.Maker": null,
+        "sitter_list": [
+          "Eliza Cheever Davis",
+          "John Derby Davis"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-2019.6.12_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_S_NPG.2009.49",
+        "title": "Elizabeth Depeyster Peale",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; transfer from the National Museum of American History, gift of the CIGNA Corporation Conserved with funds from the Smithsonian Women's Committee",
+        "date": "1795",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Watercolor on ivory, Dimensions: Ivory: 7 x 5.9cm (2 3/4 x 2 5/16)",
+        "topic": "Topic: MiniaturenElizabeth Depeyster Peale: FemalenPortrait",
+        "name.Artist": "James Peale, 1749 - 24 May 1831",
+        "name.Maker": null,
+        "sitter_list": [
+          "Elizabeth Depeyster Peale, 1765 - 1804"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-S_NPG_2009_49Depeyster-000004/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.65.59",
+        "title": "George Washington",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; transfer from the National Gallery of Art; gift of the A.W. Mellon Educational and Charitable Trust, 1942",
+        "date": "1795",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 75.6 x 64.5 x 3.2cm (29 3/4 x 25 3/8 x 1 1/4)nFrame: 94.9 x 83.8 x 9.5cm (37 3/8 x 33 x 3 3/4)",
+        "topic": "Topic: George Washington: MalenGeorge Washington: Military and IntelligenceArmyOfficerRevolutionary WarnGeorge Washington: Politics and GovernmentStatesmanColonial statesmannGeorge Washington: Business and FinanceNatural resources commerceAgriculturistFarmernGeorge Washington: Military and IntelligenceArmyOfficerGeneralnGeorge Washington: Politics and GovernmentGovernment officialPresident of USnGeorge Washington: Science and TechnologySurveyornGeorge Washington: Civilian awardsCongressional Gold MedalnPortrait",
+        "name.Artist": "Rembrandt Peale, 22 Feb 1778 - 3 Oct 1860",
+        "name.Maker": null,
+        "sitter_list": [
+          "George Washington, 22 Feb 1732 - 14 Dec 1799"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_65_59/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:saam_1996.91.1",
+        "title": "Don José Mas Ferrer",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Teodoro Vidal Collection",
+        "date": "ca. 1795",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 21 1/4 x 16 3/8 in. (54.0 x 41.7 cm.)",
+        "topic": "Topic: Portrait malefull lengthnObjectfurniturecabinetnObjectweaponswordnObjectwritten matterletter",
+        "name.Artist": "José Campeche y Jordán, born San Juan, Puerto Rico 1751-died San Juan, Puerto Rico 1809",
+        "name.Maker": null,
+        "sitter_list": [
+          "Don Jose Mas Ferrer"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1996.91.1_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.83.31",
+        "title": "Arthur St. Claire",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Mr. and Mrs. Arthur St. Clair Johnson Conserved with funds from the Smithsonian Women's Committee",
+        "date": "c. 1795",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Watercolor on ivory, Dimensions: 7cm x 5.4cm (2 3/4 x 2 1/8), Accurate",
+        "topic": "Topic: CostumeDress AccessoryEpauletnMiniaturenArthur St. Clair: MalenArthur St. Clair: Military and IntelligenceSoldiernPortrait",
+        "name.Artist": null,
+        "name.Maker": null,
+        "sitter_list": [
+          "Arthur St. Clair, 23 Mar 1737 - 31 Aug 1818"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_83_31StClaire-000001/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.67.7",
+        "title": "Reverend Justus Henry Christian Helmuth",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "c. 1795",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: 78.8cm x 71.1cm (31 x 28), Accurate",
+        "topic": "Topic: InteriornPrinted MaterialBooknHome FurnishingsFurnitureTablenHome FurnishingsFurnitureBookcasenRev. Justus Henry Christian Helmuth: MalenRev. Justus Henry Christian Helmuth: Religion and SpiritualityClergynRev. Justus Henry Christian Helmuth: Arts and CultureLiteratureWriternRev. Justus Henry Christian Helmuth: Arts and CultureJournalism and MediaMagazine publishernRev. Justus Henry Christian Helmuth: Arts and CultureEducation and ScholarshipEducatornPortrait",
+        "name.Artist": "John Eckstein, 1736 - 1817",
+        "name.Maker": null,
+        "sitter_list": [
+          "Rev. Justus Henry Christian Helmuth, 16 May 1745 - 5 Feb 1825"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_67_7Helmuth-000003/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.74.5",
+        "title": "Richard Henry Lee",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Duncan Lee and his son, Gavin Dunbar Lee",
+        "date": "c. 1795-1805",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 75.6 x 63.8 x 3.2cm (29 3/4 x 25 1/8 x 1 1/4)nFrame: 88.3 x 75.6 x 5.4cm (34 3/4 x 29 3/4 x 2 1/8)",
+        "topic": "Topic: InteriornRichard Henry Lee: MalenRichard Henry Lee: Politics and GovernmentGovernment officialState LegislatorVirginianRichard Henry Lee: Politics and GovernmentGovernment officialCongressmanContinental congressmannRichard Henry Lee: Politics and GovernmentStatesmanColonial statesmanSigner of DeclarationnRichard Henry Lee: Business and FinanceNatural resources commerceAgriculturistPlanternRichard Henry Lee: Politics and GovernmentGovernment officialUS SenatorVirginianPortrait",
+        "name.Artist": "Charles Willson Peale, 15 Apr 1741 - 22 Feb 1827",
+        "name.Maker": null,
+        "sitter_list": [
+          "Richard Henry Lee, 20 Jan 1732 - 19 Jun 1794"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_74_5/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1796,
+    "records": [
+      {
+        "EDANurl": "edanmdm:npg_NPG.98.73",
+        "title": "David Rittenhouse",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; bequest of Stanley P. Sax",
+        "date": "1796",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Sight: 124.5 x 100.3 x 2.5cm (49 x 39 1/2 x 1)nFrame: 147.3 x 121.9 x 8.9cm (58 x 48 x 3 1/2)",
+        "topic": "Topic: InteriornPrinted MaterialBooknPrinted MaterialPapersnEquipmentOptical DevicesTelescopenCostumeRobeBanyannDavid Rittenhouse: MalenDavid Rittenhouse: Arts and CultureEducation and ScholarshipEducatorProfessorUniversitynDavid Rittenhouse: Arts and CultureEducation and ScholarshipAdministratorUniversity administratorUniversity trusteenDavid Rittenhouse: Science and TechnologyScientistMathematiciannDavid Rittenhouse: Science and TechnologyScientistAstronomernDavid Rittenhouse: Business and FinanceTradesmanMechanicnDavid Rittenhouse: Business and FinanceTradesmanClockmakernPortrait",
+        "name.Artist": "Charles Willson Peale, 15 Apr 1741 - 22 Feb 1827",
+        "name.Maker": null,
+        "sitter_list": [
+          "David Rittenhouse, 8 Apr 1732 - 26 Jun 1796"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_98_73Rittenhouse_d1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.92.122",
+        "title": "Charles Cotesworth Pinckney",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Harriet J. Phelps",
+        "date": "1796",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: 66.2cm x 56.2cm (26 1/16 x 22 1/8)",
+        "topic": "Topic: CostumeDress AccessoryEpauletnCharles Cotesworth Pinckney: MalenCharles Cotesworth Pinckney: Law and CrimeLawyernCharles Cotesworth Pinckney: Politics and GovernmentPresidential candidatenCharles Cotesworth Pinckney: Military and IntelligenceArmyOfficerRevolutionary WarnCharles Cotesworth Pinckney: Politics and GovernmentDiplomatnCharles Cotesworth Pinckney: Military and IntelligenceArmyOfficerGeneralnCharles Cotesworth Pinckney: Politics and GovernmentDiplomatMinisternCharles Cotesworth Pinckney: Politics and GovernmentGovernment officialUS CongressmanSouth CarolinanCharles Cotesworth Pinckney: Politics and GovernmentGovernment officialGovernorSouth CarolinanCharles Cotesworth Pinckney: Politics and GovernmentStatesmanSigner of ConstitutionnCharles Cotesworth Pinckney: Politics and GovernmentGovernment officialState SenatorSouth CarolinanCharles Cotesworth Pinckney: Military and IntelligencePrisoner of WarnPortrait",
+        "name.Artist": "Unidentified Artist",
+        "name.Maker": null,
+        "sitter_list": [
+          "Charles Cotesworth Pinckney, 25 Feb 1746 - 25 Aug 1825"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_92_122Pinckney-000002/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2001.13",
+        "title": "George Washington (Lansdowne Portrait)",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; acquired as a gift to the nation through the generosity of the Donald W. Reynolds Foundation",
+        "date": "1796",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: 247.6 u00d7 158.7 cm (97 1/2 u00d7 62 1/2)nFrame: 283.5 u00d7 194.3 u00d7 17.8 cm (111 5/8 u00d7 76 1/2 u00d7 7)",
+        "topic": "Topic: Printed MaterialBooknPrinted MaterialDocumentnInteriorInterior with Exterior ViewnHome FurnishingsFurnitureSeatingChairArmchairnPrinted MaterialPapersnWeaponSwordnArchitectureColumnnHome FurnishingsFurnitureCarpetnHome FurnishingsFurnitureTableWriting tablenEquipmentDrafting & Writing ImplementsWriting implementPenQuillnEquipmentDrafting & Writing ImplementsInkstandnNature & EnvironmentAnimalBirdEaglenNature & EnvironmentRainbownGeorge Washington: MalenGeorge Washington: Military and IntelligenceArmyOfficerRevolutionary WarnGeorge Washington: Politics and GovernmentStatesmanColonial statesmannGeorge Washington: Business and FinanceNatural resources commerceAgriculturistFarmernGeorge Washington: Military and IntelligenceArmyOfficerGeneralnGeorge Washington: Politics and GovernmentGovernment officialPresident of USnGeorge Washington: Science and TechnologySurveyornGeorge Washington: Civilian awardsCongressional Gold MedalnPortrait",
+        "name.Artist": "Gilbert Stuart, 3 Dec 1755 - 9 Jul 1828",
+        "name.Maker": null,
+        "sitter_list": [
+          "George Washington, 22 Feb 1732 - 14 Dec 1799"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2001_13_ext/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2016.22",
+        "title": "Francis Scott Key",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; funded with support from the Secretary and the Smithsonian National Board and Chapter I - Baltimore, Maryland, The Colonial Dames of America, the Elizabeth Welsh Young Legacy Fund",
+        "date": "c. 1796",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Frame: 85.7 u00d7 76.2 cm (33 3/4 u00d7 30)nStretcher: 74 u00d7 63.8 u00d7 3 cm (29 1/8 u00d7 25 1/8 u00d7 1 3/16)",
+        "topic": "Topic: InteriornFrancis Scott Key: MalenFrancis Scott Key: Law and CrimeLawyernFrancis Scott Key: Arts and CultureLiteratureWriternFrancis Scott Key: Arts and CultureLiteratureWriterPoetnFrancis Scott Key: Politics and GovernmentGovernment officialDistrict attorneynPortrait",
+        "name.Artist": "Rembrandt Peale, 22 Feb 1778 - 3 Oct 1860",
+        "name.Maker": null,
+        "sitter_list": [
+          "Francis Scott Key, 1 Aug 1779 - 11 Jan 1843"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2016_22/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2013.140",
+        "title": "George Washington",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of the McNeil Americana Collection; conserved with funds from the Smithsonian Women's Committee",
+        "date": "after 1796",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Watercolor on ivory, Dimensions: Ivory: 8.3 u00d7 6.5cm (3 1/4 u00d7 2 9/16)nFrame: 12.1 u00d7 10.8cm (4 3/4 u00d7 4 1/4)",
+        "topic": "Topic: MiniaturenGeorge Washington: MalenGeorge Washington: Military and IntelligenceArmyOfficerRevolutionary WarnGeorge Washington: Politics and GovernmentStatesmanColonial statesmannGeorge Washington: Business and FinanceNatural resources commerceAgriculturistFarmernGeorge Washington: Military and IntelligenceArmyOfficerGeneralnGeorge Washington: Politics and GovernmentGovernment officialPresident of USnGeorge Washington: Science and TechnologySurveyornGeorge Washington: Civilian awardsCongressional Gold MedalnPortrait",
+        "name.Artist": "Unidentified Artist",
+        "name.Maker": null,
+        "sitter_list": [
+          "George Washington, 22 Feb 1732 - 14 Dec 1799"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2013_140GW-000001/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1797,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_2024.24",
+        "title": "Portrait of Thayendanegea (Joseph Brant)",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Gift of the Dorothy Tapper Goldman Foundation",
+        "date": "after 1797",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 38 1/2 u00d7 33 1/2 u00d7 3 5/8 in. (97.8 u00d7 85.1 u00d7 9.2 cm)",
+        "topic": "Topic: Portrait male",
+        "name.Artist": "Unidentified",
+        "name.Maker": null,
+        "sitter_list": [
+          "Portrait male"
+        ],
+        "thumbnail": null
+      }
+    ]
+  },
+  {
+    "year": 1798,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_2010.16.1",
+        "title": "Joseph Ball",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Transfer from the National Museum of American History, Smithsonian Institution",
+        "date": "1798 -1805",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 44 x 35 1/2 in. (111.8 x 90.2 cm)",
+        "topic": "Topic: Portrait malewaist length",
+        "name.Artist": "Christian Gullager, born Copenhagen, Denmark 1759-died Philadelphia, PA 1826",
+        "name.Maker": null,
+        "sitter_list": [
+          "Joseph Ball"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-2010.16.1_1/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1800,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_2010.16.2",
+        "title": "John Swanwick",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Transfer from the National Museum of American History, Smithsonian Institution",
+        "date": "ca. 1800",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 35 3/4 x 30 7/8 in. (90.8 x 78.4 cm)",
+        "topic": "Topic: Objectwritten matterbooknPortrait malewaist length",
+        "name.Artist": "Matthew Pratt, born Philadelphia, PA 1734-died Philadelphia, PA 1805",
+        "name.Maker": null,
+        "sitter_list": [
+          "John Swanwick"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-2010.16.2_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:saam_1967.136.3",
+        "title": "Portrait of a Connecticut Clockmaker's Wife",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Gift of Orrin Wickersham June",
+        "date": "ca. 1800",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on wood, Dimensions: 10 1/4 x 7 7/8 in. (26.0 x 20.0 cm.)",
+        "topic": "Topic: Portrait femalenCityscapeConnecticut",
+        "name.Artist": null,
+        "name.Maker": null,
+        "sitter_list": [
+          "unidentified"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1967.136.3_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:saam_1967.136.2",
+        "title": "Portrait of a Connecticut Clockmaker",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Gift of Orrin Wickersham June",
+        "date": "ca. 1800",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on wood, Dimensions: 10 1/4 x 7 7/8 in. (26.1 x 20.1 cm) oval",
+        "topic": "Topic: Portrait malenCityscapeConnecticutnOccupationcraftclockmaker",
+        "name.Artist": null,
+        "name.Maker": null,
+        "sitter_list": [
+          "unidentified"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1967.136.2_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:saam_1956.11.42",
+        "title": "Portrait of a Gentleman",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Bequest of Mabel Johnson Langhorne",
+        "date": "ca. 1800",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 29 1/2 x 24 1/2 in. (74.9 x 62.2 cm.)",
+        "topic": "Topic: Portrait male",
+        "name.Artist": "Unidentified (British)",
+        "name.Maker": null,
+        "sitter_list": [
+          "unidentified"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1956.11.42_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:saam_1956.11.41",
+        "title": "Portrait of a Boy",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Bequest of Mabel Johnson Langhorne",
+        "date": "ca. 1800",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 27 x 25 in. (68.6 x 63.5 cm.)",
+        "topic": "Topic: Portrait malechildnFigure malechildbust",
+        "name.Artist": "Unidentified (Italian)",
+        "name.Maker": null,
+        "sitter_list": [
+          "unidentified"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1956.11.41_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:saam_1968.137",
+        "title": "Captain Charles McKnight",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Museum purchase",
+        "date": "1800",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 28 3/4 x 24 in. (73.1 x 61.1 cm.)",
+        "topic": "Topic: OccupationmilitarycaptainnPortrait male",
+        "name.Artist": "Jacob Frymire, born Lancaster County, PA ca. 1765-died Hamilton Township, PA 1822",
+        "name.Maker": null,
+        "sitter_list": [
+          "Charles Mc Knight"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1968.137_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2012.90",
+        "title": "George Washington",
+        "creditLine": "Credit Line: Gift of Eleanor Morein Foster in memory of Charles Harry Foster; National Portrait Gallery, Smithsonian Institution",
+        "date": "1800",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 77.5 u00d7 64.8 u00d7 1.9cm (30 1/2 u00d7 25 1/2 u00d7 3/4)nFrame: 95.7 u00d7 82.7 u00d7 7cm (37 11/16 u00d7 32 9/16 u00d7 2 3/4)",
+        "topic": "Topic: Nature & EnvironmentAnimalHorsenCostumeHeadgearHatTricornenCostumeDress AccessoryEpauletnWeaponCannonnMusicMusical instrumentDrumnSymbols & MotifsFlagNational flagAmericannGeorge Washington: MalenGeorge Washington: Military and IntelligenceArmyOfficerRevolutionary WarnGeorge Washington: Politics and GovernmentStatesmanColonial statesmannGeorge Washington: Business and FinanceNatural resources commerceAgriculturistFarmernGeorge Washington: Military and IntelligenceArmyOfficerGeneralnGeorge Washington: Politics and GovernmentGovernment officialPresident of USnGeorge Washington: Science and TechnologySurveyornGeorge Washington: Civilian awardsCongressional Gold MedalnPortrait",
+        "name.Artist": "William Clarke, active 1785 - 1806",
+        "name.Maker": null,
+        "sitter_list": [
+          "George Washington, 22 Feb 1732 - 14 Dec 1799"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2012_90GW-000001/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_S_NPG.95.116",
+        "title": "Ann Elliott Morris",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; bequest of Herbert Leldon Kirk in memory of his wife, Ruth Chapman Kirk",
+        "date": "c. 1800",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Watercolor on ivory, Dimensions: 8.1cm x 6.3cm (3 3/16 x 2 1/2)",
+        "topic": "Topic: CostumeHeadgearHatBonnetnMiniaturenAnn Elliott Morris: FemalenPortrait",
+        "name.Artist": "Unidentified Artist",
+        "name.Maker": null,
+        "sitter_list": [
+          "Ann Elliott Morris, 1763 - 1848"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-S_NPG_95_116Morris_int/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_S_NPG.95.115",
+        "title": "Col. Lewis Morris, IV",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; bequest of Herbert Leldon Kirk in memory of his wife, Ruth Chapman Kirk",
+        "date": "c. 1800",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Watercolor on ivory, Dimensions: 8.1cm x 6.5cm (3 3/16 x 2 9/16)",
+        "topic": "Topic: MiniaturenCol. Lewis Morris IV: MalenCol. Lewis Morris IV: Military and IntelligenceSoldierRevolutionary WarnPortrait",
+        "name.Artist": "Unidentified Artist",
+        "name.Maker": null,
+        "sitter_list": [
+          "Col. Lewis Morris IV, 1752? - 1824"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-9500236A_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_S_NPG.66.64",
+        "title": "Margaret Spear Smith",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Dr. and Mrs. B. Noland Carter in memory of the Misses Mary Coles Carter and Sally Randolph Carter",
+        "date": "c. 1800",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Accurate: 73.7 x 61 cm (29 x 24)nFrame: 92.4 u00d7 79.3 u00d7 5.7 cm (36 3/8 u00d7 31 1/4 u00d7 2 1/4)",
+        "topic": "Topic: Printed MaterialBooknCostumeJewelryPendantnMargaret Spear Smith: FemalenPortrait",
+        "name.Artist": "Gilbert Stuart, 3 Dec 1755 - 9 Jul 1828",
+        "name.Maker": null,
+        "sitter_list": [
+          "Margaret Spear Smith, 1758 - 1842"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-S_NPG_66_64/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.66.50",
+        "title": "Samuel Smith",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Dr. and Mrs. B. Noland Carter in memory of the Misses Mary Coles Carter and Sally Randolph Carter",
+        "date": "c. 1800",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Frame: 91.4 x 78.7 x 7.6 cm (36 x 31 x 3)nStretcher: 74.3 u00d7 61.9 u00d7 3.2 cm (29 1/4 u00d7 24 3/8 u00d7 1 1/4)",
+        "topic": "Topic: CostumeDress AccessoryEpauletnSamuel Smith: MalenSamuel Smith: Military and IntelligenceArmyOfficerRevolutionary WarnSamuel Smith: Business and FinanceBusinesspersonMerchantnSamuel Smith: Politics and GovernmentGovernment officialUS CongressmanMarylandnSamuel Smith: Politics and GovernmentGovernment officialUS SenatorMarylandnSamuel Smith: Politics and GovernmentGovernment officialPublic officialMayorBaltimore, MDnPortrait",
+        "name.Artist": "Gilbert Stuart, 3 Dec 1755 - 9 Jul 1828",
+        "name.Maker": null,
+        "sitter_list": [
+          "Samuel Smith, 27 Jul 1752 - 22 Apr 1839"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_66_50Smith-000002/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2019.22",
+        "title": "Samuel Miles",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift from the Trustees of the Corcoran Gallery of Art (Gift of Elizabeth F. McKean) The Corcoran Gallery of Art, one of the countryu2019s first private museums, was established in 1869 to promote art and American genius. In 2014 the Works from the Corcoran Collection were distributed to institutions in Washington, D.C.",
+        "date": "c. 1800",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on wood panel, Dimensions: Panel: 74.3 u00d7 59.1cm (29 1/4 u00d7 23 1/4)nFrame: 94.3 u00d7 80.6 u00d7 6.4cm (37 1/8 u00d7 31 3/4 u00d7 2 1/2)",
+        "topic": "Topic: InteriornHome FurnishingsDrapenCostumeDress AccessoryNeckwearTienCostumeJewelryPendantnCostumeOuterwearCoatJacketnSamuel Miles: MalenSamuel Miles: Military and IntelligenceArmyOfficerRevolutionary WarnSamuel Miles: Business and FinanceBusinesspersonMerchantnSamuel Miles: Politics and GovernmentGovernment officialPublic officialMayornSamuel Miles: Politics and GovernmentPoliticiannPortrait",
+        "name.Artist": "Gilbert Stuart, 3 Dec 1755 - 9 Jul 1828",
+        "name.Maker": null,
+        "sitter_list": [
+          "Samuel Miles, 11 Mar 1740 - 6 Dec 1805"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2019_22-000002/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2004.1",
+        "title": "John Winthrop",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution, gift of Dr. and Mrs. R. Ted Steinbock",
+        "date": "c. 1800, after early 17th century original",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Sight: 74.6 x 62.2cm (29 3/8 x 24 1/2)nFrame: 93.7 x 81.4 x 6.7cm (36 7/8 x 32 1/16 x 2 5/8)",
+        "topic": "Topic: CostumeDress AccessoryNeckwearCollarRuffnPersonal AttributeFacial HairGoateenJohn Winthrop: MalenJohn Winthrop: Politics and GovernmentGovernment officialGovernorColonial GovernorMassachusettsnPortrait",
+        "name.Artist": "Unidentified Artist",
+        "name.Maker": null,
+        "sitter_list": [
+          "John Winthrop, 1587/8 - 1649"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2004_1/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1801,
+    "records": [
+      {
+        "EDANurl": "edanmdm:npg_NPG.87.244",
+        "title": "David Wiley",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "c. 1801",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Sight: 90.2 x 64.8cm (35 1/2 x 25 1/2)nFrame: 111.8 x 83.8 x 8.9cm (44 x 33 x 3 1/2)",
+        "topic": "Topic: Home FurnishingsFurnitureSeatingChairnHome FurnishingsDrapenEquipmentScientific apparatusnDavid Wiley: MalenDavid Wiley: Arts and CultureEducation and ScholarshipEducatorTeachernDavid Wiley: Business and FinanceBusinesspersonMerchantnDavid Wiley: Science and TechnologySurveyornDavid Wiley: Religion and SpiritualityClergyMinisternDavid Wiley: Arts and CultureEducation and ScholarshipEducatorLibrariannDavid Wiley: Arts and CultureLiteratureEditorJournalnPortrait",
+        "name.Artist": "Charles Peale Polk, 17 Mar 1767 - 6 May 1822",
+        "name.Maker": null,
+        "sitter_list": [
+          "David Wiley, c. 1768 - c. 1813"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_87_244Wiley-000001/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1803,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_XX108A",
+        "title": "George Washington",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Transfer from the U.S. Department of the Interior through the General Services Administration",
+        "date": "1803?",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 30 1/2 x 25 1/4 in. (77.4 x 64.2 cm.)",
+        "topic": "Topic: OccupationpoliticalpresidentnPortrait male",
+        "name.Artist": null,
+        "name.Maker": null,
+        "sitter_list": [
+          "George Washington"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-XX108A_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2013.142",
+        "title": "George Washington",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of the McNeil Americana Collection; conserved with funds from the Smithsonian Women's Committee",
+        "date": "c. 1803",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Watercolor on ivory, Dimensions: Ivory: 6.4 u00d7 5.4cm (2 1/2 u00d7 2 1/8)nFrame: 11.9 u00d7 10.5cm (4 11/16 u00d7 4 1/8)",
+        "topic": "Topic: George Washington: MalenGeorge Washington: Military and IntelligenceArmyOfficerRevolutionary WarnGeorge Washington: Politics and GovernmentStatesmanColonial statesmannGeorge Washington: Business and FinanceNatural resources commerceAgriculturistFarmernGeorge Washington: Military and IntelligenceArmyOfficerGeneralnGeorge Washington: Politics and GovernmentGovernment officialPresident of USnGeorge Washington: Science and TechnologySurveyornGeorge Washington: Civilian awardsCongressional Gold MedalnPortrait",
+        "name.Artist": "Ellen Wallace Sharples, 1769 - 1849",
+        "name.Maker": null,
+        "sitter_list": [
+          "George Washington, 22 Feb 1732 - 14 Dec 1799"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2013_142GW-000001/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1805,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_1996.91.3",
+        "title": "Retrato de caballero",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Teodoro Vidal Collection",
+        "date": "ca. 1805-1809",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on wood, Dimensions: 8 3/4 x 6 1/4 in. (22.3 x 15.9 cm.)",
+        "topic": "Topic: Portrait malewaist length",
+        "name.Artist": "José Campeche y Jordán, born San Juan, Puerto Rico 1751-died San Juan, Puerto Rico 1809",
+        "name.Maker": null,
+        "sitter_list": [
+          "unidentified"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1996.91.3_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.71.7",
+        "title": "John Wesley Jarvis Self-Portrait",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Mrs. Gerard B. Lambert",
+        "date": "c. 1805",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: 84 x 67.5 cm (33 1/16 x 26 9/16 )",
+        "topic": "Topic: Printed MaterialDocumentnSelf-portraitnJohn Wesley Jarvis: MalenJohn Wesley Jarvis: Arts and CultureVisual ArtsArtistSculptornJohn Wesley Jarvis: Arts and CultureVisual ArtsArtistPortraitistnJohn Wesley Jarvis: Arts and CultureVisual ArtsArtistPainterMiniaturistnJohn Wesley Jarvis: Arts and CultureVisual ArtsArtistPrintmakerEngravernPortrait",
+        "name.Artist": "John Wesley Jarvis, 1780 - 14 Jan 1840",
+        "name.Maker": null,
+        "sitter_list": [
+          "John Wesley Jarvis, 1780 - 14 Jan 1840"
+        ],
+        "thumbnail": null
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2013.40",
+        "title": "William Dunlap self-portrait",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Robert Bayard Severy in memory of Josephine McClintock Bellamy Severy (1914 -- 2001), great, great granddaughter of William Walton Woolsey (1766 -- 1839), brother-in-law of William Dunlap, from her family of Donald Phelps Severy, Robert Bayard Severy, and Arabella McClintock Severy Olander Conserved with funds from the Smithsonian Women's Committee",
+        "date": "c. 1805",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Watercolor on ivory, Dimensions: 6.4 u00d7 4.8cm (2 1/2 u00d7 1 7/8)",
+        "topic": "Topic: Self-portraitnWilliam Dunlap: MalenWilliam Dunlap: Arts and CultureVisual ArtsArtistPortraitistnWilliam Dunlap: Arts and CultureVisual ArtsArtistPainterMiniaturistnWilliam Dunlap: Arts and CultureLiteratureWriterPlaywrightnWilliam Dunlap: Arts and CulturePerforming ArtsTheaterTheater producernWilliam Dunlap: Arts and CultureLiteratureWriterHistoricalnPortrait",
+        "name.Artist": "William Dunlap, 18 Feb 1766 - 28 Sep 1839",
+        "name.Maker": null,
+        "sitter_list": [
+          "William Dunlap, 18 Feb 1766 - 28 Sep 1839"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2013_40/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_S_NPG.2007.12",
+        "title": "William Linn",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of DeWitt Linn Sage",
+        "date": "1805",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 74.9 x 55.9cm (29 1/2 x 22)",
+        "topic": "Topic: William Linn: MalenWilliam Linn: Religion and SpiritualityClergyMinisternPortrait",
+        "name.Artist": "John Wesley Jarvis, 1780 - 14 Jan 1840",
+        "name.Maker": null,
+        "sitter_list": [
+          "William Linn, 27 Feb 1752 - 8 Jan 1808"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-S_NPG_2007_12Linn-000001/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.83.249",
+        "title": "Joel Barlow",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; partial gift of Audrey Barlow Orndorff",
+        "date": "1805",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on panel, Dimensions: 38.7cm x 32.3cm (15 1/4 x 12 11/16), Accurate",
+        "topic": "Topic: Joel Barlow: MalenJoel Barlow: Law and CrimeLawyernJoel Barlow: Arts and CultureLiteratureWriternJoel Barlow: Arts and CultureLiteratureWriterPoetnJoel Barlow: Arts and CultureJournalism and MediaJournalistnJoel Barlow: Politics and GovernmentDiplomatMinisternPortrait",
+        "name.Artist": "Robert Fulton, 14 Nov 1765 - 25 Feb 1815",
+        "name.Maker": null,
+        "sitter_list": [
+          "Joel Barlow, 24 Mar 1754 - 26 Dec 1812"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_83_249/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1806,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_1988.2",
+        "title": "The Misses Mary and Hannah Murray",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Museum purchase made possible by an anonymous donor and Miss Emily Tuckerman",
+        "date": "1806",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 40 1/8 x 50 1/8 in. (101.9 x 127.3 cm.)",
+        "topic": "Topic: Portrait groupfamilysiblingsnObjectart toolartist's brushnObjectart tooleaselnObjectwritten matterbooknPortrait femaleknee lengthnPortrait femaleknee length",
+        "name.Artist": "John Trumbull, born Lebanon, CT 1756-died New York City 1843",
+        "name.Maker": null,
+        "sitter_list": [
+          "Hannah Murray",
+          "Mary Murray"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1988.2_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.94.83",
+        "title": "Charles Brockden Brown",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; given in loving memory of Katharine Lea Hancock by her children, grandchildren and great grandchildren Conserved with funds from the Smithsonian Women's Committee",
+        "date": "1806",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Watercolor on ivory, Dimensions: 6.2cm x 5.1cm (2 7/16 x 2)",
+        "topic": "Topic: MiniaturenCostumeDress AccessoryButtonBrassnCharles Brockden Brown: MalenCharles Brockden Brown: Arts and CultureJournalism and MediaMagazine editornCharles Brockden Brown: Business and FinanceBusinesspersonMerchantnCharles Brockden Brown: Arts and CultureLiteratureWriterNovelistnPortrait",
+        "name.Artist": "William Dunlap, 18 Feb 1766 - 28 Sep 1839",
+        "name.Maker": null,
+        "sitter_list": [
+          "Charles Brockden Brown, 17 Jan 1771 - 22 Feb 1810"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_94_83Brown-000002/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.79.216",
+        "title": "Alexander Hamilton",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Henry Cabot Lodge",
+        "date": "1806",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 77.5 x 62.2 x 3.5cm (30 1/2 x 24 1/2 x 1 3/8)nFrame: 89.2 x 73.7 x 9.2cm (35 1/8 x 29 x 3 5/8)",
+        "topic": "Topic: Alexander Hamilton: MalenAlexander Hamilton: Law and CrimeLawyernAlexander Hamilton: Arts and CultureLiteratureWriternAlexander Hamilton: Military and IntelligenceArmyOfficerRevolutionary WarnAlexander Hamilton: Politics and GovernmentGovernment officialCabinet memberSecretary of TreasurynAlexander Hamilton: Politics and GovernmentGovernment officialCongressmanContinental congressmannPortrait",
+        "name.Artist": "John Trumbull, 6 Jun 1756 - 10 Nov 1843",
+        "name.Maker": null,
+        "sitter_list": [
+          "Alexander Hamilton, 11 Jan 1757 - 11 Jul 1804"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_79_216Hamilton_d1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.76.30",
+        "title": "Joel Barlow",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Mr. and Mrs. Joel Barlow Conserved with funds from the Smithsonian Women's Committee",
+        "date": "1806",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Watercolor on ivory, Dimensions: 7.7cm x 6.4cm (3 1/16 x 2 1/2), Accurate",
+        "topic": "Topic: MiniaturenJoel Barlow: MalenJoel Barlow: Law and CrimeLawyernJoel Barlow: Arts and CultureLiteratureWriternJoel Barlow: Arts and CultureLiteratureWriterPoetnJoel Barlow: Arts and CultureJournalism and MediaJournalistnJoel Barlow: Politics and GovernmentDiplomatMinisternPortrait",
+        "name.Artist": "William Dunlap, 18 Feb 1766 - 28 Sep 1839",
+        "name.Maker": null,
+        "sitter_list": [
+          "Joel Barlow, 24 Mar 1754 - 26 Dec 1812"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_76_30/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:saam_1971.3",
+        "title": "Portrait of Edward Shippen Burd of Philadelphia",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Museum purchase",
+        "date": "ca. 1806-1808",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on canvas, Dimensions: 26 7/8 x 21 7/8 in. (68.3 x 55.5 cm.)",
+        "topic": "Topic: Portrait malebust",
+        "name.Artist": "Rembrandt Peale, born PA 1778-died Philadelphia, PA 1860",
+        "name.Maker": null,
+        "sitter_list": [
+          "Edward Shippen Burd"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1971.3_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_S_NPG.94.84",
+        "title": "Elizabeth Linn Brown",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; given in loving memory of Katharine Lea Hancock by her children, grandchildren and great grandchildren Conserved with funds from the Smithsonian Women's Committee",
+        "date": "c. 1806",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Watercolor on ivory, Dimensions: 6.7cm x 5.3cm (2 5/8 x 2 1/16)",
+        "topic": "Topic: MiniaturenElizabeth Linn Brown: FemalenPortrait",
+        "name.Artist": "William Dunlap, 18 Feb 1766 - 28 Sep 1839",
+        "name.Maker": null,
+        "sitter_list": [
+          "Elizabeth Linn Brown, 1775 - 1834"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-S_NPG_94_84_int/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.84.172",
+        "title": "George Clinton",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Charles N. Andreae",
+        "date": "c. 1806",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Pastel on paper, Dimensions: 30.5cm x 25.4cm (12 x 10), Accurate",
+        "topic": "Topic: Home FurnishingsFurnitureSeatingChairnInteriorInterior with Exterior ViewnPrinted MaterialPapersnHome FurnishingsDrapenGeorge Clinton: MalenGeorge Clinton: Military and IntelligenceArmyOfficerRevolutionary WarnGeorge Clinton: Politics and GovernmentGovernment officialCongressmanContinental congressmannGeorge Clinton: Politics and GovernmentVice-President of USnGeorge Clinton: Politics and GovernmentGovernment officialGovernorNew YorknGeorge Clinton: Military and IntelligenceArmyOfficerBrigadier GeneralnPortrait",
+        "name.Artist": null,
+        "name.Maker": null,
+        "sitter_list": [
+          "George Clinton, 26 Jul 1739 - 20 Apr 1812"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_84_172/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2020.42",
+        "title": "Col. George Gibbs III",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "c. 1806-08",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas",
+        "topic": "Topic: George Gibbs: MalenGeorge Gibbs: Science and TechnologyScientistEarth scientistMineralogistnGeorge Gibbs: Science and TechnologyMineral collectornPortrait",
+        "name.Artist": "John Vanderlyn, 15 Oct 1775 - 23 Sep 1852",
+        "name.Maker": null,
+        "sitter_list": [
+          "George Gibbs, 1776 - 1833"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2020_42Gibbs-000002/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1807,
+    "records": [
+      {
+        "EDANurl": "edanmdm:npg_NPG.86.212",
+        "title": "Rubens Peale",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; partial gift of Mrs. James Burd Peale Green",
+        "date": "1807",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 66.7 x 54.6cm (26 1/4 x 21 1/2)nFrame: 82.9 x 70.5 x 5.1cm (32 5/8 x 27 3/4 x 2)",
+        "topic": "Topic: Home FurnishingsFurnitureSeatingChairnCostumeDress AccessoryEyeglassesnRubens Peale: MalenRubens Peale: Arts and CultureVisual ArtsVisual arts administratorArt museum administratornRubens Peale: Science and TechnologyScientistBiologistBotanistnRubens Peale: Arts and CultureVisual ArtsArtistPainternRubens Peale: Science and TechnologyScientistNaturalistnPortrait",
+        "name.Artist": "Rembrandt Peale, 22 Feb 1778 - 3 Oct 1860",
+        "name.Maker": null,
+        "sitter_list": [
+          "Rubens Peale, 1784 - 1865"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-8600424A_2/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2008.4",
+        "title": "Thomas Ash II",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; partial gift of the Fund in Honor of Barbara Novak",
+        "date": "1807",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 66.4 x 56.2cm (26 1/8 x 22 1/8)nFrame: 85.1 x 74.3 x 8.9cm (33 1/2 x 29 1/4 x 3 1/2)",
+        "topic": "Topic: Thomas Ash II: MalenThomas Ash II: Arts and CultureVisual ArtsArtistFurniture makerCabinetmakernPortrait",
+        "name.Artist": "Thomas Sully, 19 Jun 1783 - 5 Nov 1872",
+        "name.Maker": null,
+        "sitter_list": [
+          "Thomas Ash II, 1785 - after 1824"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2008_4Ash_d1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.79.215",
+        "title": "Fisher Ames",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of George Cabot Lodge",
+        "date": "c. 1807",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on wood, Dimensions: Stretcher: 77.5 x 64.1 x 3.8cm (30 1/2 x 25 1/4 x 1 1/2)nFrame: 89.2 x 75.6 x 8.9cm (35 1/8 x 29 3/4 x 3 1/2)",
+        "topic": "Topic: InteriornHome FurnishingsFurnitureSeatingChairnPrinted MaterialBooknFisher Ames: MalenFisher Ames: Law and CrimeLawyernFisher Ames: Politics and GovernmentGovernment officialUS CongressmanMassachusettsnFisher Ames: Business and FinanceBusinesspersonBusiness executiveCompany presidentnPortrait",
+        "name.Artist": "Gilbert Stuart, 3 Dec 1755 - 9 Jul 1828",
+        "name.Maker": null,
+        "sitter_list": [
+          "Fisher Ames, 9 Apr 1758 - 4 Jul 1808"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_79_215Ames-000001/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.72.5",
+        "title": "George Clymer",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of W.B. Shubrick Clymer",
+        "date": "c. 1807-10",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: 77.5cm x 63.5cm (30 1/2 x 25), Accurate",
+        "topic": "Topic: InteriornHome FurnishingsFurnitureSeatingChairnGeorge Clymer: MalenGeorge Clymer: Politics and GovernmentGovernment officialCongressmanContinental congressmannGeorge Clymer: Politics and GovernmentStatesmanColonial statesmanSigner of DeclarationnGeorge Clymer: Politics and GovernmentGovernment officialUS CongressmanPennsylvanianGeorge Clymer: Business and FinanceBankernGeorge Clymer: Business and FinanceBusinesspersonMerchantnGeorge Clymer: Politics and GovernmentStatesmanSigner of ConstitutionnPortrait",
+        "name.Artist": "Unidentified Artist",
+        "name.Maker": null,
+        "sitter_list": [
+          "George Clymer, 16 Mar 1739 - 25 Jan 1813"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-7200010A/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1808,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_1996.91.2",
+        "title": "Isabel O'Daly",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Teodoro Vidal Collection",
+        "date": "1808",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on wood, Dimensions: 9 7/8 x 7 1/2 in. (25.2 x 19.1 cm.)",
+        "topic": "Topic: Portrait femalewaist length",
+        "name.Artist": "José Campeche y Jordán, born San Juan, Puerto Rico 1751-died San Juan, Puerto Rico 1809",
+        "name.Maker": null,
+        "sitter_list": [
+          "Isabel O'Daly"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1996.91.2_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.77.34",
+        "title": "West Family in the Studio Garden",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "1808-09",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 34.3 u00d7 41.3 u00d7 1.6 cm (13 1/2 u00d7 16 1/4 u00d7 5/8)nFrame: 45.1 x 51.8 x 4.8 cm (17 3/4 x 20 3/8 x 1 7/8)",
+        "topic": "Topic: Nature & EnvironmentCloudsnNature & EnvironmentPlantFlowerFlowersnNature & EnvironmentAnimalCatnArchitecturenNature & EnvironmentPlantTreenArchitectureArchnArtworkSculpturenNature & EnvironmentAnimalDognExteriorGardennSelf-portraitnBenjamin West: MalenBenjamin West: Arts and CultureVisual ArtsArtistPortraitistnBenjamin West: Arts and CultureVisual ArtsArt instructornBenjamin West: Arts and CultureVisual ArtsArtistPainterHistory painternPortrait",
+        "name.Artist": "Benjamin West, 10 Oct 1738 - 11 Mar 1820",
+        "name.Maker": null,
+        "sitter_list": [
+          "Benjamin West, 10 Oct 1738 - 11 Mar 1820"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_77_34Westfamily-000004/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.70.5",
+        "title": "Theodore Sedgwick",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Lilian Swann Saarinen",
+        "date": "after c. 1808",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 79.7 x 63.5cm (31 3/8 x 25)nFrame: 105.1 x 86.4 x 9.5cm (41 3/8 x 34 x 3 3/4)",
+        "topic": "Topic: Theodore Sedgwick: MalenTheodore Sedgwick: Law and CrimeLawyernTheodore Sedgwick: Politics and GovernmentStatesmannTheodore Sedgwick: Politics and GovernmentGovernment officialCongressmanContinental congressmannTheodore Sedgwick: Politics and GovernmentGovernment officialUS CongressmanMassachusettsnTheodore Sedgwick: Politics and GovernmentGovernment officialUS CongressmanSpeaker of the HousenTheodore Sedgwick: Law and CrimeJudgenTheodore Sedgwick: Law and CrimeJudgeJusticeState Supreme Court JusticeMassachusettsnTheodore Sedgwick: Politics and GovernmentGovernment officialState SenatorMassachusettsnTheodore Sedgwick: Politics and GovernmentGovernment officialState LegislatorMassachusettsnTheodore Sedgwick: Politics and GovernmentGovernment officialUS SenatorMassachusettsnPortrait",
+        "name.Artist": null,
+        "name.Maker": null,
+        "sitter_list": [
+          "Theodore Sedgwick, 9 May 1746 - 24 Jan 1813"
+        ],
+        "thumbnail": null
+      }
+    ]
+  },
+  {
+    "year": 1809,
+    "records": [
+      {
+        "EDANurl": "edanmdm:saam_1964.6.2",
+        "title": "Portrait of a Man",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Gift of Mary L. Schaff",
+        "date": "ca. 1809",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on wood, Dimensions: 10 x 7 3/4 in. (25.3 x 19.7 cm)",
+        "topic": "Topic: Portrait male",
+        "name.Artist": "Jacob Eichholtz, born Lancaster, PA 1776-died Lancaster, PA 1842",
+        "name.Maker": null,
+        "sitter_list": [
+          "unidentified"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1964.6.2_2/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:saam_1964.6.1",
+        "title": "Portrait of a Woman",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, Gift of Mary L. Schaff",
+        "date": "ca. 1809",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on wood, Dimensions: 10 x 7 3/4 in. (25.3 x 19.8 cm)",
+        "topic": "Topic: Portrait female",
+        "name.Artist": "Jacob Eichholtz, born Lancaster, PA 1776-died Lancaster, PA 1842",
+        "name.Maker": null,
+        "sitter_list": [
+          "unidentified"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1964.6.1_2/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:saam_1926.6.4",
+        "title": "Mary Abigail Willing Coale",
+        "creditLine": "Credit Line: Smithsonian American Art Museum, George Buchanan Coale Collection",
+        "date": "1809",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: oil on wood, Dimensions: 28 7/8 x 23 7/8 in. (73.2 x 60.8 cm)",
+        "topic": "Topic: Portrait female",
+        "name.Artist": "Thomas Sully, born Horncastle, England 1783-died Philadelphia, PA 1872",
+        "name.Maker": null,
+        "sitter_list": [
+          "Mary Abigail Willing Coale"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/SAAM-1926.6.4_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2019.32",
+        "title": "James Madison",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift from the Trustees of the Corcoran Gallery of Art (Gift of Frederic Edwin Church) The Corcoran Gallery of Art, one of the countryu2019s first private museums, was established in 1869 to promote art and American genius. In 2014 the Works from the Corcoran Collection were distributed to institutions in Washington, D.C.",
+        "date": "1809",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on panel, Dimensions: Sight: 68.3 u00d7 48.6 cm (26 7/8 u00d7 19 1/8)nPanel: 69.9 u00d7 49.5 u00d7 3.8 cm (27 1/2 u00d7 19 1/2 u00d7 1 1/2)nFrame: 97.6 u00d7 78.1 u00d7 5.7 cm (38 7/16 u00d7 30 3/4 u00d7 2 1/4)",
+        "topic": "Topic: InteriornHome FurnishingsFurnitureSeatingChairnPrinted MaterialBooknPrinted MaterialDocumentnHome FurnishingsFurnitureTablenHome FurnishingsDrapenArchitectureColumnnEquipmentDrafting & Writing ImplementsWriting implementPenQuillnHome FurnishingsGlobenContainerInkwellnJames Madison: MalenJames Madison: Law and CrimeLawyernJames Madison: Politics and GovernmentGovernment officialState LegislatorVirginianJames Madison: Politics and GovernmentGovernment officialCongressmanContinental congressmannJames Madison: Politics and GovernmentGovernment officialPresident of USnJames Madison: Politics and GovernmentGovernment officialCabinet memberSecretary of StatenJames Madison: Arts and CultureLiteratureWriterEssayistnJames Madison: Politics and GovernmentGovernment officialUS CongressmanVirginianJames Madison: Politics and GovernmentStatesmanSigner of ConstitutionnPortrait",
+        "name.Artist": "Thomas Sully, 19 Jun 1783 - 5 Nov 1872",
+        "name.Maker": null,
+        "sitter_list": [
+          "James Madison, 16 Mar 1751 - 28 Jun 1836"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2019_32-000001/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_S_NPG.89.12",
+        "title": "Elizabeth Washington Gamble Wirt",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "c. 1809-10",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Frame: 111.1 x 94.6 x 6.4cm (43 3/4 x 37 1/4 x 2 1/2)",
+        "topic": "Topic: InteriornElizabeth Washington Gamble Wirt: FemalenElizabeth Washington Gamble Wirt: Arts and CultureLiteratureWriternPortrait",
+        "name.Artist": "Cephas Thompson, 1 Jul 1775 - 6 Nov 1856",
+        "name.Maker": null,
+        "sitter_list": [
+          "Elizabeth Washington Gamble Wirt, 30 Jan 1784 - 24 Jan 1857"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-S_NPG_89_12-000001/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.89.11",
+        "title": "William Wirt",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "c. 1809-10",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Frame: 107 x 90.2 x 8.9cm (42 1/8 x 35 1/2 x 3 1/2)",
+        "topic": "Topic: William Wirt: MalenWilliam Wirt: Law and CrimeLawyernWilliam Wirt: Politics and GovernmentGovernment officialCabinet memberUS Attorney GeneralnWilliam Wirt: Politics and GovernmentGovernment officialState LegislatorVirginianWilliam Wirt: Arts and CultureLiteratureWriternWilliam Wirt: Politics and GovernmentPresidential candidatenPortrait",
+        "name.Artist": "Cephas Thompson, 1 Jul 1775 - 6 Nov 1856",
+        "name.Maker": null,
+        "sitter_list": [
+          "William Wirt, 8 Nov 1772 - 18 Feb 1834"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_89_11/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.89.207",
+        "title": "Reverend John Carroll",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of Eleanor Hunt O'Donoghue",
+        "date": "c. 1809",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: 82.5cm x 69.8cm (32 1/2 x 27 1/2), Accurate",
+        "topic": "Topic: Home FurnishingsFurnitureSeatingChairnPrinted MaterialDocumentnInteriorInterior with Exterior ViewnReligiousCrossnRev. John Carroll: MalenRev. John Carroll: Religion and SpiritualityClergyPrelateBishopnRev. John Carroll: Religion and SpiritualityClergyPrelateBishopArchbishopnPortrait",
+        "name.Artist": "Unidentified Artist",
+        "name.Maker": null,
+        "sitter_list": [
+          "Rev. John Carroll, 8 Jan 1735 - 3 Dec 1815"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-8900562A_1/full/250,/0/default.jpg"
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.2010.48",
+        "title": "John Marshall",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "1809-10",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Stretcher: 61.3 x 52.4cm (24 1/8 x 20 5/8)nFrame: 73.5 x 64.6 x 6.4cm (28 15/16 x 25 7/16 x 2 1/2)",
+        "topic": "Topic: John Marshall: MalenJohn Marshall: Law and CrimeLawyernJohn Marshall: Politics and GovernmentGovernment officialCabinet memberSecretary of StatenJohn Marshall: Law and CrimeJudgeJusticeUS Supreme Court JusticeChief Justice of USnPortrait",
+        "name.Artist": "Cephas Thompson, 1 Jul 1775 - 6 Nov 1856",
+        "name.Maker": null,
+        "sitter_list": [
+          "John Marshall, 24 Sep 1755 - 6 Jul 1835"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_2010_48_ext/full/250,/0/default.jpg"
+      }
+    ]
+  },
+  {
+    "year": 1810,
+    "records": [
+      {
+        "EDANurl": "edanmdm:npg_NPG.95.190",
+        "title": "Mason Locke Weems",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution; gift of the Weems family",
+        "date": "c. 1810",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: Frame: 87.6 u00d7 72.4 cm (34 1/2 u00d7 28 1/2)nBoard: 73.3 u00d7 58.7 u00d7 0.6 cm (28 7/8 u00d7 23 1/8 u00d7 1/4)",
+        "topic": "Topic: InteriornHome FurnishingsFurnitureSeatingChairnPrinted MaterialBooknHome FurnishingsFurnitureTablenPrinted MaterialPapersLetternMason Locke Weems: MalenMason Locke Weems: Arts and CultureLiteratureWriternMason Locke Weems: Religion and SpiritualityClergyPastornMason Locke Weems: Arts and CultureLiteratureWriterBiographernMason Locke Weems: Business and FinanceBusinesspersonMerchantBooksellernPortrait",
+        "name.Artist": "Unidentified Artist",
+        "name.Maker": null,
+        "sitter_list": [
+          "Mason Locke Weems, 11 Oct 1759 - 23 May 1825"
+        ],
+        "thumbnail": null
+      },
+      {
+        "EDANurl": "edanmdm:npg_NPG.69.48",
+        "title": "George Rogers Clark",
+        "creditLine": "Credit Line: National Portrait Gallery, Smithsonian Institution",
+        "date": "c. 1810",
+        "objectType": "Type: Painting",
+        "physicalDescription": "Medium: Oil on canvas, Dimensions: 68.6cm x 57.1cm (27 x 22 1/2), Accurate",
+        "topic": "Topic: Home FurnishingsGlobenGen. George Rogers Clark: MalenGen. George Rogers Clark: Science and TechnologyExplorernGen. George Rogers Clark: Business and FinanceNatural resources commercePioneerFrontiersmannGen. George Rogers Clark: Military and IntelligenceArmyOfficerBrigadier GeneralnGen. George Rogers Clark: Social Welfare and ReformReformerRevolutionarynPortrait",
+        "name.Artist": null,
+        "name.Maker": null,
+        "sitter_list": [
+          "Gen. George Rogers Clark, 19 Nov 1752 - 13 Feb 1818"
+        ],
+        "thumbnail": "https://ids.si.edu/ids/iiif/NPG-NPG_69_48/full/250,/0/default.jpg"
+      }
+    ]
+  }
+]
