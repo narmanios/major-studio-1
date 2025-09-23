@@ -83,12 +83,10 @@ d3.json("data/dates_binned_start_year_upto_1810.json").then((raw) => {
     .style("height", "2px") // <-- control the line thickness here
     .style("width", "1300px")
     // .style("border-radius", "999px") // pill shape
-    .style("background-color", (d) =>
-      d.year >= 1770 && d.year <= 1775 ? ROW_RED_BG : ROW_BLUE_BG
-    )
     // .style("background-color", (d) =>
     //   d.year >= 1770 && d.year <= 1775 ? ROW_RED_BG : ROW_BLUE_BG
     // )
+    .style("background-color", "#ccc")
     .style("pointer-events", "none");
 
   const borderStyle = "stroke";
@@ -100,13 +98,13 @@ d3.json("data/dates_binned_start_year_upto_1810.json").then((raw) => {
     .style("height", "60px")
     // .style("text-align", "right")
     .style("font", "16px, sans-serif")
-    .style("font-weight", "600")
+    .style("font-weight", "400")
     .style("line-height", "1.5")
     // .style("padding-right", "12px")
     .style("padding-top", "18px")
     .style("text-align", "center")
     .style("color", "white")
-    .style("border-radius", "6px")
+    .style("border-radius", "4px")
     .style("box-shadow", "0 2px 4px rgba(0,0,0,0.2)")
     // .style("border", "2px", (d) =>
     //   d.year >= 1770 && d.year <= 1775 ? ROW_RED_BG : ROW_BLUE_BG
