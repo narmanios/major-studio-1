@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- d3 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <title>String Sanitization with SymSpell</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div>
+      This lab's <code>main.js</code> file is a reference for potentially useful <a href="https://www.google.com/search?q=string+sanitization">string sanitization</a> on text you will query from
+      <a href="https://huggingface.co">Huggingface</a>.
+      <br><br>
+      The cleanUpText() function in main.js contains some common text cleanup operations, specifically geared toward text that was parced by OCR.
+      <br><br>
+      Play around with it, modify it, make it fit your needs.
+      <br><br>
+    </div>
+    <br>
+    <div>
+      <i>
+        The main upside to using some simple javascript like this instead of calling a library or LLM to fix your text, is that it is fast and free.
+      </i>
+
+      <br><br>
+      The main downside is that it might not as powerful and precise at correcting as an LLM.
+
+      <br><Br>
+
+      
+    </div>
+
+    <br>
+
+    <div>
+    If you want to experiment with LLMs I suggest reading <a href="https://platform.openai.com/docs/libraries">this guide</a> by OpenAI on:
+      <ol>
+        <li>
+          how to make an api key
+        </li>
+        <li>how to add it to an environment variable</li>
+        <li>how to call the api</li>
+      </ol>
+    </div>
+
+    <br>
+
+    <div>
+      As you'll notice in the guide, this will require you to have a more complete web application set up, with npm (node package manager) so you can install the OpenAI library.
+      <br><br>
+      If people like we could do a dedicated project setup workshop sometime during lab to help with getting started here.
+    </div>
+  
+    <script src="main.js"></script>
+  </body>
+</html>
