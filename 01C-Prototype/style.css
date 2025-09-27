@@ -2,11 +2,64 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Inter", sans-serif;
+#title h1 {
+  font-family: "Helvetica", sans-serif;
   color: #333;
+  font-weight: 200;
+  width: 800px;
+  padding: 50px 300px 0px 100px;
+}
+#title p {
+  font-family: "Helvetica", sans-serif;
+  color: #333;
+  font-weight: 200;
+  width: 600px;
+  padding: 0px 100px;
 }
 
+#input {
+  display: block;
+  margin: 50px 0px 0px 800px;
+  font-family: "Helvetica", sans-serif;
+}
 svg text {
-  font-family: "Inter", sans-serif;
+  font-family: "Helvetica", sans-serif;
+}
+
+body {
+  background-image: url("images/tile.png");
+  background-repeat: repeat;
+  background-position: top left;
+}
+.tile {
+  background: transparent;
+}
+.tile {
+  background: transparent;
+}
+
+#input {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+  padding: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-mask: var(--mask, url("images/mask.svg")) center/100% 100% no-repeat;
+  mask: var(--mask, url("images/mask.svg")) center/100% 100% no-repeat;
+}
+
+/* alternate the second mask with one tiny rule */
+.tile:nth-child(even) {
+  --mask: url("images/mask-two.svg");
 }

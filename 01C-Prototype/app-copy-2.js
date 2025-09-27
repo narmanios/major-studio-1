@@ -5,12 +5,56 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 const SIZE = 50; // circle diameter (px)
 const GAP = 12; // spacing (px)
 const PER_ROW = 15; // wrap after 30 per line
+const RED = "#a00202ff"; // border for 1770–1775
 
 // tooltip offset
 const TOOLTIP_OFFSET = 10; // pixels to offset tooltip from cursor
 
+// put your API key here
+// const apiKey = "noLuZta2hTf0G2PU11Jyn3u5oHE8gleW5yAstXPW";
+
+// // SI content endpoint
+// const objectBaseURL = "https://api.si.edu/openaccess/api/v1.0/content/";
+
+// // tiny cache so we don't refetch the same id
+// const contentCache = new Map();
+
+// // get an <img> URL for a record (prefers your existing thumbnail, else SI API)
+// async function getImageURL(rec) {
+//   // if your dataset already has a usable thumbnail, use it
+//   if (rec?.thumbnail && rec.thumbnail.trim()) return rec.thumbnail.trim();
+
+//   // otherwise try to build from an IDS id if present
+//   if (rec?.idsId) {
+//     return `https://ids.si.edu/ids/deliveryService?id=${encodeURIComponent(
+//       rec.idsId
+//     )}`;
+//   }
+
+//   // else, fetch via SI API content/{id}
+//   const id =
+//     rec?.contentId || rec?.id || (rec?.guid ? rec.guid.split("/").pop() : null);
+//   if (!id) return null;
+
+//   if (contentCache.has(id)) return contentCache.get(id);
+
+//   const url = `${objectBaseURL}${id}?api_key=${apiKey}`;
+//   const res = await fetch(url);
+//   if (!res.ok) return null;
+//   const json = await res.json();
+
+//   // try common locations for the media URL
+//   const media =
+//     json?.response?.content?.descriptiveNonRepeating?.online_media?.media;
+//   const img =
+//     (Array.isArray(media) && media.find((m) => m?.content)?.content) || null;
+
+//   contentCache.set(id, img || null);
+//   return img || null;
+// }
+
 // Smithsonian API example code
-const apiKey = "";
+const apiKey = "noLuZta2hTf0G2PU11Jyn3u5oHE8gleW5yAstXPW";
 
 const objectBaseURL = "https://api.si.edu/openaccess/api/v1.0/content/";
 
@@ -201,6 +245,23 @@ d3.json("data/dates_binned_start_year_upto_1810.json").then((raw) => {
   }
   sel.on("change", apply);
   apply(); // initial
+
+  // uses getImageURL(rec) which fetches via your API key when needed
+  // tile.style("background", "transparent").each(async function (rec) {
+  // const url = await getImageURL(rec); // <-- no proxify
+  // if (!url) return;
+  // d3.select(this)
+  //   .append("img")
+  //   .attr("src", url)
+  //   .attr("alt", rec.title || "")
+  //   .attr("loading", "lazy")
+  //   .style("width", "100%")
+  //   .style("height", "100%")
+  //   .style("object-fit", "cover")
+  //   .on("error", function () {
+  //     d3.select(this).remove();
+  //   });
+  // });
 
   // inside your d3.json(...).then(...), AFTER tiles are created:
   tile.style("background", "transparent").each(async function (rec) {
