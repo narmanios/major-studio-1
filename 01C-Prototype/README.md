@@ -9,8 +9,10 @@ Description: This visualization presents a vertical timeline from 1770 to 1810, 
 ![Timeline with Tooltip: Paintings Details](screenshots/screenshot2.png)
 ![Timeline with Artwork Preview: Paintings by Medium](screenshots/screenshot3.png)
 
+---
+
 #### Created by Neven Armanios for Major Studio 1, Fall 2025
 
-#### Images used in this project are from the collections of the Metropolitan Museum of Art, New York, and the Smithsonian American Art Museum, Washington, D.C.
+##### Images used in this project are from the collections of the Metropolitan Museum of Art, New York, and the Smithsonian American Art Museum, Washington, D.C.
 
 <!-- ![Timeline Layout: Paintings by Date](screenshots/screenshot1.png) -->
