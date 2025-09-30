@@ -1,14 +1,15 @@
 # major-studio-1
 
-## Artwork from the Amercian Revolutionary War: 1770-1810
+## Artwork from the American Revolutionary War: 1770-1810
 
-### Sitters with Known Portraits by Year: Watercolors to Oils
+### Sitters with Known Portraits: Watercolors, Oils, Pencil, Prints
 
 Description: This visualization presents a vertical timeline from 1770 to 1810, showing when artworks were created in four mediums: watercolor, oil, pencil, and prints. Viewers can filter by medium to see how each type of painting appears across the decades, offering a clear view of artistic practices during the Revolutionary era and its aftermath.
 
-![Timeline with Tooltip: Paintings Details](screenshots/screenshot2.png)
+![Timeline with Tooltip: Paintings Details](screenshots/screenshot1.png)
+<br />
 
-![Timeline with Artwork Preview: Paintings by Medium](screenshots/screenshot3.png)
+![Timeline with Artwork Preview: Paintings by Medium](screenshots/screenshot2.png)
 
 ---
 
