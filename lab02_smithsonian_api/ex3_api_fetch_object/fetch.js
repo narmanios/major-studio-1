@@ -2,7 +2,7 @@
 // check full API documentation here: https://edan.si.edu/openaccess/apidocs/
 
 // put your API key here;
-const apiKey = "noLuZta2hTf0G2PU11Jyn3u5oHE8gleW5yAstXPW";
+const apiKey = "";
 
 // Access to individual objects by ID
 const objectBaseURL = "https://api.si.edu/openaccess/api/v1.0/content/";

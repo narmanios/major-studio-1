@@ -8,7 +8,6 @@ const PER_ROW = 15; // tiles per row
 
 // tooltip offset
 const TOOLTIP_OFFSET = 10;
-const PREVIEWTOOLTIP_OFFSET = 10;
 
 // Load local JSON and render a simple grid grouped by year.
 d3.json("data/dates_binned_start_year_upto_1810.json").then((raw) => {
@@ -74,45 +73,54 @@ d3.json("data/dates_binned_start_year_upto_1810.json").then((raw) => {
     .style("height", `60px`)
     .style("overflow", "hidden")
     .style("box-sizing", "border-box")
-    .style("background", "#919191ff");
-
-  // use ONE tooltip for everything
-
-  // helper to build html from a datum
-  function tooltipHTML(d) {
-    if (!d) return "";
-    const title = d.title || "";
-    const date = d.date || "";
-    const type = d.objectType || "";
-    const artist = d.name && d.name.Artist ? d.name.Artist : "";
-    const medium = d.physicalDescription || "";
-    const credit = d.creditLine || "";
-    const sitters = Array.isArray(d.sitter_list)
-      ? d.sitter_list.join(", ")
-      : "";
-
-    let html = "";
-    if (title) html += "<strong>" + title + "</strong><br>";
-    if (date) html += "<strong>Date:</strong> " + date + "<br>";
-    if (type) html += "<strong>Type:</strong> " + type + "<br>";
-    if (artist) html += "<strong>Artist:</strong> " + artist + "<br>";
-    if (medium) html += "<strong>Medium:</strong> " + medium + "<br>";
-    if (credit) html += "<strong>Credit:</strong> " + credit + "<br>";
-    if (sitters) html += "<strong>Sitter(s):</strong> " + sitters + "<br>";
-    return html;
-  }
-
-  // thumbnails
-  tile
-    .on("mouseenter", (event, d) => {
-      tooltip.style("visibility", "visible").html(tooltipHTML(d));
+    .style("background", "#919191ff")
+    .on("mouseover", function (event, d) {
+      tooltip.style("visibility", "visible").html(`
+          ${d.title ? `<strong>${d.title}</strong><br>` : ""}
+          ${d.date ? `<strong>Date:</strong> ${d.date}<br>` : ""}
+          ${
+            d.objectType
+              ? `<strong>Type:</strong> ${d.objectType.replace(
+                  "Type: ",
+                  ""
+                )}<br>`
+              : ""
+          }
+          ${
+            d.name?.Artist
+              ? `<strong>Artist:</strong> ${d.name.Artist}<br>`
+              : ""
+          }
+          ${
+            d.physicalDescription
+              ? `<strong>Medium:</strong> ${
+                  d.physicalDescription.replace("Medium: ", "").split(",")[0]
+                }<br>`
+              : ""
+          }
+          ${
+            d.creditLine
+              ? `<strong>Credit:</strong> ${d.creditLine.replace(
+                  "Credit Line: ",
+                  ""
+                )}<br>`
+              : ""
+          }
+          ${
+            d.sitter_list
+              ? `<strong>Sitter(s):</strong> ${d.sitter_list.join(", ")}<br>`
+              : ""
+          }
+        `);
     })
-    .on("mousemove", (event) => {
+    .on("mousemove", function (event) {
       tooltip
         .style("top", event.pageY + TOOLTIP_OFFSET + "px")
         .style("left", event.pageX + TOOLTIP_OFFSET + "px");
     })
-    .on("mouseleave", () => tooltip.style("visibility", "hidden"));
+    .on("mouseout", function () {
+      tooltip.style("visibility", "hidden");
+    });
 
   // Build dropdown (same labels as before)
   const sel = d3.select("#input").html('<option value="">All</option>');
@@ -133,7 +141,7 @@ d3.json("data/dates_binned_start_year_upto_1810.json").then((raw) => {
       return "Paintings Watercolor";
     if (m.includes("oil")) return "Paintings Oil";
     if (m.includes("pencil") || m.includes("graphite"))
-      return "Pencil Drawings";
+      return "Pencil Drawings";ZZ
     if (
       m.includes("print") ||
       m.includes("engraving") ||
@@ -194,7 +202,7 @@ const tooltip = d3
   .style("max-width", "300px")
   .style("z-index", 1000);
 
-const tilePreview = d3
+const preview = d3
   .select("body")
   .append("img")
   .style("position", "fixed")
@@ -212,72 +220,14 @@ const tilePreview = d3
     d3.select(this).style("display", "none");
   });
 
-// d3.select("#app").on("click", (e) => {
-//   const el = e.target.closest(".tile");
-//   const img = el && el.querySelector("img");
-//   if (!img) return;
-
-//   const d = d3.select(el).datum();
-
-//   tilePreview.attr("src", img.src).style("display", "block");
-
-//   console.log("desc:", d && d.physicalDescription);
-
-//   console.log("tilePreview node:", tilePreview.node()); // should be <img>
-//   tooltip.style("visibility", "hidden");
-
-//   tooltip
-//     .html((d && d.physicalDescription) || "")
-//     .style("visibility", d && d.physicalDescription ? "visible" : "hidden")
-//     .style("z-index", 10001);
-// });
-
-// d3.select("#app").on("click", (e) => {
-//   const el = e.target.closest(".tile");
-//   const img = el && el.querySelector("img");
-//   if (!img) return;
-
-//   const d = d3.select(el).datum() || {};
-
-//   // show the big image
-//   tilePreview.attr("src", img.src).style("display", "block");
-
-//   // caption above the image (only if we have text)
-//   const r = tilePreview.node().getBoundingClientRect(); // image box
-//   const has = !!d.physicalDescription;
-
-//   tooltip
-//     .html(has ? d.physicalDescription : "")
-//     .style("visibility", has ? "visible" : "hidden")
-//     .style("z-index", 10001)
-//     .style("top", window.scrollY + r.top + "px")
-//     .style("left", window.scrollX + r.left + r.width / 2 + "px")
-//     .style("transform", "translate(-50%, -100%)"); // center & lift above
-// });
-
+// drop-in replacement for your click handler
 d3.select("#app").on("click", (e) => {
-  const el = e.target.closest(".tile");
-  const img = el && el.querySelector("img");
+  const img = e.target.closest(".tile")?.querySelector("img");
   if (!img) return;
 
-  const d = d3.select(el).datum() || {};
-  const pd = d.physicalDescription || "";
-  const parts = pd
-    .split(",")
-    .map((s) => s.trim())
-    .filter(Boolean);
-  const medium = parts[0] || "";
-  const size = parts.find((p) => /(cm|mm|in)\b/i.test(p)) || "";
-
-  tilePreview.attr("src", img.src).style("display", "block");
-
-  const r = tilePreview.node().getBoundingClientRect();
-  tooltip
-    .html(
-      (medium ? `<strong>Medium:</strong> ${medium}` : "") +
-        (size ? (medium ? "<br>" : "") + `<strong>Size:</strong> ${size}` : "")
-    )
-    .style("visibility", medium || size ? "visible" : "hidden")
-    .style("top", window.scrollY + r.top + "px")
-    .style("left", window.scrollX + r.right + 12 + "px");
+  tooltip.style("visibility", "hidden");
+  preview
+    .attr("src", img.src)
+    .attr("alt", img.alt || "")
+    .style("display", "block");
 });
