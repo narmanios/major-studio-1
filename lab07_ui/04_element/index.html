@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Plus Components</title>
+    
+    <!-- UI Library CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
+    
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .component-section {
+            margin: 40px 0;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        .grid-demo {
+            background: #f5f5f5;
+            padding: 16px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .icon-container {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Element Plus Components</h1>
+
+        <!-- Buttons -->
+        <div class="component-section">
+            <h2>Buttons</h2>
+            <el-button type="primary">Filled Button</el-button>
+            <el-button plain>Outlined Button</el-button>
+            <el-button text>Text Button</el-button>
+        </div>
+
+        <!-- Cards -->
+        <div class="component-section">
+            <h2>Card</h2>
+            <el-card style="max-width: 400px;">
+                <template #header>
+                    <h3 style="margin: 0;">Card Title</h3>
+                </template>
+                <p>This is a card component. Switch themes to see the color scheme change.</p>
+                <el-button text>Action</el-button>
+            </el-card>
+        </div>
+
+        <!-- Text Fields -->
+        <div class="component-section">
+            <h2>Text Field</h2>
+            <el-input v-model="inputValue" placeholder="Enter text" style="max-width: 400px;"></el-input>
+        </div>
+
+        <!-- Select -->
+        <div class="component-section">
+            <h2>Select</h2>
+            <el-select v-model="selectValue" placeholder="Pick an option" style="max-width: 400px;">
+                <el-option label="Option 1" value="option1"></el-option>
+                <el-option label="Option 2" value="option2"></el-option>
+                <el-option label="Option 3" value="option3"></el-option>
+            </el-select>
+        </div>
+
+        <!-- Checkboxes -->
+        <div class="component-section">
+            <h2>Checkbox</h2>
+            <el-checkbox v-model="checkboxValue" label="Checkbox option"></el-checkbox>
+        </div>
+
+        <!-- Switch -->
+        <div class="component-section">
+            <h2>Switch</h2>
+            <el-switch v-model="switchValue"></el-switch>
+            <span style="margin-left: 10px;">Toggle switch</span>
+        </div>
+
+        <!-- Icons -->
+        <div class="component-section">
+            <h2>Icons</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+                <el-icon :size="32"><House /></el-icon>
+                <el-icon :size="32"><Search /></el-icon>
+                <el-icon :size="32"><Star /></el-icon>
+                <el-icon :size="32"><Setting /></el-icon>
+                <el-icon :size="32"><User /></el-icon>
+                <el-icon :size="32"><Bell /></el-icon>
+                <el-icon :size="32"><Message /></el-icon>
+                <el-icon :size="32"><Share /></el-icon>
+                <el-icon :size="32"><Download /></el-icon>
+                <el-icon :size="32"><Upload /></el-icon>
+                <el-icon :size="32"><Delete /></el-icon>
+                <el-icon :size="32"><Edit /></el-icon>
+                <el-icon :size="32"><Plus /></el-icon>
+                <el-icon :size="32"><Minus /></el-icon>
+                <el-icon :size="32"><Check /></el-icon>
+                <el-icon :size="32"><Close /></el-icon>
+                <el-icon :size="32"><Collection /></el-icon>
+                <el-icon :size="32"><Calendar /></el-icon>
+                <el-icon :size="32"><Location /></el-icon>
+                <el-icon :size="32"><Lock /></el-icon>
+            </div>
+        </div>
+
+        <!-- Responsive Layout -->
+        <div class="component-section">
+            <h2>Responsive Layout Grid</h2>
+            <p>Resize window to see columns adapt (24-col system): 3/6/3 → 8/8/8 → 24/24/24</p>
+            <p><a href="https://element-plus.org/en-US/component/layout.html" target="_blank">Layout Grid Documentation</a></p>
+            
+            <el-row :gutter="10">
+                <el-col :xs="24" :sm="24" :md="8" :lg="3">
+                    <div class="grid-demo">Column A</div>
+                </el-col>
+                <el-col :xs="24" :sm="24" :md="8" :lg="6">
+                    <div class="grid-demo">Column B</div>
+                </el-col>
+                <el-col :xs="24" :sm="24" :md="8" :lg="3">
+                    <div class="grid-demo">Column C</div>
+                </el-col>
+            </el-row>
+        </div>
+    </div>
+
+    <!-- UI Library JavaScript -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/element-plus"></script>
+    <script src="https://unpkg.com/@element-plus/icons-vue"></script>
+    
+    <script>
+        const { createApp } = Vue;
+        const app = createApp({
+            data() {
+                return {
+                    inputValue: '',
+                    selectValue: '',
+                    checkboxValue: true,
+                    switchValue: true
+                }
+            }
+        });
+        
+        // Register Element Plus
+        app.use(ElementPlus);
+        
+        // Register all icons
+        for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+            app.component(key, component);
+        }
+        
+        app.mount('#app');
+    </script>
+</body>
+</html>

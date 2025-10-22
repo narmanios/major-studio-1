@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Design Components</title>
+    
+    <!-- UI Library CSS -->
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .component-section {
+            margin: 40px 0;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        .grid-demo {
+            background: #f5f5f5;
+            padding: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Material Design Components</h1>
+
+    <!-- Buttons -->
+    <div class="component-section">
+        <h2>Buttons</h2>
+        <button class="mdc-button mdc-button--raised">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">Filled Button</span>
+        </button>
+        <button class="mdc-button mdc-button--outlined">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">Outlined Button</span>
+        </button>
+        <button class="mdc-button">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">Text Button</span>
+        </button>
+    </div>
+
+    <!-- Cards -->
+    <div class="component-section">
+        <h2>Card</h2>
+        <div class="mdc-card" style="max-width: 400px; padding: 20px;">
+            <h3>Card Title</h3>
+            <p>This is a card component. Switch themes to see the color scheme change.</p>
+            <button class="mdc-button">
+                <span class="mdc-button__ripple"></span>
+                <span class="mdc-button__label">Action</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Text Fields -->
+    <div class="component-section">
+        <h2>Text Field</h2>
+        <label class="mdc-text-field mdc-text-field--filled">
+            <span class="mdc-text-field__ripple"></span>
+            <input class="mdc-text-field__input" type="text">
+            <span class="mdc-floating-label">Enter text</span>
+            <span class="mdc-line-ripple"></span>
+        </label>
+    </div>
+
+    <!-- Select -->
+    <div class="component-section">
+        <h2>Select</h2>
+        <div class="mdc-select mdc-select--filled">
+            <div class="mdc-select__anchor">
+                <span class="mdc-select__ripple"></span>
+                <span class="mdc-floating-label">Pick an option</span>
+                <span class="mdc-select__selected-text"></span>
+                <span class="mdc-select__dropdown-icon">
+                    <svg class="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5">
+                        <polygon class="mdc-select__dropdown-icon-inactive" stroke="none" fill-rule="evenodd" points="7 10 12 15 17 10"></polygon>
+                    </svg>
+                </span>
+                <span class="mdc-line-ripple"></span>
+            </div>
+            <div class="mdc-select__menu mdc-menu mdc-menu-surface">
+                <ul class="mdc-list">
+                    <li class="mdc-list-item mdc-list-item--selected" data-value="option1">
+                        <span class="mdc-list-item__ripple"></span>
+                        <span class="mdc-list-item__text">Option 1</span>
+                    </li>
+                    <li class="mdc-list-item" data-value="option2">
+                        <span class="mdc-list-item__ripple"></span>
+                        <span class="mdc-list-item__text">Option 2</span>
+                    </li>
+                    <li class="mdc-list-item" data-value="option3">
+                        <span class="mdc-list-item__ripple"></span>
+                        <span class="mdc-list-item__text">Option 3</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkboxes -->
+    <div class="component-section">
+        <h2>Checkbox</h2>
+        <div class="mdc-form-field">
+            <div class="mdc-checkbox">
+                <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1" checked/>
+                <div class="mdc-checkbox__background">
+                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                    </svg>
+                    <div class="mdc-checkbox__mixedmark"></div>
+                </div>
+                <div class="mdc-checkbox__ripple"></div>
+            </div>
+            <label for="checkbox-1">Checkbox option</label>
+        </div>
+    </div>
+
+    <!-- Switch -->
+    <div class="component-section">
+        <h2>Switch</h2>
+        <button class="mdc-switch mdc-switch--selected" type="button" role="switch" aria-checked="true">
+            <div class="mdc-switch__track"></div>
+            <div class="mdc-switch__handle-track">
+                <div class="mdc-switch__handle">
+                    <div class="mdc-switch__shadow">
+                        <div class="mdc-elevation-overlay"></div>
+                    </div>
+                    <div class="mdc-switch__ripple"></div>
+                </div>
+            </div>
+        </button>
+        <label>Toggle switch</label>
+    </div>
+
+    <!-- Icons -->
+    <div class="component-section">
+        <h2>Icons</h2>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 32px;">
+            <span class="material-icons">home</span>
+            <span class="material-icons">search</span>
+            <span class="material-icons">favorite</span>
+            <span class="material-icons">settings</span>
+            <span class="material-icons">person</span>
+            <span class="material-icons">notifications</span>
+            <span class="material-icons">shopping_cart</span>
+            <span class="material-icons">menu</span>
+            <span class="material-icons">email</span>
+            <span class="material-icons">share</span>
+            <span class="material-icons">download</span>
+            <span class="material-icons">upload</span>
+            <span class="material-icons">delete</span>
+            <span class="material-icons">edit</span>
+            <span class="material-icons">add</span>
+            <span class="material-icons">remove</span>
+            <span class="material-icons">check</span>
+            <span class="material-icons">close</span>
+            <span class="material-icons">star</span>
+            <span class="material-icons">bookmark</span>
+            <span class="material-icons">calendar_today</span>
+            <span class="material-icons">location_on</span>
+            <span class="material-icons">visibility</span>
+            <span class="material-icons">lock</span>
+        </div>
+    </div>
+
+    <!-- Responsive Layout -->
+    <div class="component-section">
+        <h2>Responsive Layout Grid</h2>
+        <p>Resize window to see columns adapt (12-col system): 3/6/3 → 8/8/4 → 4/4/4</p>
+        <p><a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-layout-grid" target="_blank">Layout Grid Documentation</a></p>
+        
+        <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-3-desktop">
+                    <div class="grid-demo">Column A</div>
+                </div>
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-6-desktop">
+                    <div class="grid-demo">Column B</div>
+                </div>
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-3-desktop">
+                    <div class="grid-demo">Column C</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UI Library JavaScript -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    
+    <script>
+        // Initialize components
+        mdc.autoInit();
+    </script>
+</body>
+</html>

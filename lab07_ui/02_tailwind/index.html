@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Components</title>
+    
+    <!-- UI Library CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body class="p-5 max-w-7xl mx-auto">
+    <h1 class="text-4xl font-bold mb-8">Tailwind CSS Components</h1>
+
+    <!-- Buttons -->
+    <div class="my-10 p-5 border border-gray-300 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4">Buttons</h2>
+        <div class="flex gap-3 flex-wrap">
+            <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+                Filled Button
+            </button>
+            <button class="px-4 py-2 border-2 border-blue-600 text-blue-600 rounded hover:bg-blue-50 transition">
+                Outlined Button
+            </button>
+            <button class="px-4 py-2 text-blue-600 hover:bg-blue-50 rounded transition">
+                Text Button
+            </button>
+        </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="my-10 p-5 border border-gray-300 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4">Card</h2>
+        <div class="max-w-md border border-gray-200 rounded-lg shadow-sm p-5">
+            <h3 class="text-xl font-semibold mb-2">Card Title</h3>
+            <p class="text-gray-700 mb-4">This is a card component. Switch themes to see the color scheme change.</p>
+            <button class="text-blue-600 hover:bg-blue-50 px-4 py-2 rounded transition">
+                Action
+            </button>
+        </div>
+    </div>
+
+    <!-- Text Fields -->
+    <div class="my-10 p-5 border border-gray-300 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4">Text Field</h2>
+        <div class="max-w-md">
+            <div class="relative">
+                <input 
+                    type="text" 
+                    id="floating_input" 
+                    class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" 
+                    placeholder=" " 
+                />
+                <label 
+                    for="floating_input" 
+                    class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">
+                    Enter text
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Select -->
+    <div class="my-10 p-5 border border-gray-300 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4">Select</h2>
+        <div class="max-w-md">
+            <select class="block w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600">
+                <option>Pick an option</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Checkboxes -->
+    <div class="my-10 p-5 border border-gray-300 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4">Checkbox</h2>
+        <div class="flex items-center">
+            <input 
+                id="checkbox-1" 
+                type="checkbox" 
+                checked 
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+            >
+            <label for="checkbox-1" class="ml-2 text-sm font-medium text-gray-900">
+                Checkbox option
+            </label>
+        </div>
+    </div>
+
+    <!-- Switch -->
+    <div class="my-10 p-5 border border-gray-300 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4">Switch</h2>
+        <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" checked class="sr-only peer">
+            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+            <span class="ml-3 text-sm font-medium text-gray-900">Toggle switch</span>
+        </label>
+    </div>
+
+    <!-- Icons -->
+    <div class="my-10 p-5 border border-gray-300 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4">Icons</h2>
+        <div class="flex gap-5 flex-wrap text-3xl">
+            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-gear"></i>
+            <i class="fa-solid fa-user"></i>
+            <i class="fa-solid fa-bell"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-solid fa-share"></i>
+            <i class="fa-solid fa-download"></i>
+            <i class="fa-solid fa-upload"></i>
+            <i class="fa-solid fa-trash"></i>
+            <i class="fa-solid fa-pen"></i>
+            <i class="fa-solid fa-plus"></i>
+            <i class="fa-solid fa-minus"></i>
+            <i class="fa-solid fa-check"></i>
+            <i class="fa-solid fa-xmark"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-bookmark"></i>
+            <i class="fa-solid fa-calendar"></i>
+            <i class="fa-solid fa-location-dot"></i>
+            <i class="fa-solid fa-eye"></i>
+            <i class="fa-solid fa-lock"></i>
+        </div>
+    </div>
+
+    <!-- Responsive Layout -->
+    <div class="my-10 p-5 border border-gray-300 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4">Responsive Layout Grid</h2>
+        <p class="mb-2">Resize window to see columns adapt (12-col system): 3/6/3 → 8/8/4 → 12/12/12</p>
+        <p class="mb-4"><a href="https://tailwindcss.com/docs/grid-template-columns" target="_blank" class="text-blue-600 hover:underline">Layout Grid Documentation</a></p>
+        
+        <div class="grid grid-cols-12 gap-3">
+            <div class="col-span-12 md:col-span-8 lg:col-span-3">
+                <div class="bg-gray-100 p-4 rounded text-center">Column A</div>
+            </div>
+            <div class="col-span-12 md:col-span-8 lg:col-span-6">
+                <div class="bg-gray-100 p-4 rounded text-center">Column B</div>
+            </div>
+            <div class="col-span-12 md:col-span-4 lg:col-span-3">
+                <div class="bg-gray-100 p-4 rounded text-center">Column C</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

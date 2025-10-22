@@ -1,0 +1,6 @@
+let hexColors = [];
+
+let getImageHex = function () {
+for (let i = 0; i < pictures.length; i++) { Vibrant.from(pictures[i]).getPalette(function (err, palette) { //
+    console.log(pictures[i]); // console.log(palette); // console.log(palette["Vibrant"].getHex());
+    hexColors.push(palette["Vibrant"].getHex()); }); } console.log(hexColors); }; getImageHex();
