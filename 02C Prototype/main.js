@@ -1,71 +1,97 @@
-// ...existing code...
-// Landing / Read More overlay setup (runs independently of d3.json)
-(function setupLandingOverlay() {
-  function ready(fn) {
-    if (document.readyState === "loading")
-      document.addEventListener("DOMContentLoaded", fn);
-    else fn();
+// Debug: verify script loads and DOM elements exist
+console.log("main.js: loaded");
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("main.js: DOMContentLoaded");
+  console.log(
+    "project-overlay element:",
+    !!document.getElementById("project-overlay")
+  );
+  console.log(
+    "readmore-btn element:",
+    !!document.getElementById("readmore-btn")
+  );
+  console.log("enter-btn element:", !!document.getElementById("enter-btn"));
+});
+// --- overlay wiring: expect <div id="project-overlay"> to be present in index.html ---
+document.addEventListener("DOMContentLoaded", function () {
+  const landing = document.getElementById("landing");
+  const overlay = document.getElementById("project-overlay"); // MUST be in HTML
+  const readMoreBtn = document.getElementById("readmore-btn");
+  const overlayClose = document.getElementById("project-overlay-close");
+  const exploreBtn = document.getElementById("enter-btn"); // changed: match index.html
+
+  if (!overlay) {
+    console.warn(
+      "project-overlay element not found in HTML. Add it to index.html to enable Read More."
+    );
+    return;
   }
 
-  ready(() => {
-    const landing = document.getElementById("landing");
-    let overlay = document.getElementById("project-overlay");
+  // Open overlay (Read More)
+  if (readMoreBtn) {
+    readMoreBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      overlay.classList.remove("hidden");
+      document.body.classList.add("no-scroll");
+    });
+  }
 
-    // create overlay if it's not in the HTML
-    if (!overlay) {
-      overlay = document.createElement("div");
-      overlay.id = "project-overlay";
-      overlay.className = "project-overlay hidden";
-      overlay.innerHTML = `
-        <div class="project-panel" role="dialog" aria-modal="true" aria-labelledby="project-overlay-title">
-          <h2 id="project-overlay-title">Project: Revolutionary Silhouettes</h2>
-          <p>This prototype maps silhouette metadata to portrait dataset entries. Use the legend buttons to filter by sitter type.</p>
-          <div class="project-actions"><button id="project-overlay-close" class="enter-btn">Close</button></div>
-        </div>`;
-      document.body.appendChild(overlay);
-    }
+  // Close overlay (Close button)
+  if (overlayClose) {
+    overlayClose.addEventListener("click", function (e) {
+      e.preventDefault();
+      overlay.classList.add("hidden");
+      document.body.classList.remove("no-scroll");
+    });
+  }
 
-    const enterBtn = document.getElementById("enter-btn");
-    const readMoreBtn = document.getElementById("readmore-btn");
-    const overlayClose = document.getElementById("project-overlay-close");
-
-    if (readMoreBtn) {
-      readMoreBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        console.log("Read More clicked");
-        overlay.classList.remove("hidden");
-      });
-    } else {
-      console.warn("readmore-btn not found");
-    }
-
-    if (overlayClose) {
-      overlayClose.addEventListener("click", (e) => {
-        e.preventDefault();
-        overlay.classList.add("hidden");
-      });
-    }
-
-    if (overlay) {
-      overlay.addEventListener("click", (e) => {
-        if (e.target === overlay) overlay.classList.add("hidden");
-      });
-    }
-
-    if (enterBtn && landing) {
-      // keep existing enter behavior but safe if this runs earlier
-      enterBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        landing.classList.add("hidden");
-        setTimeout(() => {
-          landing.style.display = "none";
-          document.body.classList.remove("no-scroll");
-        }, 650);
-        overlay.classList.add("hidden");
-      });
+  // Close when clicking outside panel
+  overlay.addEventListener("click", function (e) {
+    if (e.target === overlay) {
+      overlay.classList.add("hidden");
+      document.body.classList.remove("no-scroll");
     }
   });
-})();
+
+  // Enter / Explore button behavior (still hides landing)
+  if (exploreBtn && landing) {
+    document.body.classList.add("no-scroll");
+    exploreBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      landing.classList.add("hidden");
+      setTimeout(function () {
+        landing.style.display = "none";
+        document.body.classList.remove("no-scroll");
+      }, 650);
+      overlay.classList.add("hidden");
+    });
+  }
+});
+// ...existing code...
+document.addEventListener("DOMContentLoaded", function () {
+  const readMore = document.getElementById("readmore-btn");
+  const overlay = document.getElementById("project-overlay");
+
+  if (!readMore || !overlay) {
+    console.warn("readmore-btn or project-overlay not found in DOM");
+    return;
+  }
+
+  readMore.addEventListener("click", function (e) {
+    e && e.preventDefault();
+    overlay.classList.remove("hidden");
+    document.body.classList.add("no-scroll");
+  });
+});
+// ...existing code...
+
+// async function loadData() {
+//   const dataText = await d3.json(
+//     "data/revolutionary_silhouettes-original.json"
+//   );
+//   console.log(dataText);
+// }
+// loadData();
 
 d3.json("data/dataset_portrait_only.json")
   .then((data) => {
@@ -330,10 +356,10 @@ d3.json("data/dataset_portrait_only.json")
           var img = document.createElement("img");
           img.src = imgData.src;
           img.alt = imgData.alt;
-          img.style.maxWidth = "900px";
-          img.style.maxHeight = "90vh";
+          // img.style.maxWidth = "900px";
+          // img.style.maxHeight = "90vh";
           img.style.margin = "0 16px";
-          img.style.borderRadius = "16px";
+          // img.style.borderRadius = "16px";
           img.style.boxShadow = "0 4px 32px rgba(0,0,0,0.45)";
           area.appendChild(img);
         }
@@ -347,12 +373,12 @@ d3.json("data/dataset_portrait_only.json")
 
     // simple landing "Enter" handler — fade then hide, enable scrolling and jump to gallery
     var landing = document.getElementById("landing");
-    var enterBtn = document.getElementById("enter-btn");
-    if (landing && enterBtn) {
+    var exploreBtn = document.getElementById("enter-btn"); // changed: match index.html
+    if (landing && exploreBtn) {
       // block scrolling while landing is visible
       document.body.classList.add("no-scroll");
 
-      enterBtn.addEventListener("click", function (e) {
+      exploreBtn.addEventListener("click", function (e) {
         e.preventDefault();
         // fade out
         landing.classList.add("hidden");

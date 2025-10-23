@@ -7,66 +7,147 @@
     <title>Art During the Revolutionary War</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- UI Library CSS (load first) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- app styles override bootstrap -->
+    <!-- app styles override tailwind -->
     <link rel="stylesheet" href="styles.css">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 
+    <!-- removed inline landing layout styles — moved to styles.css -->
 </head>
 
 <body>
 
-
-    <div class="top">
-        <div id="headline" class="box headline">
-            <img src="assets/logo.svg" alt="Headline" class="headline-img">
-        </div>
-        <!-- <div id="legend-top" class="box"><button id="men">Men</button> <button id="women">Women</button><button
-                id="watercolor">Watercolor</button> <button id="oil">Oil</button> -->
-
-        <div id="legend-top" class="box">
-
-
-            <button id="men" class="legend-btn" title="Men">
-                <img src="assets/icon-men.svg" alt="Men" class="legend-icon">
-            </button>
-            <button id="women" class="legend-btn" title="Women">
-                <img src="assets/icon-women.svg" alt="Women" class="legend-icon">
-            </button>
-            <button id="children" class="legend-btn" title="Children">
-                <img src="assets/icon-children.svg" alt="Children" class="legend-icon">
-                <button id="select-btn" class="select-btn" title="Select">Select</button>
-            </button>
-        </div>
-
-    </div>
-
-
-
-    <div class="frame">
-        <!-- <div class="select-bar">
-            <button id="select-btn" class="select-btn">Select</button>
-        </div> -->
-        <!-- Full-bleed responsive gallery: no outer padding and no gutters -->
-        <div class="portraits container-fluid px-0">
-            <div id="gallery" class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-0">
-                <!-- JS will append <div class="col"> items here -->
+    <section id="landing" class="landing">
+        <div class="landing-inner">
+            <!-- replaced landing-panels container with responsive grid -->
+            <div class="landing-panels grid grid-cols-1 md:grid-cols-2 items-center gap-">
+                <div class="landing-left">
+                    <div id="landing-logo">
+                        <img src="assets/landing-logo.svg" alt="Headline" id="landing-logo-img">
+                        <!-- new: subheading under the logo -->
+                        <div class="landing-subheading">Traced in Shadow: The Silhouette Sitters & <br>Diverse Faces
+                            of
+                            Early America
+                        </div>
+                        <!-- changed: wrap buttons so we can move them independently -->
+                        <div class="landing-cta">
+                            <!-- changed id: match main.js listener (enter-btn) -->
+                            <button id="enter-btn" class="enter-btn" type="button">Explore</button>
+                            <button id="readmore-btn" class="read-btn" type="button">Read More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="landing-right flex justify-center">
+                    <img src="assets/silo-animation2.gif" alt="" class="landing-hero">
+                </div>
             </div>
         </div>
-        <!-- Add this after your main gallery in index.html -->
-        <div id="large-gallery" class="large-gallery hidden"></div>
-        <div id="barchart" class="bar"></div>
+        <!-- <div id="project-overlay" class="project-overlay hidden" role="dialog" aria-modal="true"
+            aria-labelledby="project-overlay-title">
+            <div class="project-panel"> -->
+        <div id="project-overlay" class="project-overlay hidden" role="dialog" aria-modal="true"
+            aria-labelledby="project-overlay-title">
+            <div class="project-panel p-6 max-w-5xl mx-auto">
+                <div class="project-grid grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="panel-image flex items-center justify-center">
+                        <img src="assets/william-bache.jpg" alt="Portrait" />
+                    </div>
+                    <div class="panel-content">
+
+                        <h2 id="project-overlay-title">About</h2>
+                        <p>Silhouette Art of Early America is a data visualization project inspired by the
+                            work of William Bache, an early 19th-century artist who used a device called a
+                            physiognotrace to
+                            create
+                            nearly 2,000 silhouette portraits. Traveling from Philadelphia to New Orleans and into the
+                            Caribbean,
+                            Bache captured a wide cross-section of American society. From artisans and merchants to
+                            women and
+                            people of African descent. His ledger was recently digitized and researched by the
+                            Smithsonian’s
+                            National
+                            Portrait Gallery, and offers a rare glimpse into the lives of everyday people in early
+                            American
+                            history.</p>
+
+                        <p>This project transforms those silhouettes into interactive data, mapping where Bache
+                            traveled, who
+                            sat for him, and what their profiles can tell us about identity, mobility, and
+                            representation in
+                            early America. By linking visual art with historical data, Silhouette Art of Early America
+                            invites
+                            viewers to explore these portraits not just as images, but as entries into a larger
+                            narrative about the past.</p>
+
+                        <p>
+                            For full collection records, <a href="https://americanart.si.edu" target="_blank"
+                                rel="noopener">visit the Smithsonian
+                                American Art Museum</a>.
+                        </p>
+                        <!-- <div class="project-actions">
+                            <button id="project-overlay-close" class="enter-btn">Close</button>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="project-actions panel-footer flex justify-end p-4">
+                    <button id="project-overlay-close" class="enter-btn">Close</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="landing-credit">
+            <p>Data and images courtesy of the Smithsonian Institution.<br>
+                Visualization and design by Neven Armanios &amp; Thiago Herson.</p>
+        </div>
+    </section>
+
+    <!-- header / top area: use grid to align headline and legend -->
+    <div class="top container mx-auto px-4 sticky top-0 z-50 bg-[#222222] border-b border-white/5">
+        <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-4">
+            <div id="headline" class="box headline md:col-span-1">
+                <img src="assets/logo.svg" alt="Headline" class="headline-img">
+            </div>
+
+            <div id="legend-top" class="box flex justify-end items-center space-x-3 md:col-start-3">
+                <button id="men" class="legend-btn" title="Men">
+                    <img src="assets/icon-men.svg" alt="Men" class="legend-icon">
+                </button>
+                <button id="women" class="legend-btn" title="Women">
+                    <img src="assets/icon-women.svg" alt="Women" class="legend-icon">
+                </button>
+                <button id="children" class="legend-btn" title="Children">
+                    <img src="assets/icon-children.svg" alt="Children" class="legend-icon">
+                    <button id="select-btn" class="select-btn" title="Select">Select</button>
+                </button>
+            </div>
+        </div>
     </div>
 
-    <div id="barchart" class="bar"></div>
+    <!-- frame/gallery: make gallery take more columns on breakpoints -->
+    <div class="frame container mx-auto px-4 py-6">
+        <div class="sticky-header" class="grid grid-cols-1 lg:grid-cols-16 gap-6">
+            <div class="portraits col-span-1 lg:col-span-4 w-full">
+                <!-- increased columns: more thumbnails per row -->
+                <div id="gallery"
+                    class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-12 xl:grid-cols-20 gap-2">
+                    <!-- JS will append <div class="col"> items here -->
+                </div>
+            </div>
+
+            <!-- sidebar: large gallery preview + barchart stacked -->
+            <aside class="space-y-4">
+                <div id="large-gallery" class="large-gallery hidden"></div>
+                <div id="barchart" class="bar"></div>
+            </aside>
+        </div>
     </div>
+
     <script type="module" src="main.js"></script>
-    <!-- Bootstrap JS (optional for components) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <!-- <script type="module" src="charts.js"></script> -->
 
 
