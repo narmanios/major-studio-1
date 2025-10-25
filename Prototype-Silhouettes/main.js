@@ -201,7 +201,7 @@ d3.json("data/dataset_silhouettes_only_with_filename.json")
         // bar.style.borderRadius = "6px";
         bar.style.transition = "opacity .12s, outline .12s";
         bar.style.background =
-          t === "men" ? "#ffb3b3" : t === "women" ? "#ffc686" : "#a1d5ff";
+          t === "men" ? "#4c9aff" : t === "women" ? "#d4fe72" : "#ffd166";
         bar.style.opacity = "0.95";
 
         var label = document.createElement("div");
@@ -276,6 +276,20 @@ d3.json("data/dataset_silhouettes_only_with_filename.json")
         updateChartUI();
       });
     });
+
+    // move select button to the left of the first legend button (if present)
+    (function moveSelectBtnBeforeLegend() {
+      var selectBtnEl = document.getElementById("select-btn");
+      if (!selectBtnEl) return;
+      // find first existing legend button and insert selectBtn before it
+      for (var i = 0; i < ids.length; i++) {
+        var legend = document.getElementById(ids[i]);
+        if (legend && legend.parentNode) {
+          legend.parentNode.insertBefore(selectBtnEl, legend);
+          return;
+        }
+      }
+    })();
 
     // precompute the silhouettes from the loaded dataset so `allSilhouette` exists
     // simple: collect silhouette items
@@ -381,58 +395,43 @@ d3.json("data/dataset_silhouettes_only_with_filename.json")
     buildBarChart(counts);
     updateChartUI();
 
-    // Selection mode logic
-    // ...existing code...
-
-    // Selection mode and carousel logic
+    // Selection behaviour: click thumbnails to toggle selection.
+    // When at least one thumbnail is selected, show the "View Collection" button (selectBtn).
     var selectBtn = document.getElementById("select-btn");
-    var selecting = false;
-    var selectedItems = [];
     var largeGallery = document.getElementById("large-gallery");
     var carouselIndex = 0;
     var carouselImages = [];
 
-    // Only ONE event listener for selectBtn!
+    // hide view button initially (if present)
     if (selectBtn) {
+      selectBtn.style.display = "none";
+      selectBtn.textContent = "View Collection";
       selectBtn.addEventListener("click", function () {
-        if (!selecting) {
-          // Enter selection mode
-          selecting = true;
-          selectBtn.textContent = "View Collection";
-          selectedItems = [];
-          document
-            .querySelectorAll(".gallery-item, .col")
-            .forEach(function (item) {
-              item.classList.remove("selected");
-            });
-        } else {
-          // Show carousel modal
-          selecting = false;
-          // Collect selected images
-          var selectedThumbs = document.querySelectorAll(
-            ".gallery-item.selected img, .col.selected img"
-          );
-          //to do: look up json entry based on img.src
-          carouselImages = Array.from(selectedThumbs).map(function (img) {
-            var found = findDataForImageSrc(img.src);
-            return {
-              src: img.src,
-              alt: img.alt,
+        var selectedThumbs = document.querySelectorAll(
+          ".gallery-item.selected img, .col.selected img"
+        );
+        if (!selectedThumbs || selectedThumbs.length === 0) return;
 
-              /////////////////////////////////////////////
-              siloSrc:
-                "https://github.com/PGDV-5200-2025F-A/silhouettes/raw/refs/heads/main/imgs/04_silhouetted/" +
-                found.filename +
-                ".png", // may be null if not found
-              /////////////////////////////////////////////
-            };
-          });
-          if (carouselImages.length === 0) return; // nothing selected
+        carouselImages = Array.from(selectedThumbs).map(function (img) {
+          var found = findDataForImageSrc(img.src);
+          return {
+            src: img.src,
+            alt: img.alt,
+            // reuse existing logic for siloSrc
+            siloSrc:
+              found && found.filename
+                ? "https://github.com/PGDV-5200-2025F-A/silhouettes/raw/refs/heads/main/imgs/04_silhouetted/" +
+                  found.filename +
+                  ".png"
+                : null,
+            item: found || null,
+          };
+        });
 
-          // In your selectBtn event listener, replace showCarouselImage() with showCarouselImages()
-          // ...inside your selectBtn event listener, replace the modal build with:
-          if (largeGallery) {
-            largeGallery.innerHTML = `
+        if (carouselImages.length === 0) return;
+
+        if (largeGallery) {
+          largeGallery.innerHTML = `
     <button class="close-btn">Close</button>
     <div class="carousel-outer">
       <button class="carousel-prev">&#8592;</button>
@@ -440,47 +439,53 @@ d3.json("data/dataset_silhouettes_only_with_filename.json")
       <button class="carousel-next">&#8594;</button>
     </div>
   `;
-            largeGallery.classList.remove("hidden");
-            carouselIndex = 0;
-            showCarouselImages();
+          largeGallery.classList.remove("hidden");
+          carouselIndex = 0;
+          showCarouselImages();
 
-            // Close button handler
-            largeGallery.querySelector(".close-btn").onclick = function () {
-              largeGallery.classList.add("hidden");
-            };
-            // Prev/Next handlers
-            largeGallery.querySelector(".carousel-prev").onclick = function () {
-              carouselIndex = Math.max(0, carouselIndex - 1);
-              showCarouselImages();
-            };
-            largeGallery.querySelector(".carousel-next").onclick = function () {
-              var visibleCount = Math.min(3, carouselImages.length);
-              carouselIndex = Math.min(
-                carouselImages.length - visibleCount,
-                carouselIndex + 1
-              );
-              showCarouselImages();
-            };
-          }
-          // Clear selection highlights
-          document
-            .querySelectorAll(".gallery-item, .col")
-            .forEach(function (item) {
-              item.classList.remove("selected");
-            });
-          selectBtn.textContent = "Select";
+          largeGallery.querySelector(".close-btn").onclick = function () {
+            largeGallery.classList.add("hidden");
+          };
+          largeGallery.querySelector(".carousel-prev").onclick = function () {
+            carouselIndex = Math.max(0, carouselIndex - 1);
+            showCarouselImages();
+          };
+          largeGallery.querySelector(".carousel-next").onclick = function () {
+            var visibleCount = Math.min(3, carouselImages.length);
+            carouselIndex = Math.min(
+              carouselImages.length - visibleCount,
+              carouselIndex + 1
+            );
+            showCarouselImages();
+          };
         }
+
+        // clear selections and hide the view button
+        document
+          .querySelectorAll(".gallery-item.selected, .col.selected")
+          .forEach(function (item) {
+            item.classList.remove("selected");
+          });
+        if (selectBtn) selectBtn.style.display = "none";
       });
     }
 
-    // Delegate click events for thumbnails
-    document.getElementById("gallery").addEventListener("click", function (e) {
-      if (!selecting) return;
-      var item = e.target.closest(".gallery-item, .col");
-      if (item) {
+    // delegate clicks on thumbnails: always allow toggling selection
+    var galleryEl = document.getElementById("gallery");
+    if (galleryEl) {
+      galleryEl.addEventListener("click", function (e) {
+        var item = e.target.closest(".gallery-item, .col");
+        if (!item) return;
         item.classList.toggle("selected");
-      }
-    });
+        // show/hide View Collection button based on selection count
+        var selectedCount = document.querySelectorAll(
+          ".gallery-item.selected, .col.selected"
+        ).length;
+        if (selectBtn) {
+          selectBtn.style.display = selectedCount > 0 ? "" : "none";
+        }
+      });
+    }
 
     // replace showCarouselImages with a fixed version that appends images and optional captions
     function showCarouselImages() {

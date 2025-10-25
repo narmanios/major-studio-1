@@ -453,6 +453,54 @@ body {
   font-size: 0.9rem;
 }
 
+.legend-btn {
+  color: #ffffff;
+} /* set the icon color here */
+.legend-icon.icon-men {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background-color: currentColor; /* the icon’s color */
+  -webkit-mask: url("assets/icon-men.svg") no-repeat center / contain;
+  mask: url("assets/icon-men.svg") no-repeat center / contain;
+}
+.legend-icon.icon-women {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background-color: currentColor; /* the icon’s color */
+  -webkit-mask: url("assets/icon-women.svg") no-repeat center / contain;
+  mask: url("assets/icon-women.svg") no-repeat center / contain;
+}
+
+.legend-icon.icon-children {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background-color: currentColor; /* the icon’s color */
+  -webkit-mask: url("assets/icon-children.svg") no-repeat center / contain;
+  mask: url("assets/icon-children.svg") no-repeat center / contain;
+}
+
+/* legend button default (ensure white icons when not active) */
+.legend-btn,
+#men,
+#women,
+#children {
+  color: #ffffff;
+}
+
+/* Active-state colors (set on the button; .legend-icon uses currentColor for its mask) */
+#men.active {
+  color: #4c9aff; /* new active color for men (blue) */
+}
+#women.active {
+  color: #d4fe72; /* new active color for women (pink) */
+}
+#children.active {
+  color: #ffd166; /* new active color for children (yellow) */
+}
+
 /* Optional: smaller screens — reduce min-height so footer doesn't appear too low */
 @media (max-width: 640px) {
   .landing {
