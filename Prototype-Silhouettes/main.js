@@ -1,4 +1,3 @@
-// ...existing code...
 // Landing / Read More overlay setup (runs independently of d3.json)
 (function setupLandingOverlay() {
   function ready(fn) {
@@ -32,8 +31,14 @@
     if (readMoreBtn) {
       readMoreBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        console.log("Read More clicked");
+        // show the overlay and move focus into the dialog for accessibility
         overlay.classList.remove("hidden");
+        var panel = overlay.querySelector(".project-panel");
+        if (panel) {
+          panel.setAttribute("tabindex", "-1");
+          panel.focus();
+        }
+        console.log("Read More clicked - overlay opened");
       });
     } else {
       console.warn("readmore-btn not found");
@@ -60,6 +65,10 @@
         setTimeout(() => {
           landing.style.display = "none";
           document.body.classList.remove("no-scroll");
+          // scroll to gallery after landing hides
+          var galleryEl = document.getElementById("gallery");
+          if (galleryEl)
+            galleryEl.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 650);
         overlay.classList.add("hidden");
       });
@@ -67,102 +76,204 @@
   });
 })();
 
-d3.json("data/dataset_portrait_only.json")
+d3.json("data/dataset_silhouettes_only_with_filename.json")
   .then((data) => {
     ///////////// Filtering ///////////////////////
 
-    var selectedTopics = []; // men / women
-    var selectedMedia = []; // watercolor, oil, pencil, etching, print, silhouette
+    // much simpler: single active topic filter (one at a time)
+    var activeTopic = null;
+    var topicKeywords = {
+      men: ["man", "men"],
+      women: ["woman", "women"],
+      children: ["child", "children"],
+    };
 
-    // helpers
-    function matchesTopic(item) {
-      var s = String(item.indexed_topics || "").toLowerCase();
-      for (var i = 0; i < selectedTopics.length; i++) {
-        if (s.indexOf(selectedTopics[i]) !== -1) return true;
-      }
-      return false;
+    // helper to escape user-provided keywords for regex
+    function escapeRegExp(str) {
+      return String(str).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     }
 
-    function matchesMedia(item) {
-      var desc = String(item.physicalDescription || "").toLowerCase();
-      var idx = String(item.indexed_object_types || "").toLowerCase();
-      var obj = String(item.objectType || "").toLowerCase();
+    // replace filterByTopic with explicit whole-word regex matching
+    function filterByTopic(items, topic) {
+      if (!topic) return items;
+      var keys = topicKeywords[topic] || [topic];
+      // build word-boundary, case-insensitive regexes for each keyword
+      var regs = keys.map(function (k) {
+        return new RegExp("\\b" + escapeRegExp(k) + "\\b", "i");
+      });
 
-      for (var i = 0; i < selectedMedia.length; i++) {
-        var m = selectedMedia[i];
-        if (m === "print") {
-          if (idx.indexOf("print") !== -1) return true;
-        } else if (m === "silhouette") {
-          if (obj.indexOf("silhouette") !== -1) return true;
-        } else {
-          // watercolor, oil, pencil, etching
-          if (desc.indexOf(m) !== -1) return true;
+      return items.filter(function (it) {
+        var txt =
+          (it.indexed_topics || "") +
+          " " +
+          (it.topic || "") +
+          " " +
+          (it.name || "") +
+          " " +
+          (it.title || "") +
+          " " +
+          (it.indexed_names || "");
+        for (var r = 0; r < regs.length; r++) {
+          if (regs[r].test(txt)) return true;
         }
-      }
-      return false;
+        return false;
+      });
     }
 
-    function computeCombined() {
-      var combined = [];
-      for (var i = 0; i < data.length; i++) {
-        var item = data[i];
-        var ok = false;
-        if (selectedTopics.length > 0 && selectedMedia.length > 0) {
-          // must match both a topic and a media
-          ok = matchesTopic(item) && matchesMedia(item);
-        } else if (selectedTopics.length > 0) {
-          ok = matchesTopic(item);
-        } else if (selectedMedia.length > 0) {
-          ok = matchesMedia(item);
-        } else {
-          ok = false; // nothing selected -> no results
+    ///////////// Wiring the buttons + header bar chart ///////////////////////
+    // helper: count occurrences using word-boundary regex (uses escapeRegExp above)
+    function countTopics(items) {
+      var out = { men: 0, women: 0, children: 0 };
+      var regs = {
+        men: new RegExp(
+          "\\b(" + ["man", "men"].map(escapeRegExp).join("|") + ")\\b",
+          "i"
+        ),
+        women: new RegExp(
+          "\\b(" + ["woman", "women"].map(escapeRegExp).join("|") + ")\\b",
+          "i"
+        ),
+        children: new RegExp(
+          "\\b(" + ["child", "children"].map(escapeRegExp).join("|") + ")\\b",
+          "i"
+        ),
+      };
+      items.forEach(function (it) {
+        var txt =
+          (it.indexed_topics || "") +
+          " " +
+          (it.topic || "") +
+          " " +
+          (it.name || "") +
+          " " +
+          (it.title || "");
+        for (var k in regs) {
+          if (regs[k].test(txt)) out[k]++;
         }
-        if (ok && combined.indexOf(item) === -1) combined.push(item);
-      }
-      return combined;
+      });
+      return out;
     }
 
-    ///////////// Wiring the buttons ///////////////////////
-    var ids = [
-      "men",
-      "women",
-      "watercolor",
-      "oil",
-      "pencil",
-      "etching",
-      "print",
-      "silhouette",
-    ];
+    // build a small bar chart using an existing #topic-bar-chart element in the DOM
+    function buildBarChart(counts) {
+      var wrap = document.getElementById("topic-bar-chart");
+      if (!wrap) {
+        console.warn(
+          'topic-bar-chart element not found. Add <div id="topic-bar-chart"></div> into your index.html.'
+        );
+        return;
+      }
+
+      // clear existing content and apply compact fixed bottom-right styles
+      wrap.innerHTML = "";
+      wrap.style.position = "fixed";
+      wrap.style.right = "12px";
+      wrap.style.bottom = "12px";
+      wrap.style.zIndex = "9999";
+      wrap.style.display = "flex";
+      wrap.style.justifyContent = "center";
+      wrap.style.gap = "0px";
+      wrap.style.alignItems = "flex-end";
+      wrap.style.padding = "8px";
+      wrap.style.background = "rgba(0,0,0,0.85)";
+      // wrap.style.borderRadius = "10px";
+      wrap.style.boxShadow = "0 6px 20px rgba(0,0,0,0.35)";
+      wrap.style.maxWidth = "320px";
+      wrap.style.pointerEvents = "auto";
+      wrap.style.color = "#fff";
+
+      var topics = ["men", "women", "children"];
+      var max = Math.max(counts.men, counts.women, counts.children, 1);
+      topics.forEach(function (t) {
+        var col = document.createElement("div");
+        col.className = "topic-bar";
+        col.dataset.topic = t;
+        col.style.cursor = "pointer";
+        col.style.display = "flex";
+        col.style.flexDirection = "column";
+        col.style.alignItems = "center";
+        col.style.width = "72px";
+
+        var bar = document.createElement("div");
+        // compact bars: max height ~48px
+        bar.style.height = Math.round((counts[t] / max) * 48 + 6) + "px";
+        bar.style.width = "18px";
+        // bar.style.borderRadius = "6px";
+        bar.style.transition = "opacity .12s, outline .12s";
+        bar.style.background =
+          t === "men" ? "#ffb3b3" : t === "women" ? "#ffc686" : "#a1d5ff";
+        bar.style.opacity = "0.95";
+
+        var label = document.createElement("div");
+        label.textContent = t + " (" + counts[t] + ")";
+        label.style.fontSize = "8px";
+        label.style.fontWeight = "bold";
+
+        label.style.marginTop = "8px";
+        label.style.color = "#fff";
+        label.style.textTransform = "capitalize";
+
+        col.appendChild(bar);
+        col.appendChild(label);
+        wrap.appendChild(col);
+
+        // click a bar toggles the corresponding button/filter
+        col.addEventListener("click", function () {
+          var btn = document.getElementById(t);
+          if (btn) btn.click(); // reuse existing button handler behavior
+        });
+      });
+    }
+
+    // update bar active state and labels after filter change
+    function updateChartUI() {
+      var wrap = document.getElementById("topic-bar-chart");
+      if (!wrap) return;
+      Array.from(wrap.querySelectorAll(".topic-bar")).forEach(function (col) {
+        var t = col.dataset.topic;
+        if (activeTopic === t) {
+          col.querySelector("div").style.outline =
+            "3px solid rgba(255,255,255,0.12)";
+          col.querySelector("div").style.opacity = "1";
+        } else {
+          col.querySelector("div").style.outline = "none";
+          col.querySelector("div").style.opacity = activeTopic
+            ? "0.45"
+            : "0.95";
+        }
+      });
+      // update labels counts as well (in case they changed)
+      var counts = countTopics(silhouettes || []);
+      Array.from(wrap.querySelectorAll(".topic-bar")).forEach(function (col) {
+        var t = col.dataset.topic;
+        col.querySelector("div + div").textContent = t + " (" + counts[t] + ")";
+      });
+    }
+
+    // rewire the legend buttons so they also update chart UI (replace old wiring)
+    var ids = ["men", "women", "children"];
     ids.forEach(function (id) {
       var btn = document.getElementById(id);
       if (!btn) return;
-      btn.addEventListener("click", function () {
-        // toggle into correct group
-        if (id === "men" || id === "women") {
-          var p = selectedTopics.indexOf(id);
-          if (p === -1) {
-            selectedTopics.push(id);
-            btn.classList.add("active");
-          } else {
-            selectedTopics.splice(p, 1);
-            btn.classList.remove("active");
-          }
+      // remove previous handlers if any by cloning node
+      var newBtn = btn.cloneNode(true);
+      btn.parentNode.replaceChild(newBtn, btn);
+      newBtn.addEventListener("click", function () {
+        // toggle single active topic like before
+        if (activeTopic === id) {
+          activeTopic = null;
+          newBtn.classList.remove("active");
         } else {
-          var q = selectedMedia.indexOf(id);
-          if (q === -1) {
-            selectedMedia.push(id);
-            btn.classList.add("active");
-          } else {
-            selectedMedia.splice(q, 1);
-            btn.classList.remove("active");
+          if (activeTopic) {
+            var prev = document.getElementById(activeTopic);
+            if (prev) prev.classList.remove("active");
           }
+          activeTopic = id;
+          newBtn.classList.add("active");
         }
-
-        var combined = computeCombined();
-        console.log("selectedTopics:", selectedTopics);
-        console.log("selectedMedia:", selectedMedia);
-        console.log("combined count:", combined.length);
-        console.log("combined matches:", combined);
+        var filtered = filterByTopic(silhouettes || [], activeTopic);
+        renderGallery(filtered);
+        updateChartUI();
       });
     });
 
@@ -197,29 +308,78 @@ d3.json("data/dataset_portrait_only.json")
       return "images/placeholder.jpg";
     }
 
-    // render gallery (minimal DOM; uses .gallery-item so Bootstrap .col won't interfere)
-    var gallery = document.getElementById("gallery");
-    gallery.innerHTML = "";
-    var frag = document.createDocumentFragment();
-
-    for (var j = 0; j < silhouettes.length; j++) {
-      var it = silhouettes[j];
-      var url = getImageUrl(it);
-
-      var cell = document.createElement("div");
-      cell.className = "gallery-item";
-
-      var img = document.createElement("img");
-      img.src = url;
-      img.alt = (it.title || "silhouette").replace(/"/g, "");
-      img.loading = "lazy";
-      img.className = "gallery-img";
-
-      cell.appendChild(img);
-      frag.appendChild(cell);
+    // NEW: helper to match a thumbnail src back to the loaded JSON record.
+    // It tries exact matches first, then compares normalized filename tails
+    // (strip query string and take last path segment) against known image fields.
+    function normalizeFilename(url) {
+      if (!url) return "";
+      try {
+        // remove query/hash
+        var u = url.split("?")[0].split("#")[0];
+        // take last segment
+        var parts = u.split("/");
+        return parts[parts.length - 1].toLowerCase();
+      } catch (e) {
+        return String(url).toLowerCase();
+      }
     }
 
-    gallery.appendChild(frag);
+    function findDataForImageSrc(src) {
+      if (!src) return null;
+      var normSrc = normalizeFilename(src);
+
+      // First try exact match against common fields
+      for (var i = 0; i < data.length; i++) {
+        var it = data[i];
+        var keys = ["primaryImage", "image_url", "thumbnail", "image"];
+        for (var k = 0; k < keys.length; k++) {
+          if (it[keys[k]] && it[keys[k]] === src) return it;
+          if (it[keys[k]] && normalizeFilename(it[keys[k]]) === normSrc)
+            return it;
+        }
+        // check images array
+        if (it.images && it.images.length) {
+          for (var m = 0; m < it.images.length; m++) {
+            var img = it.images[m];
+            var url = typeof img === "string" ? img : img && img.url;
+            if (!url) continue;
+            if (url === src || normalizeFilename(url) === normSrc) return it;
+          }
+        }
+      }
+
+      // As a last resort try matching on title or other loose heuristics (optional)
+      return null;
+    }
+
+    // render gallery helper (keeps initial render and filtered updates simple)
+    var gallery = document.getElementById("gallery");
+    function renderGallery(items) {
+      if (!gallery) return;
+      gallery.innerHTML = "";
+      var frag = document.createDocumentFragment();
+      for (var j = 0; j < items.length; j++) {
+        var it = items[j];
+        var url = getImageUrl(it);
+        var cell = document.createElement("div");
+        cell.className = "gallery-item";
+        var img = document.createElement("img");
+        img.src = url;
+        img.alt = (it.title || it.name || "silhouette").replace(/"/g, "");
+        img.loading = "lazy";
+        img.className = "gallery-img";
+        cell.appendChild(img);
+        frag.appendChild(cell);
+      }
+      gallery.appendChild(frag);
+    }
+
+    // initial display: show all silhouettes
+    renderGallery(silhouettes);
+    // build chart and set initial UI
+    var counts = countTopics(silhouettes);
+    buildBarChart(counts);
+    updateChartUI();
 
     // Selection mode logic
     // ...existing code...
@@ -252,8 +412,20 @@ d3.json("data/dataset_portrait_only.json")
           var selectedThumbs = document.querySelectorAll(
             ".gallery-item.selected img, .col.selected img"
           );
+          //to do: look up json entry based on img.src
           carouselImages = Array.from(selectedThumbs).map(function (img) {
-            return { src: img.src, alt: img.alt };
+            var found = findDataForImageSrc(img.src);
+            return {
+              src: img.src,
+              alt: img.alt,
+
+              /////////////////////////////////////////////
+              siloSrc:
+                "https://github.com/PGDV-5200-2025F-A/silhouettes/raw/refs/heads/main/imgs/04_silhouetted/" +
+                found.filename +
+                ".png", // may be null if not found
+              /////////////////////////////////////////////
+            };
           });
           if (carouselImages.length === 0) return; // nothing selected
 
@@ -310,7 +482,7 @@ d3.json("data/dataset_portrait_only.json")
       }
     });
 
-    // Helper to show all selected images in a horizontal carousel
+    // replace showCarouselImages with a fixed version that appends images and optional captions
     function showCarouselImages() {
       var area = document.querySelector(".carousel-image-area");
       if (!area || carouselImages.length === 0) return;
@@ -324,20 +496,73 @@ d3.json("data/dataset_portrait_only.json")
       }
       if (carouselIndex < 0) carouselIndex = 0;
 
+      var container = document.createElement("div");
+      container.style.display = "flex";
+      container.style.alignItems = "center";
+      container.style.justifyContent = "center";
+      container.style.width = "100%";
+      container.style.overflow = "hidden";
+
       for (var i = carouselIndex; i < carouselIndex + visibleCount; i++) {
-        if (carouselImages[i]) {
-          var imgData = carouselImages[i];
-          var img = document.createElement("img");
-          img.src = imgData.src;
-          img.alt = imgData.alt;
-          img.style.maxWidth = "900px";
-          img.style.maxHeight = "90vh";
-          img.style.margin = "0 16px";
-          img.style.borderRadius = "16px";
-          img.style.boxShadow = "0 4px 32px rgba(0,0,0,0.45)";
-          area.appendChild(img);
+        if (!carouselImages[i]) continue;
+        var imgData = carouselImages[i];
+
+        var frame = document.createElement("div");
+        frame.style.display = "flex";
+        frame.style.flexDirection = "column";
+        frame.style.alignItems = "center";
+        frame.style.margin = "0 16px";
+
+        //look a this to move to the other main.js//
+        var img = document.createElement("img");
+        img.src = imgData.src;
+        console.log(imgData);
+        img.alt = imgData.alt || "";
+        img.style.maxWidth = "900px";
+        img.style.maxHeight = "90vh";
+        img.style.borderRadius = "16px";
+        img.style.boxShadow = "0 4px 32px rgba(0,0,0,0.45)";
+        img.style.objectFit = "contain";
+
+        var silo = document.createElement("img");
+        silo.src = imgData.siloSrc;
+        console.log(imgData);
+        silo.alt = imgData.alt || "";
+        silo.style.maxWidth = "900px";
+        silo.style.maxHeight = "90vh";
+        silo.style.borderRadius = "16px";
+        silo.style.boxShadow = "0 4px 32px rgba(0,0,0,0.45)";
+        silo.style.objectFit = "contain";
+
+        frame.appendChild(img);
+        frame.appendChild(silo);
+
+        //////////////////////////////////////////
+
+        // if we matched a JSON item, show a small caption/metadata
+        if (imgData.item) {
+          var caption = document.createElement("div");
+          caption.style.maxWidth = "360px";
+          caption.style.marginTop = "12px";
+          caption.style.color = "#fff";
+          caption.style.textAlign = "center";
+          caption.style.fontSize = "14px";
+          caption.style.lineHeight = "1.2";
+
+          var title = imgData.item.title || imgData.item.name || "";
+          var people = imgData.item.people || imgData.item.indexed_topics || "";
+          caption.innerHTML =
+            (title ? "<strong>" + title + "</strong><br/>" : "") +
+            (people ? String(people) : "");
+          frame.appendChild(caption);
         }
+
+        container.appendChild(frame);
       }
+
+      area.appendChild(container);
+
+      // basic area styling (keeps previous layout intentions)
       area.style.display = "flex";
       area.style.alignItems = "center";
       area.style.justifyContent = "center";
@@ -360,6 +585,10 @@ d3.json("data/dataset_portrait_only.json")
         setTimeout(function () {
           landing.style.display = "none";
           document.body.classList.remove("no-scroll");
+          // ensure we land at the gallery
+          var galleryEl = document.getElementById("gallery");
+          if (galleryEl)
+            galleryEl.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 650); // should be slightly longer than CSS transition
       });
     }
