@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silhouette Art of Early America</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+
+    <section id="landing" class="landing">
+        <div class="landing-inner">
+            <!-- replaced landing-panels container with responsive grid -->
+            <div class="landing-panels grid grid-cols-1 md:grid-cols-2 items-center gap-">
+                <div class="landing-left">
+                    <div id="landing-logo">
+                        <img src="assets/landing-logo2.svg" alt="Headline" id="landing-logo-img">
+                        <!-- new: subheading under the logo -->
+                        <div class="landing-subheading">Traced in Shadow: The Silhouette Sitters & <br>Diverse Faces
+                            of
+                            Early America
+                        </div>
+                        <!-- changed: wrap buttons so we can move them independently -->
+                        <div class="landing-cta">
+                            <!-- changed id: match main.js listener (enter-btn) -->
+                            <a href="gallery.html"><button id="enter-btn" class="enter-btn"
+                                    type="button">Explore</button></a>
+                            <button id="readmore-btn" class="read-btn" type="button">Read More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="landing-right flex justify-center">
+                    <img src="assets/silo-animation2.gif" alt="" class="landing-hero">
+                </div>
+            </div>
+        </div>
+
+        <div id="project-overlay" class="project-overlay hidden" role="dialog" aria-modal="true"
+            aria-labelledby="project-overlay-title">
+            <div class="project-panel p-6 max-w-5xl mx-auto">
+                <div class="project-grid grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="panel-image flex items-center justify-center">
+                        <img src="assets/william-bache.jpg" alt="Portrait" />
+                    </div>
+                    <div class="panel-content">
+
+                        <h2 id="project-overlay-title">About</h2>
+                        <p>Silhouette Art of Early America is a data visualization project inspired by the
+                            work of William Bache, an early 19th-century artist who used a device called a
+                            physiognotrace to
+                            create
+                            nearly 2,000 silhouette portraits. Traveling from Philadelphia to New Orleans and into the
+                            Caribbean,
+                            Bache captured a wide cross-section of American society. From artisans and merchants to
+                            women and
+                            people of African descent. His ledger was recently digitized and researched by the
+                            Smithsonian’s
+                            National
+                            Portrait Gallery, and offers a rare glimpse into the lives of everyday people in early
+                            American
+                            history.</p>
+
+                        <p>This project transforms those silhouettes into interactive data, mapping where Bache
+                            traveled, who
+                            sat for him, and what their profiles can tell us about identity, mobility, and
+                            representation in
+                            early America. By linking visual art with historical data, Silhouette Art of Early America
+                            invites
+                            viewers to explore these portraits not just as images, but as entries into a larger
+                            narrative about the past.</p>
+
+                        <p>
+                            For full collection records, <a href="https://americanart.si.edu" target="_blank"
+                                rel="noopener">visit the Smithsonian
+                                American Art Museum</a>.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="project-actions panel-footer flex justify-end p-4">
+                    <button id="project-overlay-close" class="enter-btn">Close</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="landing-credit">
+            <p>Data and images courtesy of the Smithsonian Institution.<br>
+                Visualization and design by Neven Armanios &amp; Thiago Herson.</p>
+        </div>
+    </section>
+
+
+    <script type="module" src="main.js"></script>
+
+</body>
+
+</html>
