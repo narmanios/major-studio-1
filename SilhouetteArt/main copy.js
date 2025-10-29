@@ -49,67 +49,6 @@ d3.json("data/dataset_silhouettes_only_with_filename.json").then((data) => {
     children: [" child", " children"],
   };
 
-  // helper to escape user-provided keywords for regex
-  function escapeRegExp(str) {
-    return String(str).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  }
-
-  // replace filterByTopic with explicit whole-word regex matching
-  function filterByTopic(items, topic) {
-    // if (!topic) return items;
-    var keys = topicKeywords[topic] || [topic];
-    // build word-boundary, case-insensitive regexes for each keyword
-    var regs = keys.map(function (k) {
-      return new RegExp("\\b" + escapeRegExp(k) + "\\b", "i");
-    });
-
-    data.map((item) => {
-      console.log(item);
-      var txt =
-        (it.indexed_topics || "") +
-        " " +
-        (it.topic || "") +
-        " " +
-        (it.name || "") +
-        " " +
-        (it.title || "") +
-        " " +
-        (it.indexed_names || "");
-      if (
-        txt.includes(topicKeywords.men[0]) ||
-        txt.includes(topicKeywords.men[1])
-      ) {
-      } else if (
-        txt.includes(topicKeywords.women[0]) ||
-        txt.includes(topicKeywords.women[1])
-      ) {
-      } else if (
-        txt.includes(topicKeywords.children[0]) ||
-        txt.includes(topicKeywords.children[1])
-      ) {
-      }
-      return item;
-    });
-
-    return items.filter(function (it) {
-      var txt =
-        (it.indexed_topics || "") +
-        " " +
-        (it.topic || "") +
-        " " +
-        (it.name || "") +
-        " " +
-        (it.title || "") +
-        " " +
-        (it.indexed_names || "");
-      for (var r = 0; r < regs.length; r++) {
-        if (regs[r].test(txt)) return true;
-      }
-      return false;
-    });
-  }
-  // filterByTopic();
-
   // helper: count occurrences using word-boundary regex (uses escapeRegExp above)
   function countTopics(items) {
     var out = { men: 0, women: 0, children: 0 };
@@ -197,14 +136,14 @@ d3.json("data/dataset_silhouettes_only_with_filename.json").then((data) => {
   });
 
   // move select button to the left of the first legend button (if present)
-  (function moveviewCollectionBtnBeforeLegend() {
-    var viewCollectionBtnEl = document.getElementById("view-btn");
-    if (!viewCollectionBtnEl) return;
-    // find first existing legend button and insert viewCollectionBtn before it
+  (function moveSelectBtnBeforeLegend() {
+    var selectBtnEl = document.getElementById("select-btn");
+    if (!selectBtnEl) return;
+    // find first existing legend button and insert selectBtn before it
     for (var i = 0; i < ids.length; i++) {
       var legend = document.getElementById(ids[i]);
       if (legend && legend.parentNode) {
-        legend.parentNode.insertBefore(viewCollectionBtnEl, legend);
+        legend.parentNode.insertBefore(selectBtnEl, legend);
         return;
       }
     }
@@ -212,34 +151,20 @@ d3.json("data/dataset_silhouettes_only_with_filename.json").then((data) => {
 
   // precompute the silhouettes from the loaded dataset so `allSilhouette` exists
   // simple: collect silhouette items
-  var silhouettes = [];
-  for (var i = 0; i < data.length; i++) {
-    var item = data[i];
-    var text =
-      (item.objectType || "") +
-      " " +
-      (item.indexed_object_types || "") +
-      " " +
-      (item.physicalDescription || "");
-    if (text.toLowerCase().indexOf("silhouette") !== -1) {
-      silhouettes.push(item);
-    }
-  }
-  console.log("silhouettes:", silhouettes.length);
-
-  // simple helper to get an image URL
-  // function getImageUrl(item) {
-  //   var keys = ["primaryImage", "image_url", "thumbnail", "image"];
-  //   for (var k = 0; k < keys.length; k++) {
-  //     if (item[keys[k]]) return item[keys[k]];
+  // var silhouettes = [];
+  // for (var i = 0; i < data.length; i++) {
+  //   var item = data[i];
+  //   var text =
+  //     (item.objectType || "") +
+  //     " " +
+  //     (item.indexed_object_types || "") +
+  //     " " +
+  //     (item.physicalDescription || "");
+  //   if (text.toLowerCase().indexOf("silhouette") !== -1) {
+  //     silhouettes.push(item);
   //   }
-  //   if (item.images && item.images.length) {
-  //     var first = item.images[0];
-  //     if (typeof first === "string") return first;
-  //     if (first && first.url) return first.url;
-  //   }
-  //   return "images/placeholder.jpg";
   // }
+  // console.log("silhouettes:", silhouettes.length);
 
   function findDataFromFilename(filename) {
     if (!filename) return null;
@@ -307,20 +232,24 @@ d3.json("data/dataset_silhouettes_only_with_filename.json").then((data) => {
     gallery.appendChild(frag);
   }
 
+  // initial display: show all silhouettes
   renderGallery(silhouettes);
+  // build chart and set initial UI
+  var counts = countTopics(silhouettes);
+  // buildBarChart(counts);
+  // updateChartUI();
 
-  // When at least one thumbnail is selected, show the "View Collection" button (viewCollectionBtn).
-  var viewCollectionBtn = document.getElementById("view-btn");
+  // When at least one thumbnail is selected, show the "View Collection" button (selectBtn).
+  var selectBtn = document.getElementById("select-btn");
   var largeGallery = document.getElementById("large-gallery");
   var carouselIndex = 0;
   var carouselImages = [];
 
   // hide view button initially (if present)
-  if (viewCollectionBtn) {
-    viewCollectionBtn.style.display = "none";
-    viewCollectionBtn.textContent = "View Collection";
-
-    viewCollectionBtn.addEventListener("click", function () {
+  if (selectBtn) {
+    selectBtn.style.display = "none";
+    selectBtn.textContent = "View Collection";
+    selectBtn.addEventListener("click", function () {
       var selectedThumbs = document.querySelectorAll(
         ".gallery-item.selected img, .col.selected img"
       );
@@ -379,7 +308,7 @@ d3.json("data/dataset_silhouettes_only_with_filename.json").then((data) => {
         .forEach(function (item) {
           item.classList.remove("selected");
         });
-      if (viewCollectionBtn) viewCollectionBtn.style.display = "none";
+      if (selectBtn) selectBtn.style.display = "none";
     });
   }
 
@@ -394,8 +323,8 @@ d3.json("data/dataset_silhouettes_only_with_filename.json").then((data) => {
       var selectedCount = document.querySelectorAll(
         ".gallery-item.selected, .col.selected"
       ).length;
-      if (viewCollectionBtn) {
-        viewCollectionBtn.style.display = selectedCount > 0 ? "" : "none";
+      if (selectBtn) {
+        selectBtn.style.display = selectedCount > 0 ? "" : "none";
       }
     });
   }
@@ -433,7 +362,7 @@ d3.json("data/dataset_silhouettes_only_with_filename.json").then((data) => {
 
       img.style.maxWidth = "900px";
       img.style.maxHeight = "90vh";
-      img.style.borderRadius = "6px";
+      img.style.borderRadius = "16px";
       img.style.boxShadow = "0 4px 32px rgba(0,0,0,0.45)";
       img.style.objectFit = "contain";
 

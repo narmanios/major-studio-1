@@ -3,16 +3,6 @@
   box-sizing: border-box;
 }
 
-/* page base */
-/* body {
-  margin: 0;
-  padding: 24px;
-  background-color: #000000;
-  color: #e6e6e6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
-
 body {
   margin: 0;
   padding: 24px;
@@ -34,19 +24,15 @@ body {
   padding: 12px 24px;
 }
 
-#portraits {
-  margin-top: 280px; /* adjust based on header height to avoid overlap */
-}
-/* If you want page content not hidden under the fixed header, add a top offset to the main content */
+/* offset so content does not go behind sticky header */
 main,
 .content,
 #gallery {
-  /* adjust value to match header height (padding + line-height) */
   margin-top: 56px;
 }
 
 /* small UI controls */
-.select-btn {
+.view-btn {
   margin: 16px 0;
   padding: 10px 18px;
   background: #111;
@@ -54,7 +40,7 @@ main,
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.65rem;
 }
 
 /* selected state for gallery/cols */
@@ -77,25 +63,145 @@ main,
   overflow: hidden;
 }
 
-/* carousel wrapper inside large gallery */
+/* Carousel / large gallery styles */
 .carousel-outer {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 12px;
   width: 100%;
-  height: 100%;
-  position: relative;
+  box-sizing: border-box;
 }
 
-/* image row area */
 .carousel-image-area {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100vw;
   overflow: hidden;
-  width: 100%;
-  max-height: 80vh;
+  box-sizing: border-box;
 }
+
+.carousel-image-collection {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.carousel-image-container {
+  position: relative;
+  display: inline-block;
+  max-width: 900px;
+  max-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 16px;
+  z-index: 0;
+}
+
+/* base image (background) */
+.carousel-image-container img.carousel-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 900px;
+  max-height: 90vh;
+  /* border-radius: 16px; */
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.45);
+  object-fit: contain;
+  z-index: 1; /* behind the silo image */
+  position: relative;
+  transition: opacity 0.085s ease; /* animate only when opacity changes */
+}
+/* change opacity only on hover (and keyboard focus) */
+.carousel-image-container:hover img.carousel-img,
+.carousel-image-container:focus-within img.carousel-img,
+.carousel-image-container a:focus img.carousel-img {
+  opacity: 0.5%; /* target opacity on hover */
+}
+/* overlay silhouette image sits on top */
+.carousel-image-container img.silo-img {
+  position: absolute;
+  top: -10px;
+  left: 4px;
+  inset: -4px;
+  width: 100%;
+  height: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.45);
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* // silo.style.position = "absolute";
+// silo.style.top = "0px";
+// // silo.style.left = "0px";
+// silo.style.width = "100%";
+// silo.style.maxWidth = "900px";
+// silo.style.maxHeight = "90vh";
+// silo.style.borderRadius = "16px";
+// silo.style.boxShadow = "0 4px 32px rgba(0,0,0,0.45)";
+// silo.style.objectFit = "contain"; */
+
+/* optional caption below each frame when present */
+.carousel-caption {
+  max-width: 360px;
+  margin-top: 12px;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* controls */
+.close-btn {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 100020;
+  padding: 8px 12px;
+  background: #fff;
+  color: #111;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.carousel-prev,
+.carousel-next {
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+  color: #fff;
+  padding: 10px 12px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* accessibility / focus */
+.carousel-prev:focus,
+.carousel-next:focus,
+.close-btn:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.22);
+  outline-offset: 2px;
+}
+
+/* small responsive tweaks */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-image-collection,
+  .carousel-image-container img {
+    transition: none;
+  }
+}
+
+/* ...existing code... */
 
 /* arrows */
 .carousel-prev,
@@ -117,7 +223,7 @@ main,
 }
 
 /* close button for large gallery */
-.large-gallery .close-btn {
+/* .large-gallery .close-btn {
   position: absolute;
   top: 20px;
   right: 28px;
@@ -128,7 +234,7 @@ main,
   padding: 8px 12px;
   cursor: pointer;
   z-index: 10001;
-}
+} */
 
 /* helper utilities */
 .hidden {
@@ -495,13 +601,13 @@ main,
   color: #ffffff;
 } /* set the icon color here */
 
-.legend-icon.icon-charts {
+.legend-icon.icon-identified {
   display: inline-block;
   width: 70px;
   height: 70px;
   background-color: currentColor; /* the icon’s color */
-  -webkit-mask: url("assets/icon-charts.svg") no-repeat center / contain;
-  mask: url("assets/icon-charts.svg") no-repeat center / contain;
+  -webkit-mask: url("assets/icon-identified.svg") no-repeat center / contain;
+  mask: url("assets/icon-identified.svg") no-repeat center / contain;
 }
 
 .legend-icon.icon-silhouettes {
@@ -541,10 +647,48 @@ main,
 
 /* legend button default (ensure white icons when not active) */
 .legend-btn,
+#identified,
 #men,
 #women,
 #children {
   color: #ffffff;
+}
+
+.filter-identified .men,
+.filter-identified .women,
+.filter-identified .children,
+.filter-identified .gallery-item {
+  display: block;
+}
+.filter-identified .identified.gallery-item {
+  display: none;
+}
+.filter-children .identified,
+.filter-children .men,
+.filter-children .women,
+.filter-children .gallery-item {
+  display: none;
+}
+.filter-children .children.gallery-item {
+  display: block;
+}
+.filter-men .identified,
+.filter-men .men,
+.filter-men .women,
+.filter-men .gallery-item {
+  display: none;
+}
+.filter-men .men.gallery-item {
+  display: block;
+}
+.filter-women .identified,
+.filter-women .men,
+.filter-women .women,
+.filter-women .gallery-item {
+  display: none;
+}
+.filter-women .women.gallery-item {
+  display: block;
 }
 
 /* Active-state colors (set on the button; .legend-icon uses currentColor for its mask) */
@@ -556,6 +700,22 @@ main,
 }
 #children.active {
   color: #f666fdff; /* new active color for children (yellow) */
+}
+
+.carousel-image-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin: 0 16px; */
+}
+
+.carousel-image-collection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* Optional: smaller screens — reduce min-height so footer doesn't appear too low */
