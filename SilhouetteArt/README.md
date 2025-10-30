@@ -2,42 +2,29 @@
 
 ## Quantitative Visualization
 
-## Artwork from the American Revolutionary War: 1770-1810
+## Silhouette Art of Early America
 
-### Sitters with Known Portraits: Watercolors, Oils, Pencil, Prints
+### Traced in Shadow: The Silhouette Sitters Diverse Faces of Early America
 
-Description: This visualization presents a vertical timeline from 1770 to 1810, showing when artworks were created in four mediums: watercolor, oil, pencil, and prints. Viewers can filter by medium to see how each type of painting appears across the decades, offering a clear view of artistic practices during the Revolutionary era and its aftermath.
+Silhouette Art of Early America is a data visualization project inspired by the work of William Bache, an early 19th century artist who used a device called a physiognotrace to create nearly 2,000 silhouette portraits.
 
-![Timeline with Tooltip: Paintings Details](screenshots/screenshot1.png)
+This project transforms those silhouettes into interactive data. Who sat for him, both identified and unidentified, including some of the founding fathers' of the United States. Viewers can filter the collection by gender and identification status, inviting viewers to explore these portraits not just as images, but as entries into a larger narrative about the past.
+
+![Homescreen](screenshots/landing.png)
 <br />
 
-![Timeline with Artwork Preview: Paintings by Medium](screenshots/screenshot2.png)
+![Interior gallery page](screenshots/interior.png)
 
 ---
 
 #### Created by Neven Armanios for Major Studio 1, Fall 2025
 
-##### Images used in this project are from the collections of the Metropolitan Museum of Art, New York, and the Smithsonian American Art Museum, Washington, D.C.
+## Data
 
-## Qualitative Visualization
+#### Images used in this project are from the collections of the the Smithsonian American Art Museum, Washington, D.C.
 
-## Sketch 1: "Exploring Revolutionary Portraits: Medium, Period, Color, and Gender"
+https://huggingface.co/datasets/RevolutionCrossroads/si_us_revolutionary_era_collections/sql-console/_jKV43s
 
-Description: This captures that the visualization is about artworks from 1770–1810, broken down by different qualitative categories (medium, time period, color, gender), with an individual artwork spotlighted in the center.
+#### Thanks to by Thiago Herson, Parsons School of Design, for assistance with data collection, cleaning and silhouette creation.
 
-![Sketch:](sketches/sketch1.jpg)
-<br />
-
-## Sketch 2: ”Multiple Lenses on Revolutionary Portraits: Medium, Color, Period, Gender, and Sitter”
-
-Description: This sketch shows Revolutionary War portraits (1770–1810) organized through five qualitative lenses: medium, color, period, gender, and sitter–artist relationships. Each category highlights different qualities of the artworks, with a central portrait silhouette acting as a focal point. The aim is to reveal stylistic, emotional, and social dimensions beyond simple counts or dates.
-
-![Sketch:](sketches/sketch2.jpg)
-<br />
-
-## Sketch 3: “Portrait Qualities: Color, Medium, and Identity in Revolutionary Art”
-
-Description: This sketch organizes Revolutionary War portraits by a grid of sitters, a spectrum of dominant colors, artistic mediums (watercolor, oil, pencil, prints), and gender. A large silhouette on the right highlights individual works, balancing collective qualities with focused detail.
-
-![Sketch:](sketches/sketch3.jpg)
-<br />
+https://huggingface.co/datasets/visualizedata/revolutionary_silhouettes/tree/main/json
