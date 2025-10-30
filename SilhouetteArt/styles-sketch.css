@@ -1,0 +1,36 @@
+/* Sketch styles */
+
+/* body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+/* body {
+  display: flex;
+  flex-direction: row;
+} */
+*/ canvas {
+  display: block;
+}
+
+.img-component {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: flex-start;
+  width: 30%;
+  max-width: 256px;
+  cursor: pointer;
+}
+
+.original-image {
+  width: 100%;
+}
+
+.canvas-container {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Sketch styles */

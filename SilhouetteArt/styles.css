@@ -102,7 +102,7 @@ main,
 }
 
 /* base image (background) */
-.carousel-image-container img.carousel-img {
+.carousel-image-container .carousel-img {
   display: block;
   width: 100%;
   height: auto;
@@ -111,18 +111,21 @@ main,
   /* border-radius: 16px; */
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.45);
   object-fit: contain;
-  z-index: 1; /* behind the silo image */
+  /* z-index: 1; behind the silo image */
   position: relative;
   transition: opacity 0.085s ease; /* animate only when opacity changes */
 }
-/* change opacity only on hover (and keyboard focus) */
-.carousel-image-container:hover img.carousel-img,
-.carousel-image-container:focus-within img.carousel-img,
-.carousel-image-container a:focus img.carousel-img {
-  opacity: 0.5%; /* target opacity on hover */
+
+/* hide the base image when the container is hovered or focused */
+.carousel-image-container:hover > img.carousel-img,
+.carousel-image-container:focus-within > img.carousel-img {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
 }
+
 /* overlay silhouette image sits on top */
-.carousel-image-container img.silo-img {
+.carousel-image-container .silo-img {
   position: absolute;
   top: -10px;
   left: 4px;
@@ -134,7 +137,8 @@ main,
   border-radius: 16px;
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.45);
   object-fit: contain;
-  z-index: 2;
+  z-index: 4;
+  visibility: visible;
 }
 
 /* // silo.style.position = "absolute";
@@ -692,14 +696,18 @@ main,
 }
 
 /* Active-state colors (set on the button; .legend-icon uses currentColor for its mask) */
+
+#identified.active {
+  color: #f89843;
+}
 #men.active {
-  color: #4c9aff; /* new active color for men (blue) */
+  color: #4c9aff;
 }
 #women.active {
-  color: #d4fe72; /* new active color for women (pink) */
+  color: #d4fe72;
 }
 #children.active {
-  color: #f666fdff; /* new active color for children (yellow) */
+  color: #f666fdff;
 }
 
 .carousel-image-container {

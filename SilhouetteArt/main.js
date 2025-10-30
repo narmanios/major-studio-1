@@ -429,6 +429,13 @@ d3.json("data/dataset_silhouettes_only_with_filename.json").then((data) => {
       img.src = imgData.src;
       console.log(imgData);
       img.alt = imgData.alt || "";
+      img.classList.add("carousel-img");
+
+      // create silo image separately:
+      var silo = document.createElement("img");
+      silo.src = imgData.siloSrc;
+      silo.classList.add("silo-img");
+
       img.style.width = "100%";
 
       img.style.maxWidth = "900px";
