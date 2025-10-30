@@ -1,5 +1,3 @@
-# major-studio-1
-
 ## Silhouette Art of Early America
 
 ### Traced in Shadow: The Silhouette Sitters & Diverse Faces of Early America
