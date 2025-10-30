@@ -614,13 +614,13 @@ main,
   mask: url("assets/icon-identified.svg") no-repeat center / contain;
 }
 
-.legend-icon.icon-silhouettes {
+.legend-icon.icon-politics {
   display: inline-block;
   width: 70px;
   height: 70px;
   background-color: currentColor; /* the icon’s color */
-  -webkit-mask: url("assets/icon-silhouettes.svg") no-repeat center / contain;
-  mask: url("assets/icon-silhouettes.svg") no-repeat center / contain;
+  -webkit-mask: url("assets/icon-politics.svg") no-repeat center / contain;
+  mask: url("assets/icon-politics.svg") no-repeat center / contain;
 }
 
 .legend-icon.icon-men {
@@ -652,12 +652,25 @@ main,
 /* legend button default (ensure white icons when not active) */
 .legend-btn,
 #identified,
+#politics,
 #men,
 #women,
 #children {
   color: #ffffff;
 }
-
+.filter-politics .identified,
+.filter-politics .politics,
+.filter-politics .men,
+.filter-politics .women,
+.filter-politics .children,
+.filter-politics .gallery-item {
+  display: none;
+}
+.filter-politics .politics.gallery-item {
+  display: block;
+}
+/* .filter-identified .identified, */
+.filter-identified .politics,
 .filter-identified .men,
 .filter-identified .women,
 .filter-identified .children,
@@ -668,26 +681,33 @@ main,
   display: none;
 }
 .filter-children .identified,
+.filter-children .politics,
 .filter-children .men,
 .filter-children .women,
+/* .filter-children .children, */
 .filter-children .gallery-item {
   display: none;
 }
 .filter-children .children.gallery-item {
   display: block;
 }
+
 .filter-men .identified,
-.filter-men .men,
+.filter-men .politics,
+/* .filter-men .men, */
 .filter-men .women,
+.filter-men .children,
 .filter-men .gallery-item {
   display: none;
 }
 .filter-men .men.gallery-item {
   display: block;
 }
+.filter-women .politics,
 .filter-women .identified,
 .filter-women .men,
-.filter-women .women,
+/* .filter-women .women, */
+.filter-women .children,
 .filter-women .gallery-item {
   display: none;
 }
@@ -696,6 +716,10 @@ main,
 }
 
 /* Active-state colors (set on the button; .legend-icon uses currentColor for its mask) */
+
+#politics.active {
+  color: #43f8ad;
+}
 
 #identified.active {
   color: #f89843;
