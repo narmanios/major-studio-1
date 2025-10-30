@@ -141,16 +141,6 @@ main,
   visibility: visible;
 }
 
-/* // silo.style.position = "absolute";
-// silo.style.top = "0px";
-// // silo.style.left = "0px";
-// silo.style.width = "100%";
-// silo.style.maxWidth = "900px";
-// silo.style.maxHeight = "90vh";
-// silo.style.borderRadius = "16px";
-// silo.style.boxShadow = "0 4px 32px rgba(0,0,0,0.45)";
-// silo.style.objectFit = "contain"; */
-
 /* optional caption below each frame when present */
 .carousel-caption {
   max-width: 360px;
@@ -225,20 +215,6 @@ main,
   align-items: center;
   justify-content: center;
 }
-
-/* close button for large gallery */
-/* .large-gallery .close-btn {
-  position: absolute;
-  top: 20px;
-  right: 28px;
-  background: #fff;
-  color: #222;
-  border: none;
-  font-size: 1rem;
-  padding: 8px 12px;
-  cursor: pointer;
-  z-index: 10001;
-} */
 
 /* helper utilities */
 .hidden {

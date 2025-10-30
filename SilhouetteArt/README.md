@@ -25,6 +25,6 @@ This project transforms those silhouettes into interactive data. Who sat for him
 
 https://huggingface.co/datasets/RevolutionCrossroads/si_us_revolutionary_era_collections/sql-console/_jKV43s
 
-#### Thanks to by Thiago Herson, The News School: Parsons School of Design, for assistance with data collection and silhouette outline creation.
+#### Thanks to Thiago Herson, The News School: Parsons School of Design, for assistance with data collection and silhouette outline creation.
 
 https://huggingface.co/datasets/visualizedata/revolutionary_silhouettes/tree/main/json

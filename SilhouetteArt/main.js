@@ -63,107 +63,7 @@ d3.json("data/dataset_silhouettes_only_with_filename.json").then((data) => {
     var regs = keys.map(function (k) {
       return new RegExp("\\b" + escapeRegExp(k) + "\\b", "i");
     });
-
-    // data.map((item) => {
-    //   console.log(item);
-    //   var txt =
-    //     (it.indexed_topics || "") +
-    //     " " +
-    //     (it.topic || "") +
-    //     " " +
-    //     (it.name || "") +
-    //     " " +
-    //     (it.title || "") +
-    //     " " +
-    //     (it.indexed_names || "");
-    //   if (
-    //     txt.includes(topicKeywords.men[0]) ||
-    //     txt.includes(topicKeywords.men[1])
-    //   ) {
-    //   } else if (
-    //     txt.includes(topicKeywords.women[0]) ||
-    //     txt.includes(topicKeywords.women[1])
-    //   ) {
-    //   } else if (
-    //     txt.includes(topicKeywords.children[0]) ||
-    //     txt.includes(topicKeywords.children[1])
-    //   ) {
-    //   }
-    //   return item;
-    // });
-
-    // return items.filter(function (it) {
-    //   var txt =
-    //     (it.indexed_topics || "") +
-    //     " " +
-    //     (it.topic || "") +
-    //     " " +
-    //     (it.name || "") +
-    //     " " +
-    //     (it.title || "") +
-    //     " " +
-    //     (it.indexed_names || "");
-    //   for (var r = 0; r < regs.length; r++) {
-    //     if (regs[r].test(txt)) return true;
-    //   }
-    //   return false;
-    // });
   }
-  // filterByTopic();
-
-  // helper: count occurrences using word-boundary regex (uses escapeRegExp above)
-  // function countTopics(items) {
-  //   var out = { men: 0, women: 0, children: 0 };
-  //   var regs = {
-  //     men: new RegExp(
-  //       "\\b(" + ["man", "men"].map(escapeRegExp).join("|") + ")\\b",
-  //       "i"
-  //     ),
-  //     women: new RegExp(
-  //       "\\b(" + ["woman", "women"].map(escapeRegExp).join("|") + ")\\b",
-  //       "i"
-  //     ),
-  //     children: new RegExp(
-  //       "\\b(" + ["child", "children"].map(escapeRegExp).join("|") + ")\\b",
-  //       "i"
-  //     ),
-  //   };
-  //   items.forEach(function (it) {
-  //     var txt =
-  //       (it.indexed_topics || "") +
-  //       " " +
-  //       (it.topic || "") +
-  //       " " +
-  //       (it.name || "") +
-  //       " " +
-  //       (it.title || "");
-  //     for (var k in regs) {
-  //       if (regs[k].test(txt)) out[k]++;
-  //     }
-  //   });
-  //   return out;
-  // }
-
-  // classify a single record into men/women/children/other (uses topicKeywords above)
-  // function classifyRecord(item) {
-  //   if (!item) return "other";
-  //   var txt =
-  //     (item.indexed_topics || "") +
-  //     " " +
-  //     (item.topic || "") +
-  //     " " +
-  //     (item.name || "") +
-  //     " " +
-  //     (item.title || "") +
-  //     " " +
-  //     (item.indexed_names || "");
-  //   txt = txt.toLowerCase();
-  //   // whole-word checks
-  //   if (/\b(child|children)\b/i.test(txt)) return "children";
-  //   if (/\b(woman|women)\b/i.test(txt)) return "women";
-  //   if (/\b(man|men)\b/i.test(txt)) return "men";
-  //   return "other";
-  // }
 
   // wire up legend buttons
   var ids = ["politics", "identified", "men", "women", "children"];
@@ -227,20 +127,6 @@ d3.json("data/dataset_silhouettes_only_with_filename.json").then((data) => {
     }
   }
   console.log("silhouettes:", silhouettes.length);
-
-  // simple helper to get an image URL
-  // function getImageUrl(item) {
-  //   var keys = ["primaryImage", "image_url", "thumbnail", "image"];
-  //   for (var k = 0; k < keys.length; k++) {
-  //     if (item[keys[k]]) return item[keys[k]];
-  //   }
-  //   if (item.images && item.images.length) {
-  //     var first = item.images[0];
-  //     if (typeof first === "string") return first;
-  //     if (first && first.url) return first.url;
-  //   }
-  //   return "images/placeholder.jpg";
-  // }
 
   function findDataFromFilename(filename) {
     if (!filename) return null;
