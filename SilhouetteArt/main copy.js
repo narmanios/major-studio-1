@@ -1,425 +1,580 @@
-// Landing page
-(function setupLandingOverlay() {
-  function ready(fn) {
-    if (document.readyState === "loading")
-      document.addEventListener("DOMContentLoaded", fn);
-    else fn();
-  }
+/**
+ * Landing + Gallery Module (Vanilla, Accessible, Performant)
+ * - Keyboard accessible overlay & carousel (Esc/Arrows/Focus trap)
+ * - CSS-only filtering via <html class="filter-*> (persisted to URL/localStorage)
+ */
 
-  ready(() => {
-    var overlay = document.getElementById("project-overlay");
-    var readMoreBtn = document.getElementById("readmore-btn");
+(() => {
+  // =========================
+  // Utilities
+  // =========================
+  const whenDocumentReady = (fn) =>
+    document.readyState === "loading"
+      ? document.addEventListener("DOMContentLoaded", fn, { once: true })
+      : fn();
 
-    // Wire Read More button -> open overlay (only if both exist)
-    if (readMoreBtn && overlay) {
-      var panel = overlay.querySelector(".project-panel");
-      readMoreBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-        overlay.classList.remove("hidden");
-        if (panel) {
-          panel.setAttribute("tabindex", "-1");
-          panel.focus();
-        }
-      });
+  const select = (sel, scope = document) => scope.querySelector(sel);
+  const selectAll = (sel, scope = document) =>
+    Array.from(scope.querySelectorAll(sel));
 
-      // close button inside overlay (if present)
-      var overlayClose = overlay.querySelector("#project-overlay-close");
-      if (overlayClose) {
-        overlayClose.addEventListener("click", function (e) {
-          e.preventDefault();
-          overlay.classList.add("hidden");
-        });
+  const escapeRegExp = (str) =>
+    String(str).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const clampIndex = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+
+  const localStore = {
+    get(key, fallback = null) {
+      try {
+        const raw = localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : fallback;
+      } catch {
+        return fallback;
       }
-
-      // clicking the overlay backdrop closes it
-      overlay.addEventListener("click", function (e) {
-        if (e.target === overlay) overlay.classList.add("hidden");
-      });
-    }
-  });
-})();
-
-d3.json("data/dataset_silhouettes_only_with_filename.json").then((data) => {
-  ///////////// Filtering ///////////////////////
-  var activeTopic = null;
-  var topicKeywords = {
-    identified: [" Unidentified", " unidentified"],
-    men: [" man", " men"],
-    women: [" woman", " women"],
-    children: [" child", " children"],
+    },
+    set(key, value) {
+      try {
+        localStorage.setItem(key, JSON.stringify(value));
+      } catch {}
+    },
   };
 
-  // helper: count occurrences using word-boundary regex (uses escapeRegExp above)
-  function countTopics(items) {
-    var out = { men: 0, women: 0, children: 0 };
-    var regs = {
-      men: new RegExp(
-        "\\b(" + ["man", "men"].map(escapeRegExp).join("|") + ")\\b",
-        "i"
-      ),
-      women: new RegExp(
-        "\\b(" + ["woman", "women"].map(escapeRegExp).join("|") + ")\\b",
-        "i"
-      ),
-      children: new RegExp(
-        "\\b(" + ["child", "children"].map(escapeRegExp).join("|") + ")\\b",
-        "i"
-      ),
-    };
-    items.forEach(function (it) {
-      var txt =
-        (it.indexed_topics || "") +
-        " " +
-        (it.topic || "") +
-        " " +
-        (it.name || "") +
-        " " +
-        (it.title || "");
-      for (var k in regs) {
-        if (regs[k].test(txt)) out[k]++;
+  const createAbortController = () => new AbortController();
+
+  const prefetchImg = (src) => {
+    if (!src) return;
+    const link = document.createElement("link");
+    link.rel = "prefetch";
+    link.as = "image";
+    link.href = src;
+    document.head.appendChild(link);
+  };
+
+  // =========================
+  // Config
+  // =========================
+  const DATA_JSON_URL = "data/dataset_silhouettes_only_with_filename.json";
+  const FILTER_BUTTON_IDS = [
+    "politics",
+    "identified",
+    "men",
+    "women",
+    "children",
+  ];
+  const STORAGE_KEYS = { activeTopic: "silhouette.activeTopic" };
+
+  const TOPIC_KEYWORDS = {
+    politics: ["president", "presidents", "politics", "political"],
+    identified: ["unidentified"],
+    men: ["man", "men"],
+    women: ["woman", "women"],
+    children: ["child", "children"],
+  };
+
+  const getTopicRegexes = (topic) =>
+    (TOPIC_KEYWORDS[topic] || (topic ? [topic] : [])).map(
+      (k) => new RegExp(`\\b${escapeRegExp(k)}\\b`, "i")
+    );
+
+  // =========================
+  // Overlay (focus trap + a11y)
+  // =========================
+  class Overlay {
+    /**
+     * @param {HTMLElement} overlayEl
+     * @param {HTMLElement} openButton
+     */
+    constructor(overlayEl, openButton) {
+      this.overlayEl = overlayEl;
+      this.openButton = openButton;
+      this.contentPanel = select(".project-panel", overlayEl);
+      this.closeButton = select("#project-overlay-close", overlayEl);
+      this.previousFocus = null;
+      this.abortController = createAbortController();
+
+      if (this.openButton) {
+        this.openButton.addEventListener("click", (e) => this.open(e), {
+          signal: this.abortController.signal,
+        });
       }
-    });
-    return out;
-  }
+      if (this.closeButton) {
+        this.closeButton.addEventListener("click", (e) => this.close(e), {
+          signal: this.abortController.signal,
+        });
+      }
 
-  // classify a single record into men/women/children/other (uses topicKeywords above)
-  // function classifyRecord(item) {
-  //   if (!item) return "other";
-  //   var txt =
-  //     (item.indexed_topics || "") +
-  //     " " +
-  //     (item.topic || "") +
-  //     " " +
-  //     (item.name || "") +
-  //     " " +
-  //     (item.title || "") +
-  //     " " +
-  //     (item.indexed_names || "");
-  //   txt = txt.toLowerCase();
-  //   // whole-word checks
-  //   if (/\b(child|children)\b/i.test(txt)) return "children";
-  //   if (/\b(woman|women)\b/i.test(txt)) return "women";
-  //   if (/\b(man|men)\b/i.test(txt)) return "men";
-  //   return "other";
-  // }
+      // backdrop
+      this.overlayEl.addEventListener(
+        "click",
+        (e) => {
+          if (e.target === this.overlayEl) this.close(e);
+        },
+        { signal: this.abortController.signal }
+      );
 
-  // wire up legend buttons
-  var ids = ["identified", "men", "women", "children"];
-  ids.forEach(function (id) {
-    var btn = document.getElementById(id);
-    if (!btn) return;
-    // remove previous handlers if any by cloning node
-    var newBtn = btn.cloneNode(true);
-    btn.parentNode.replaceChild(newBtn, btn);
-    newBtn.addEventListener("click", function () {
-      // toggle single active topic like before
-      if (activeTopic === id) {
-        activeTopic = null;
-        newBtn.classList.remove("active");
+      // keys
+      this.overlayEl.addEventListener(
+        "keydown",
+        (e) => {
+          if (e.key === "Escape") this.close(e);
+          if (
+            e.key === "Tab" &&
+            this.overlayEl.getAttribute("aria-hidden") !== "true"
+          ) {
+            this.trapFocus(e);
+          }
+        },
+        { signal: this.abortController.signal }
+      );
+    }
+
+    destroy() {
+      this.abortController.abort();
+    }
+
+    open(e) {
+      if (e) e.preventDefault();
+      this.previousFocus = document.activeElement;
+      this.overlayEl.classList.remove("hidden");
+      this.overlayEl.setAttribute("aria-hidden", "false");
+      if (this.contentPanel) {
+        this.contentPanel.setAttribute("tabindex", "-1");
+        this.contentPanel.focus();
       } else {
-        if (activeTopic) {
-          var prev = document.getElementById(activeTopic);
-          if (prev) prev.classList.remove("active");
-        }
-        activeTopic = id;
-        newBtn.classList.add("active");
-      }
-      // var filtered = filterByTopic(silhouettes || [], activeTopic);
-      document.documentElement.className = ""; // reset all filters
-      document.documentElement.classList.toggle(
-        "filter-" + id,
-        activeTopic === id
-      );
-      // renderGallery(filtered);
-      // updateChartUI();
-    });
-  });
-
-  // move select button to the left of the first legend button (if present)
-  (function moveSelectBtnBeforeLegend() {
-    var selectBtnEl = document.getElementById("select-btn");
-    if (!selectBtnEl) return;
-    // find first existing legend button and insert selectBtn before it
-    for (var i = 0; i < ids.length; i++) {
-      var legend = document.getElementById(ids[i]);
-      if (legend && legend.parentNode) {
-        legend.parentNode.insertBefore(selectBtnEl, legend);
-        return;
+        this.overlayEl.focus();
       }
     }
-  })();
 
-  // precompute the silhouettes from the loaded dataset so `allSilhouette` exists
-  // simple: collect silhouette items
-  // var silhouettes = [];
-  // for (var i = 0; i < data.length; i++) {
-  //   var item = data[i];
-  //   var text =
-  //     (item.objectType || "") +
-  //     " " +
-  //     (item.indexed_object_types || "") +
-  //     " " +
-  //     (item.physicalDescription || "");
-  //   if (text.toLowerCase().indexOf("silhouette") !== -1) {
-  //     silhouettes.push(item);
-  //   }
-  // }
-  // console.log("silhouettes:", silhouettes.length);
-
-  function findDataFromFilename(filename) {
-    if (!filename) return null;
-    const foundImages = data.filter((img) => img.filename === filename);
-    return foundImages.length > 0 ? foundImages[0] : null;
-  }
-
-  // render gallery helper (keeps initial render and filtered updates simple)
-  var gallery = document.getElementById("gallery");
-  function renderGallery(items) {
-    if (!gallery) return;
-    gallery.innerHTML = "";
-    var frag = document.createDocumentFragment();
-    for (var j = 0; j < items.length; j++) {
-      var it = items[j];
-      var url = it.thumbnail;
-      var cell = document.createElement("div");
-      cell.className = "gallery-item";
-
-      var txt =
-        (it.indexed_topics || "") +
-        " " +
-        (it.topic || "") +
-        " " +
-        (it.name || "") +
-        " " +
-        (it.title || "") +
-        " " +
-        (it.indexed_names || "");
-      txt = txt.toLowerCase();
-
+    close(e) {
+      if (e) e.preventDefault();
+      this.overlayEl.classList.add("hidden");
+      this.overlayEl.setAttribute("aria-hidden", "true");
       if (
-        txt.includes(topicKeywords.identified[0]) ||
-        txt.includes(topicKeywords.identified[1])
+        this.previousFocus &&
+        typeof this.previousFocus.focus === "function"
       ) {
-        cell.classList.add("identified");
+        this.previousFocus.focus();
       }
-
-      if (
-        txt.includes(topicKeywords.men[0]) ||
-        txt.includes(topicKeywords.men[1])
-      ) {
-        cell.classList.add("men");
-      } else if (
-        txt.includes(topicKeywords.women[0]) ||
-        txt.includes(topicKeywords.women[1])
-      ) {
-        cell.classList.add("women");
-      } else if (
-        txt.includes(topicKeywords.children[0]) ||
-        txt.includes(topicKeywords.children[1])
-      ) {
-        cell.classList.add("children");
-      }
-      var img = document.createElement("img");
-      img.src = url;
-      img.dataset.filename = it.filename ?? null;
-
-      img.alt = (it.title || it.name || "silhouette").replace(/"/g, "");
-      img.loading = "lazy";
-      img.className = "gallery-img";
-      cell.appendChild(img);
-      frag.appendChild(cell);
     }
-    gallery.appendChild(frag);
+
+    trapFocus(e) {
+      const focusables = selectAll(
+        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])',
+        this.overlayEl
+      ).filter((el) => el.offsetParent !== null);
+      if (focusables.length === 0) return;
+
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
   }
 
-  // initial display: show all silhouettes
-  renderGallery(silhouettes);
-  // build chart and set initial UI
-  var counts = countTopics(silhouettes);
-  // buildBarChart(counts);
-  // updateChartUI();
-
-  // When at least one thumbnail is selected, show the "View Collection" button (selectBtn).
-  var selectBtn = document.getElementById("select-btn");
-  var largeGallery = document.getElementById("large-gallery");
-  var carouselIndex = 0;
-  var carouselImages = [];
-
-  // hide view button initially (if present)
-  if (selectBtn) {
-    selectBtn.style.display = "none";
-    selectBtn.textContent = "View Collection";
-    selectBtn.addEventListener("click", function () {
-      var selectedThumbs = document.querySelectorAll(
-        ".gallery-item.selected img, .col.selected img"
+  // =========================
+  // Gallery + Carousel
+  // =========================
+  class Gallery {
+    /**
+     * @param {Array<Object>} records
+     */
+    constructor(records) {
+      this.records = records;
+      this.recordByFilename = new Map();
+      records.forEach(
+        (r) => r?.filename && this.recordByFilename.set(r.filename, r)
       );
-      if (!selectedThumbs || selectedThumbs.length === 0) return;
 
-      carouselImages = Array.from(selectedThumbs).map(function (img) {
-        var found = findDataFromFilename(img.dataset.filename);
-        return {
-          src: img.src,
-          alt: img.alt,
-          // reuse existing logic for siloSrc
-          siloSrc: img.dataset.filename
-            ? "https://github.com/PGDV-5200-2025F-A/silhouettes/raw/refs/heads/main/imgs/04_silhouetted/" +
-              img.dataset.filename +
-              ".png"
-            : null,
-          item: found || null,
-        };
+      this.gridEl = select("#gallery");
+      this.lightboxEl = select("#large-gallery");
+      this.viewCollectionButton = select("#view-btn");
+      this.activeTopic = this.loadActiveTopic();
+      this.abortController = createAbortController();
+
+      this.silhouetteRecords = records.filter((r) => {
+        const text = [
+          r.objectType,
+          r.indexed_object_types,
+          r.physicalDescription,
+          r.title,
+          r.name,
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
+        return text.includes("silhouette");
       });
 
-      if (carouselImages.length === 0) return;
+      this.renderGrid(this.silhouetteRecords);
+      this.setupFilterButtons();
+      this.positionViewButton();
+      this.enableSelection();
+      this.enableViewCollection();
+      this.applyTopicClassToRoot();
+    }
 
-      if (largeGallery) {
-        largeGallery.innerHTML = `
-    <button class="close-btn">Close</button>
-    <div class="carousel-outer">
-      <button class="carousel-prev">&#8592;</button>
-      <div class="carousel-image-area"></div>
-      <button class="carousel-next">&#8594;</button>
-    </div>
-  `;
-        largeGallery.classList.remove("hidden");
-        carouselIndex = 0;
-        showCarouselImages();
+    loadActiveTopic() {
+      const hashTopic = new URLSearchParams(location.hash.slice(1)).get(
+        "topic"
+      );
+      const savedTopic = localStore.get(STORAGE_KEYS.activeTopic, null);
+      return hashTopic || savedTopic || null;
+    }
 
-        largeGallery.querySelector(".close-btn").onclick = function () {
-          largeGallery.classList.add("hidden");
-        };
-        largeGallery.querySelector(".carousel-prev").onclick = function () {
-          carouselIndex = Math.max(0, carouselIndex - 1);
-          showCarouselImages();
-        };
-        largeGallery.querySelector(".carousel-next").onclick = function () {
-          var visibleCount = Math.min(3, carouselImages.length);
-          carouselIndex = Math.min(
-            carouselImages.length - visibleCount,
-            carouselIndex + 1
+    persistActiveTopic(topic) {
+      const params = new URLSearchParams(location.hash.slice(1));
+      if (topic) params.set("topic", topic);
+      else params.delete("topic");
+      const hash = params.toString();
+      history.replaceState(null, "", hash ? `#${hash}` : location.pathname);
+      localStore.set(STORAGE_KEYS.activeTopic, topic);
+    }
+
+    applyTopicClassToRoot() {
+      document.documentElement.classList.remove(
+        ...FILTER_BUTTON_IDS.map((t) => `filter-${t}`)
+      );
+      if (this.activeTopic) {
+        document.documentElement.classList.add(`filter-${this.activeTopic}`);
+      }
+      this.persistActiveTopic(this.activeTopic);
+      FILTER_BUTTON_IDS.forEach((id) =>
+        select(`#${id}`)?.classList.toggle("active", this.activeTopic === id)
+      );
+    }
+
+    setupFilterButtons() {
+      FILTER_BUTTON_IDS.forEach((id) => {
+        const button = select(`#${id}`);
+        if (!button) return;
+
+        button.addEventListener(
+          "click",
+          () => {
+            this.activeTopic = this.activeTopic === id ? null : id;
+            this.applyTopicClassToRoot();
+          },
+          { signal: this.abortController.signal }
+        );
+
+        // prefetch a few images for this topic on hover/focus
+        ["mouseenter", "focus"].forEach((evt) =>
+          button.addEventListener(
+            evt,
+            () => {
+              const topicRegexes = getTopicRegexes(id);
+              const matches = this.silhouetteRecords.filter((r) =>
+                this.recordMatchesTopic(r, topicRegexes)
+              );
+              matches.slice(0, 6).forEach((m) => prefetchImg(m.thumbnail));
+            },
+            { signal: this.abortController.signal }
+          )
+        );
+      });
+    }
+
+    recordMatchesTopic(record, regexes) {
+      if (!regexes || regexes.length === 0) return true;
+      const text = [
+        record.indexed_topics,
+        record.topic,
+        record.name,
+        record.title,
+        record.indexed_names,
+        record.indexed_object_types,
+        record.physicalDescription,
+        record.objectType,
+      ]
+        .filter(Boolean)
+        .join(" ");
+      return regexes.some((rx) => rx.test(text));
+    }
+
+    getTopicClassesForText(text) {
+      const lower = text.toLowerCase();
+      const classes = [];
+      if (TOPIC_KEYWORDS.politics.some((k) => lower.includes(k)))
+        classes.push("politics");
+      if (TOPIC_KEYWORDS.identified.some((k) => lower.includes(k)))
+        classes.push("identified");
+      if (TOPIC_KEYWORDS.men.some((k) => lower.includes(k)))
+        classes.push("men");
+      if (TOPIC_KEYWORDS.women.some((k) => lower.includes(k)))
+        classes.push("women");
+      if (TOPIC_KEYWORDS.children.some((k) => lower.includes(k)))
+        classes.push("children");
+      return classes;
+    }
+
+    buildCardHTML(record) {
+      const text = [
+        record.indexed_topics,
+        record.topic,
+        record.name,
+        record.title,
+        record.indexed_names,
+        record.indexed_object_types,
+        record.physicalDescription,
+        record.objectType,
+      ]
+        .filter(Boolean)
+        .join(" ");
+
+      const topicClasses = this.getTopicClassesForText(text).join(" ");
+      const altText = (record.title || record.name || "silhouette").replace(
+        /"/g,
+        ""
+      );
+      const filenameAttr = record.filename
+        ? ` data-filename="${record.filename}"`
+        : "";
+
+      return `
+        <div class="gallery-item ${topicClasses}">
+          <img class="gallery-img" src="${record.thumbnail}" alt="${altText}" loading="lazy"${filenameAttr}>
+        </div>
+      `;
+    }
+
+    renderGrid(items) {
+      if (!this.gridEl) return;
+      this.gridEl.innerHTML = items.map((r) => this.buildCardHTML(r)).join("");
+    }
+
+    positionViewButton() {
+      if (!this.viewCollectionButton) return;
+      for (const id of FILTER_BUTTON_IDS) {
+        const filterButton = select(`#${id}`);
+        if (filterButton?.parentNode) {
+          filterButton.parentNode.insertBefore(
+            this.viewCollectionButton,
+            filterButton
           );
-          showCarouselImages();
-        };
+          break;
+        }
       }
-
-      // clear selections and hide the view button
-      document
-        .querySelectorAll(".gallery-item.selected, .col.selected")
-        .forEach(function (item) {
-          item.classList.remove("selected");
-        });
-      if (selectBtn) selectBtn.style.display = "none";
-    });
-  }
-
-  // delegate clicks on thumbnails: always allow toggling selection
-  var galleryEl = document.getElementById("gallery");
-  if (galleryEl) {
-    galleryEl.addEventListener("click", function (e) {
-      var item = e.target.closest(".gallery-item, .col");
-      if (!item) return;
-      item.classList.toggle("selected");
-      // show/hide View Collection button based on selection count
-      var selectedCount = document.querySelectorAll(
-        ".gallery-item.selected, .col.selected"
-      ).length;
-      if (selectBtn) {
-        selectBtn.style.display = selectedCount > 0 ? "" : "none";
-      }
-    });
-  }
-
-  // replace showCarouselImages with a fixed version that appends images and optional captions
-  function showCarouselImages() {
-    var area = document.querySelector(".carousel-image-area");
-    if (!area || carouselImages.length === 0) return;
-    area.innerHTML = "";
-
-    // Number of images to show at once (e.g. 3)
-    var visibleCount = Math.min(3, carouselImages.length);
-    // Clamp carouselIndex so it doesn't go out of bounds
-    if (carouselIndex > carouselImages.length - visibleCount) {
-      carouselIndex = carouselImages.length - visibleCount;
-    }
-    if (carouselIndex < 0) carouselIndex = 0;
-
-    var container = document.createElement("div");
-    container.classList.add("carousel-image-collection");
-
-    for (var i = carouselIndex; i < carouselIndex + visibleCount; i++) {
-      if (!carouselImages[i]) continue;
-      var imgData = carouselImages[i];
-
-      var frame = document.createElement("div");
-      frame.classList.add("carousel-image-container");
-
-      //look a this to move to the other main.js//
-      var img = document.createElement("img");
-      img.src = imgData.src;
-      console.log(imgData);
-      img.alt = imgData.alt || "";
-      img.style.width = "100%";
-
-      img.style.maxWidth = "900px";
-      img.style.maxHeight = "90vh";
-      img.style.borderRadius = "16px";
-      img.style.boxShadow = "0 4px 32px rgba(0,0,0,0.45)";
-      img.style.objectFit = "contain";
-
-      var silo = document.createElement("img");
-      silo.src = imgData.siloSrc;
-      console.log(imgData);
-      silo.alt = imgData.alt || "";
-      silo.style.position = "absolute";
-      silo.style.top = "0px";
-      // silo.style.left = "0px";
-      silo.style.width = "100%";
-      silo.style.maxWidth = "900px";
-      silo.style.maxHeight = "90vh";
-      silo.style.borderRadius = "16px";
-      silo.style.boxShadow = "0 4px 32px rgba(0,0,0,0.45)";
-      silo.style.objectFit = "contain";
-
-      frame.appendChild(img);
-      frame.appendChild(silo);
-
-      //////////////////////////////////////////
-
-      // if we matched a JSON item, show a small caption/metadata
-      if (imgData.item) {
-        var caption = document.createElement("div");
-        caption.style.maxWidth = "360px";
-        caption.style.marginTop = "12px";
-        caption.style.color = "#fff";
-        caption.style.textAlign = "center";
-        caption.style.fontSize = "14px";
-        caption.style.lineHeight = "1.2";
-
-        var title = imgData.item.title || imgData.item.name || "";
-        var date = imgData.item.date || imgData.item.indexed_dates || "";
-        // var credit = imgData.item.creditLine || "";
-
-        var places = imgData.item.places || imgData.item.indexed_places || "";
-        caption.innerHTML =
-          (title ? "<strong>" + title + "</strong><br/>" : "") +
-          (date ? String(date) + "<br/>" : "") +
-          // (credit ? String(credit) + "<br/>" : "") +
-          (places ? String(places) : "");
-        +frame.appendChild(caption);
-      }
-
-      container.appendChild(frame);
+      this.viewCollectionButton.style.display = "none";
+      this.viewCollectionButton.textContent = "View Collection";
     }
 
-    area.appendChild(container);
+    enableSelection() {
+      if (!this.gridEl) return;
+      this.gridEl.addEventListener(
+        "click",
+        (e) => {
+          const cardEl = e.target.closest(".gallery-item, .col");
+          if (!cardEl) return;
+          cardEl.classList.toggle("selected");
+
+          const selectedCount = selectAll(
+            ".gallery-item.selected, .col.selected"
+          ).length;
+          if (this.viewCollectionButton)
+            this.viewCollectionButton.style.display =
+              selectedCount > 0 ? "" : "none";
+        },
+        { signal: this.abortController.signal }
+      );
+    }
+
+    enableViewCollection() {
+      if (!this.viewCollectionButton || !this.lightboxEl) return;
+
+      this.viewCollectionButton.addEventListener(
+        "click",
+        () => {
+          const selectedImgs = selectAll(
+            ".gallery-item.selected img, .col.selected img"
+          );
+          if (selectedImgs.length === 0) return;
+
+          const slides = selectedImgs.map((img) => {
+            const filename = img.dataset.filename || null;
+            const record = filename
+              ? this.recordByFilename.get(filename)
+              : null;
+            const silhouetteUrl = filename
+              ? `https://github.com/PGDV-5200-2025F-A/silhouettes/raw/refs/heads/main/imgs/04_silhouetted/${filename}.png`
+              : null;
+            return { src: img.src, alt: img.alt || "", record, silhouetteUrl };
+          });
+
+          Carousel.open(this.lightboxEl, slides);
+
+          // cleanup
+          selectAll(".gallery-item.selected, .col.selected").forEach((el) =>
+            el.classList.remove("selected")
+          );
+          this.viewCollectionButton.style.display = "none";
+        },
+        { signal: this.abortController.signal }
+      );
+    }
+
+    destroy() {
+      this.abortController.abort();
+    }
   }
 
-  function ready(fn) {
-    if (document.readyState === "loading")
-      document.addEventListener("DOMContentLoaded", fn);
-    else fn();
+  // =========================
+  // Carousel (modal/lightbox)
+  // =========================
+  class Carousel {
+    static open(lightboxEl, slides) {
+      if (!lightboxEl || !Array.isArray(slides) || slides.length === 0) return;
+      const instance = new Carousel(lightboxEl, slides);
+      instance.show(0);
+    }
+
+    /**
+     * @param {HTMLElement} lightboxEl
+     * @param {Array<{src:string, alt:string, silhouetteUrl?:string, record?:any}>} slides
+     */
+    constructor(lightboxEl, slides) {
+      this.lightboxEl = lightboxEl;
+      this.slides = slides;
+      this.currentIndex = 0;
+      this.abortController = createAbortController();
+
+      this.lightboxEl.innerHTML = `
+        <button class="close-btn" aria-label="Close carousel">Close</button>
+        <div class="carousel-outer" role="dialog" aria-modal="true">
+          <button class="carousel-prev" aria-label="Previous">&#8592;</button>
+          <div class="carousel-image-area"></div>
+          <button class="carousel-next" aria-label="Next">&#8594;</button>
+        </div>
+      `;
+      this.lightboxEl.classList.remove("hidden");
+      this.lightboxEl.setAttribute("aria-hidden", "false");
+
+      this.slideAreaEl = select(".carousel-image-area", this.lightboxEl);
+      this.prevButton = select(".carousel-prev", this.lightboxEl);
+      this.nextButton = select(".carousel-next", this.lightboxEl);
+      this.closeButton = select(".close-btn", this.lightboxEl);
+
+      this.prevButton.addEventListener("click", () => this.shift(-1), {
+        signal: this.abortController.signal,
+      });
+      this.nextButton.addEventListener("click", () => this.shift(+1), {
+        signal: this.abortController.signal,
+      });
+      this.closeButton.addEventListener("click", () => this.close(), {
+        signal: this.abortController.signal,
+      });
+
+      this.lightboxEl.addEventListener(
+        "keydown",
+        (e) => {
+          if (e.key === "ArrowLeft") this.shift(-1);
+          if (e.key === "ArrowRight") this.shift(+1);
+          if (e.key === "Escape") this.close();
+        },
+        { signal: this.abortController.signal }
+      );
+    }
+
+    shift(delta) {
+      const visibleCount = Math.min(3, this.slides.length);
+      const maxIndex = Math.max(0, this.slides.length - visibleCount);
+      this.currentIndex = clampIndex(this.currentIndex + delta, 0, maxIndex);
+      this.show(this.currentIndex);
+    }
+
+    show(startIndex) {
+      if (!this.slideAreaEl) return;
+
+      const visibleCount = Math.min(3, this.slides.length);
+      const first = clampIndex(
+        startIndex,
+        0,
+        Math.max(0, this.slides.length - visibleCount)
+      );
+
+      const frag = document.createDocumentFragment();
+      const container = document.createElement("div");
+      container.className = "carousel-image-collection";
+
+      for (let i = 0; i < visibleCount; i++) {
+        const slide = this.slides[first + i];
+        if (!slide) continue;
+
+        // prefetch the next image for snappier nav
+        const nextSlide = this.slides[first + i + 1];
+        if (nextSlide) prefetchImg(nextSlide.src);
+
+        const figureEl = document.createElement("figure");
+        figureEl.className = "carousel-image-container";
+
+        const imgEl = document.createElement("img");
+        imgEl.className = "carousel-img";
+        imgEl.src = slide.src;
+        imgEl.alt = slide.alt;
+        figureEl.appendChild(imgEl);
+
+        if (slide.silhouetteUrl) {
+          const overlayImgEl = document.createElement("img");
+          overlayImgEl.className = "silo-img";
+          overlayImgEl.src = slide.silhouetteUrl;
+          overlayImgEl.alt = slide.alt;
+          figureEl.appendChild(overlayImgEl);
+        }
+
+        if (slide.record) {
+          const captionEl = document.createElement("figcaption");
+          captionEl.className = "carousel-caption";
+          const title = slide.record.title || slide.record.name || "";
+          const date = slide.record.date || slide.record.indexed_dates || "";
+          const places =
+            slide.record.places || slide.record.indexed_places || "";
+          captionEl.innerHTML =
+            (title ? `<strong>${title}</strong><br/>` : "") +
+            (date ? `${String(date)}<br/>` : "") +
+            (places ? String(places) : "");
+          figureEl.appendChild(captionEl);
+        }
+
+        container.appendChild(figureEl);
+      }
+
+      this.slideAreaEl.innerHTML = "";
+      frag.appendChild(container);
+      this.slideAreaEl.appendChild(frag);
+    }
+
+    close() {
+      this.lightboxEl.classList.add("hidden");
+      this.lightboxEl.setAttribute("aria-hidden", "true");
+      this.abortController.abort();
+    }
   }
-});
-// .catch(function (err) {
-//   console.error("Failed to load JSON:", err);
-// });
+
+  // =========================
+  // Boot
+  // =========================
+  whenDocumentReady(async () => {
+    // Overlay
+    const overlayElement = select("#project-overlay");
+    const openOverlayButton = select("#readmore-btn");
+    if (overlayElement && openOverlayButton)
+      new Overlay(overlayElement, openOverlayButton);
+
+    // Data (swap to d3.json if you prefer)
+    let records = [];
+    try {
+      const res = await fetch(DATA_JSON_URL, { cache: "no-store" });
+      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+      records = await res.json();
+    } catch (err) {
+      console.error("Failed to load JSON:", err);
+      return;
+    }
+
+    // Gallery
+    new Gallery(records);
+  });
+})();

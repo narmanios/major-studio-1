@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Silhouette Morph — Auto Fit & Loop</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- GSAP + MorphSVG -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MorphSVGPlugin.min.js"></script> -->
+
+    <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MorphSVGPlugin.min.js"></script> -->
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            color-scheme: light;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background: none;
+            font-family: system-ui, sans-serif;
+        }
+
+        svg {
+            width: min(80vmin, 900px);
+            height: auto;
+            display: block;
+        }
+
+        .hint {
+            position: fixed;
+            bottom: 10px;
+            left: 12px;
+            opacity: .7;
+            font-size: 12px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- Big, safe viewBox; we’ll fit both shapes into this via a <g> transform -->
+    <svg id="stage" viewBox="0 0 1200 1200" preserveAspectRatio="xMidYMid meet" aria-label="Morphing silhouettes">
+        <g id="fitGroup">
+            <path id="shape1" fill="#000"></path>
+            <path id="shape2" fill="#000" style="visibility:hidden"></path>
+        </g>
+    </svg>
+
+    <div class="hint">morphing…</div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MorphSVGPlugin.min.js"></script>
+
+
+    <script>
+        gsap.registerPlugin(MorphSVGPlugin);
+
+        // TODO: update these to your actual paths (URL-encode spaces or just rename files).
+        const URL1 = "assets/svgs/00097.svg";           // was “silhouette_traced_hat 1.svg”
+        const URL2 = "assets/svgs/00098.svg";   // was “silhouette_traced_full_detail 1.svg”
+        // when click on array of images from these images morph them into each other
+
+        const stage = document.getElementById("stage");
+        const fitGroup = document.getElementById("fitGroup");
+        const p1 = document.getElementById("shape1");
+        const p2 = document.getElementById("shape2");
+
+        // Helper: fetch an external SVG and return its first <path> "d"
+        async function getPathD(url) {
+            const res = await fetch(url);
+            const txt = await res.text();
+            const doc = new DOMParser().parseFromString(txt, "image/svg+xml");
+            const path = doc.querySelector("path");
+            if (!path) throw new Error(`No <path> found in ${url}`);
+            return path.getAttribute("d");
+        }
+
+        // Fit both shapes into the stage viewBox by transforming the <g>
+        function fitToViewBox() {
+            // Make sure both paths are in the DOM with their "d" set
+            const bb1 = p1.getBBox();
+            const bb2 = p2.getBBox();
+
+            const minX = Math.min(bb1.x, bb2.x);
+            const minY = Math.min(bb1.y, bb2.y);
+            const maxX = Math.max(bb1.x + bb1.width, bb2.x + bb2.width);
+            const maxY = Math.max(bb1.y + bb1.height, bb2.y + bb2.height);
+
+            const bw = maxX - minX;
+            const bh = maxY - minY;
+
+            // Stage viewBox dimensions
+            const vb = stage.viewBox.baseVal;
+            const scale = Math.min(vb.width / bw, vb.height / bh) * 0.92; // slight padding
+
+            // Center after scaling
+            const tx = (vb.width - bw * scale) * 0.5 - minX * scale;
+            const ty = (vb.height - bh * scale) * 0.5 - minY * scale;
+
+            fitGroup.setAttribute("transform", `matrix(${scale} 0 0 ${scale} ${tx} ${ty})`);
+        }
+
+        (async () => {
+            // Load paths
+            const [d1, d2] = await Promise.all([getPathD(URL1), getPathD(URL2)]);
+            p1.setAttribute("d", d1);
+            p2.setAttribute("d", d2);
+
+            // Important: ensure both are measurable before fitting
+            requestAnimationFrame(() => {
+                fitToViewBox();
+
+                // Morph loop
+                const tl = gsap.timeline({ repeat: -1, yoyo: true, defaults: { ease: "power1.inOut", duration: 1.4 } });
+                tl.to(p1, { morphSVG: p2 })
+                    .to(p1, { morphSVG: p1 }, ">"); // morph back (yoyo also works, but this keeps control explicit)
+            });
+        })().catch(err => {
+            console.error(err);
+            document.querySelector(".hint").textContent = "Error: " + err.message;
+        });
+    </script>
+    <div class="hint">morphing…</div>
+</body>
+
+</html>

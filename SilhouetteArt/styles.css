@@ -46,7 +46,7 @@ main,
 /* selected state for gallery/cols */
 .gallery-item.selected,
 .col.selected {
-  outline: 3px solid red; /* Tailwind blue-600 equivalent */
+  outline: 3px solid rgb(255, 231, 46); /* Tailwind blue-600 equivalent */
   z-index: 2;
 }
 
@@ -54,13 +54,56 @@ main,
 .large-gallery {
   position: fixed;
   inset: 0;
-  background: rgba(30, 30, 30, 0.98);
-  z-index: 9999;
+  background: rgba(0, 0, 0, 0.55); /* dimmer */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 24px;
+  z-index: 9999;
+  backdrop-filter: blur(6px) saturate(90%); /* soft blur of background content */
+}
+
+.large-gallery .carousel-outer {
+  width: min(92vw, 1100px);
+  max-width: 1100px;
+  max-height: 90vh;
+  box-sizing: border-box;
+  background: rgba(255, 252, 223, 0.96); /* panel background */
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 40px 80px rgba(2, 6, 23, 0.65),
+    /* deep outer shadow */ 0 8px 24px rgba(0, 0, 0, 0.45); /* softer inner lift */
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  position: relative;
   overflow: hidden;
+}
+
+.large-gallery .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1010;
+}
+
+.large-gallery .carousel-image-area {
+  width: 100%;
+  max-height: calc(90vh - 90px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#large-gallery .morph-btn,
+#large-gallery #lightbox-morph-btn {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  background: #fff;
+  color: #111;
+  transform: translateX(-50%);
+  z-index: 1000; /* above carousel content */
+  display: inline-block;
 }
 
 /* Carousel / large gallery styles */
@@ -109,7 +152,7 @@ main,
   max-width: 900px;
   max-height: 90vh;
   /* border-radius: 16px; */
-  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.45);
+  /* box-shadow: 0 4px 32px rgba(0, 0, 0, 0.45); */
   object-fit: contain;
   /* z-index: 1; behind the silo image */
   position: relative;
@@ -135,7 +178,6 @@ main,
   max-width: 900px;
   max-height: 90vh;
   border-radius: 16px;
-  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.45);
   object-fit: contain;
   z-index: 4;
   visibility: visible;
@@ -149,6 +191,12 @@ main,
   text-align: center;
   font-size: 14px;
   line-height: 1.2;
+}
+.large-gallery .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10010;
 }
 
 /* controls */
@@ -694,20 +742,20 @@ main,
 /* Active-state colors (set on the button; .legend-icon uses currentColor for its mask) */
 
 #politics.active {
-  color: #43f8ad;
+  color: #fae86f;
 }
 
 #identified.active {
-  color: #f89843;
+  color: #fae86f;
 }
 #men.active {
-  color: #4c9aff;
+  color: #fae86f;
 }
 #women.active {
-  color: #d4fe72;
+  color: #fae86f;
 }
 #children.active {
-  color: #f666fdff;
+  color: #fae86f;
 }
 
 .carousel-image-container {
