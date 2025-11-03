@@ -36,7 +36,7 @@ main,
   margin: 16px 0;
   padding: 10px 18px;
   background: #111;
-  color: #fff;
+  color: #e5d3b5;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -170,9 +170,9 @@ main,
 /* overlay silhouette image sits on top */
 .carousel-image-container .silo-img {
   position: absolute;
-  top: -10px;
-  left: 4px;
-  inset: -4px;
+  top: -24px;
+  left: 0px;
+  /* inset: -4px; */
   width: 100%;
   height: 100%;
   max-width: 900px;
@@ -181,6 +181,15 @@ main,
   object-fit: contain;
   z-index: 4;
   visibility: visible;
+}
+
+.carousel-image-container .silo-img {
+  transition: filter 220ms ease, opacity 200ms ease;
+}
+.carousel-image-container:hover .silo-img,
+.carousel-image-container:focus-within .silo-img {
+  /* example: light yellow tint */
+  filter: invert(100%) sepia(10%) saturate(600%) hue-rotate(45deg) brightness(1);
 }
 
 /* optional caption below each frame when present */
@@ -516,6 +525,36 @@ main,
   font-weight: 700;
 }
 
+.wb-img {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(240px, 420px); /* left column grows, right column reserved for map */
+  gap: 20px;
+  align-items: start; /* align both columns to the top so map sits beside paragraphs */
+}
+
+/* .panel-image .overlay-map {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.32);
+  margin-bottom: 0;
+} */
+/* left column content (text + portrait) */
+/* .panel-content {
+  grid-column: 1;
+} */
+
 /* Project overlay / panel: consolidated and corrected */
 .project-overlay {
   position: fixed;
@@ -559,9 +598,11 @@ main,
 .panel-image {
   grid-column: 2;
   justify-self: end;
+  width: 350px;
 }
+
 .panel-image img {
-  width: 120px;
+  width: 200px;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
@@ -569,6 +610,11 @@ main,
 }
 .panel-content {
   grid-column: 1;
+  width: 45vw;
+}
+
+.panel-content p {
+  width: 35vw;
 }
 
 /* panel text */
@@ -742,20 +788,20 @@ main,
 /* Active-state colors (set on the button; .legend-icon uses currentColor for its mask) */
 
 #politics.active {
-  color: #fae86f;
+  color: #e5d3b5;
 }
 
 #identified.active {
-  color: #fae86f;
+  color: #e5d3b5;
 }
 #men.active {
-  color: #fae86f;
+  color: #e5d3b5;
 }
 #women.active {
-  color: #fae86f;
+  color: #e5d3b5;
 }
 #children.active {
-  color: #fae86f;
+  color: #e5d3b5;
 }
 
 .carousel-image-container {

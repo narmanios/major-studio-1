@@ -45,12 +45,14 @@
             </div>
         </div>
 
-        <div id="project-overlay" class="project-overlay hidden" role="dialog" aria-modal="true"
+        <!-- <div id="project-overlay" class="project-overlay hidden" role="dialog" aria-modal="true"
             aria-labelledby="project-overlay-title">
             <div class="project-panel p-6 max-w-5xl mx-auto">
                 <div class="project-grid grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="panel-image flex items-center justify-center">
                         <img src="assets/william-bache.jpg" alt="Portrait" />
+                        <img src="assets/map.jpg" alt="Portrait" />
+
                     </div>
                     <div class="panel-content">
 
@@ -91,7 +93,58 @@
                     <button id="project-overlay-close" class="enter-btn">Close</button>
                 </div>
             </div>
+        </div> -->
+
+
+        <!-- ...existing code... -->
+        <div id="project-overlay" class="project-overlay hidden" role="dialog" aria-modal="true"
+            aria-labelledby="project-overlay-title">
+            <div class="project-panel p-6 max-w-5xl mx-auto">
+                <div class="project-grid">
+                    <!-- LEFT: portrait above paragraph text -->
+                    <div class="panel-content">
+                        <img src="assets/william-bache.jpg" alt="William Bache portrait" class="wb-img" />
+                        <h2 id="project-overlay-title">About William Bache</h2>
+                        <p>
+                            Silhouette Art of Early America is a data visualization project inspired by the
+                            work of William Bache, an early 19th century artist who used a device called a
+                            physiognotrace to
+                            create
+                            nearly 2,000 silhouette portraits. Traveling throughout the eastern seaboard of the United
+                            States and to the
+                            Caribbean and Cuba,
+                            Bache captured a wide cross section of American society from politicians, to artisans and
+                            merchants to men and women and
+                            people of African descent. His silhouettes were digitized by the
+                            Smithsonian’s
+                            National
+                            Portrait Gallery, and offers a glimpse into the lives of everyday people in early
+                            American
+                            history.</p>
+
+                        <p></p>
+
+                        <p>This project transforms those silhouettes into interactive data. A selection of any number of
+                            silhouettes can be made and then viewed as a collection or explored through the tracing of
+                            their outlines. The outlines of the silhouettes highlight the outlines that William Bache
+                            made as he created these art pieces of his sitters. Viewers can also filter the collection
+                            by gender. This project invites one to explore these portraits not just as silhouettes but
+                            as a window into the image of early America and its past.</p>
+
+                    </div>
+
+                    <!-- RIGHT: map -->
+                    <div class="panel-image" aria-hidden="false">
+                        <img src="assets/map.jpg" alt="Map showing collection locations" class="overlay-map" />
+                    </div>
+                </div>
+
+                <div class="project-actions panel-footer">
+                    <button id="project-overlay-close" class="enter-btn">Close</button>
+                </div>
+            </div>
         </div>
+        <!-- ...existing code... -->
 
 
 

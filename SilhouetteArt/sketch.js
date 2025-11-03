@@ -62,7 +62,7 @@ function fitToViewBox() {
     const tl = gsap.timeline({
       repeat: -1,
       yoyo: true,
-      defaults: { ease: "power1.inOut", duration: 1.4 },
+      defaults: { ease: "power1.inOut", duration: 0.5 },
     });
     tl.to(p1, { morphSVG: p2 }).to(p1, { morphSVG: p1 }, ">"); // morph back (yoyo also works, but this keeps control explicit)
   });

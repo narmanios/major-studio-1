@@ -51,7 +51,7 @@
   // =========================
   // Config
   // =========================
-  const DATA_JSON_URL = "data/dataset_silhouettes_only_with_filename.json";
+  const DATA_JSON_URL = "data/dataset.json";
   const FILTER_BUTTON_IDS = [
     "politics",
     "identified",
@@ -248,6 +248,15 @@
       FILTER_BUTTON_IDS.forEach((id) =>
         select(`#${id}`)?.classList.toggle("active", this.activeTopic === id)
       );
+      this.clearSelection();
+    }
+    clearSelection() {
+      selectAll(".gallery-item.selected, .col.selected").forEach((el) =>
+        el.classList.remove("selected")
+      );
+      if (this.viewCollectionButton)
+        this.viewCollectionButton.style.display = "none";
+      if (this.morphButton) this.morphButton.style.display = "none";
     }
 
     setupFilterButtons() {
@@ -371,7 +380,7 @@
       this.viewCollectionButton.textContent = "View Collection";
       if (this.morphButton) {
         this.morphButton.style.display = "none";
-        this.morphButton.textContent = "Morph";
+        this.morphButton.textContent = "Trace";
       }
     }
 
@@ -487,6 +496,28 @@
     }
     // ...existing code...
 
+    // enableViewCollection() {
+    //   if (!this.viewCollectionButton || !this.lightboxEl) return;
+
+    //   this.viewCollectionButton.addEventListener(
+    //     "click",
+    //     () => {
+    //       const selectedImgs = selectAll(
+    //         ".gallery-item.selected img, .col.selected img"
+    //       );
+    //       if (selectedImgs.length === 0) return;
+
+    //       const slides = selectedImgs.map((img) => {
+    //         const filename = img.dataset.filename || null;
+    //         const record = filename
+    //           ? this.recordByFilename.get(filename)
+    //           : null;
+    //         const silhouetteUrl = filename
+    //           ? `https://github.com/PGDV-5200-2025F-A/silhouettes/raw/refs/heads/main/imgs/04_silhouetted/${filename}.png`
+    //           : null;
+    //         return { src: img.src, alt: img.alt || "", record, silhouetteUrl };
+    //       });
+
     enableViewCollection() {
       if (!this.viewCollectionButton || !this.lightboxEl) return;
 
@@ -503,9 +534,7 @@
             const record = filename
               ? this.recordByFilename.get(filename)
               : null;
-            const silhouetteUrl = filename
-              ? `https://github.com/PGDV-5200-2025F-A/silhouettes/raw/refs/heads/main/imgs/04_silhouetted/${filename}.png`
-              : null;
+            const silhouetteUrl = filename ? `outlines/${filename}.png` : null;
             return { src: img.src, alt: img.alt || "", record, silhouetteUrl };
           });
 
