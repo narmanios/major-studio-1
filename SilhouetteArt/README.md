@@ -15,6 +15,10 @@ This project transforms those silhouettes into interactive data. A selection of 
 
 ![Interior gallery page](screenshots/interior.jpg)
 
+![Collection gallery page](screenshots/collection.jpg)
+
+![Tracing of a collection](screenshots/trace.jpg)
+
 ---
 
 #### Created by Neven Armanios for Major Studio 1, Fall 2025
