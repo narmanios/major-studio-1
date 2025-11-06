@@ -575,6 +575,37 @@ main,
   margin-bottom: 12px;
 }
 
+/* ensure images inside .wb-image sit side-by-side */
+.wb-image {
+  display: flex;
+  flex-direction: row;
+  gap: 12px; /* space between images */
+  align-items: flex-start; /* align tops */
+  flex-wrap: wrap; /* allows stacking on narrow screens */
+}
+
+/* make each image keep its intrinsic aspect and not stretch the column */
+.wb-image .wb-img {
+  width: auto;
+  max-width: 160px; /* adjust to preferred thumbnail size */
+  margin-bottom: 0;
+}
+
+#ledger {
+  max-width: 280px;
+}
+
+/* responsive: stack vertically on small viewports */
+@media (max-width: 640px) {
+  .wb-image {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .wb-image .wb-img {
+    max-width: 100%;
+  }
+}
+
 /* overlay container */
 .project-overlay {
   position: fixed;
