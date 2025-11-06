@@ -11,16 +11,20 @@ body {
   background-position: top left;
 }
 
+/* remove later */
+.bg-\[\#222222\] {
+  background-color: transparent;
+}
+
 #sticky-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
-  z-index: 9998; /* sit above page content but below overlays if needed */
+  z-index: 9998;
   background-color: #000000 !important;
   box-sizing: border-box;
-  /* optional: add your header padding here rather than relying on body padding */
   padding: 12px 24px;
 }
 
@@ -30,17 +34,58 @@ main,
 #gallery {
   margin-top: 56px;
 }
+#filter {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  min-width: 160px;
+  padding: 8px 38px 8px 12px; /* room for custom arrow on the right */
+  font-size: 14px;
+  color: #fff;
+  background-color: rgba(
+    98,
+    98,
+    98,
+    0.35
+  ); /* subtle background to match dark header */
+  /* border: 1px solid rgba(255, 255, 255, 0.06); */
+  border-radius: 4px;
+  line-height: 1.2;
+  cursor: pointer;
+  /* transition: box-shadow 150ms ease, transform 80ms ease,
+    background-color 150ms ease; */
+  box-shadow: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M6 8l4 4 4-4' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+}
 
-/* small UI controls */
 .view-btn {
-  margin: 16px 0;
   padding: 10px 18px;
-  background: #111;
-  color: #e5d3b5;
+  background-color: rgba(98, 98, 98, 0.35);
+  color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   font-size: 0.65rem;
+  font-weight: 600;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+.view-btn img {
+  width: 100%;
+  height: auto;
+  padding-right: 4px;
+}
+.view-btn span {
+  display: inline-block;
+  width: 20px;
+  padding-right: ;
 }
 
 /* selected state for gallery/cols */
@@ -92,6 +137,7 @@ main,
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 20px;
 }
 
 #large-gallery .morph-btn,
@@ -244,14 +290,6 @@ main,
   outline-offset: 2px;
 }
 
-/* small responsive tweaks */
-@media (prefers-reduced-motion: reduce) {
-  .carousel-image-collection,
-  .carousel-image-container img {
-    transition: none;
-  }
-}
-
 /* ...existing code... */
 
 /* arrows */
@@ -307,14 +345,6 @@ main,
   --gallery-top-offset: 20px;
   padding-top: var(--gallery-top-offset);
 }
-
-/* reduce the offset on small screens */
-@media (max-width: 640px) {
-  #gallery {
-    --gallery-top-offset: 40px;
-  }
-}
-
 /* NEW: make each gallery cell square and ensure images fill the cell */
 #gallery > * {
   aspect-ratio: 1 / 1;
@@ -525,6 +555,18 @@ main,
   font-weight: 700;
 }
 
+:root {
+  --overlay-width: min(900px, 94vw);
+  --left-col: 60%;
+  /* --map-max: 560px; */
+  --device-max: 320px;
+  /* --panel-gap: 20px; */
+  --text-max: 46rem;
+  --muted-text: rgba(255, 255, 255, 0.9);
+  --heading: rgba(255, 255, 255, 0.95);
+}
+
+/* small portrait used in the left column */
 .wb-img {
   width: 100%;
   max-width: 120px;
@@ -534,39 +576,17 @@ main,
   margin-bottom: 12px;
 }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: 1fr minmax(240px, 420px); /* left column grows, right column reserved for map */
-  gap: 20px;
-  align-items: start; /* align both columns to the top so map sits beside paragraphs */
-}
-
-/* .panel-image .overlay-map {
-  width: 100%;
-  max-width: 420px;
-  height: auto;
-  border-radius: 8px;
-  object-fit: contain;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.32);
-  margin-bottom: 0;
-} */
-/* left column content (text + portrait) */
-/* .panel-content {
-  grid-column: 1;
-} */
-
-/* Project overlay / panel: consolidated and corrected */
+/* overlay container */
 .project-overlay {
   position: fixed;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* make overlay translucent so underlying landing background image is visible */
   background: rgba(0, 0, 0, 0.18);
   z-index: 9999;
   padding: 24px;
-  transition: opacity 220ms ease, visibility 220ms ease;
+  transition: opacity 220ms, visibility 220ms;
 }
 .project-overlay.hidden {
   opacity: 0;
@@ -574,67 +594,97 @@ main,
   pointer-events: none;
 }
 
+/* panel */
 .project-panel {
-  width: min(900px, 94vw);
+  width: var(--overlay-width);
   max-height: 90vh;
   overflow: auto;
-  padding: 16px;
+  padding: 32px;
   border-radius: 10px;
-  /* translucent panel so overlay shows some context, keep blur for legibility */
   background: rgba(12, 12, 12, 0.72);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--muted-text);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* two-column project grid (fallback). layout/cols handled in HTML/Tailwind */
+/* two-column grid: left = portrait + text, right = map/device */
 .project-grid {
   display: grid;
-  grid-template-columns: 1fr 120px;
-  gap: 12px;
+  grid-template-columns: var(--left-col) 1fr;
+  grid-template-rows: auto 1fr;
+  gap: var(--panel-gap);
   align-items: start;
 }
-.panel-image {
-  grid-column: 2;
-  justify-self: end;
-  width: 350px;
-}
 
-.panel-image img {
-  width: 200px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-}
-.panel-content {
+/* explicit placements */
+/* .wb-image {
   grid-column: 1;
-  width: 45vw;
+  grid-row: 1;
+} */
+/* .panel-content {
+  grid-column: 1;
+  grid-row: 2;
+  max-width: var(--text-max);
+} */
+.panel-image {
+  display: flex;
+  align-items: flex-start; /* align to top of text */
+  justify-content: flex-end; /* keep device/map to the right */
 }
 
-.panel-content p {
-  width: 35vw;
+/* prevent physiognotrace from stretching to 100% of the column */
+.panel-image .overlay-img {
+  flex: 0 0 auto; /* do not grow/shrink in the flex row */
+  max-width: 280px; /* <-- reduce to desired size */
+  height: auto;
+  object-fit: contain;
+  align-self: flex-start;
 }
 
-/* panel text */
+/* typography */
 .project-panel h2 {
-  margin: 0 0 8px 0;
+  margin: 0 0 8px;
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--heading);
 }
 .project-panel p {
-  margin: 0 0 12px 0;
+  margin: 0 0 12px;
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--muted-text);
 }
 
 .project-actions {
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
+}
+
+/* mobile: stack exactly image -> text -> map */
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  .wb-image {
+    grid-row: 1;
+  }
+  .panel-content {
+    grid-row: 2;
+  }
+  .panel-image {
+    grid-row: 3;
+    align-items: center;
+    margin-top: 12px;
+  }
+  .wb-img {
+    max-width: 200px;
+  }
+  .panel-image .overlay-img,
+  .panel-image .overlay-map {
+    max-width: 100%;
+  }
 }
 .panel-footer {
   margin-top: 12px;
@@ -642,11 +692,10 @@ main,
   justify-content: flex-end;
 }
 
-/* Make landing a column so the credit can sit at the bottom */
 .landing {
   display: flex;
   flex-direction: column;
-  min-height: 70vh; /* adjust as needed (e.g. 100vh to fill viewport) */
+  min-height: 70vh;
 }
 
 /* Let the main content fill available space */
@@ -654,14 +703,6 @@ main,
   flex: 1 1 auto;
 }
 
-/* Ensure overlays or panels that are siblings don't break layout.
-   If project overlay is absolutely positioned, it will not affect flow. */
-.project-overlay {
-  /* keep existing behavior if needed */
-  /* ...existing rules... */
-}
-
-/* Footer-like credit at bottom of landing */
 .landing-credit {
   margin-top: auto; /* pushes this element to the bottom of .landing */
   padding: 0.75rem 1rem; /* breathing room */
@@ -669,28 +710,6 @@ main,
   width: 100%;
   color: #ddd; /* tweak as desired */
   font-size: 0.9rem;
-}
-
-.legend-btn {
-  color: #ffffff;
-} /* set the icon color here */
-
-.legend-icon.icon-identified {
-  display: inline-block;
-  width: 70px;
-  height: 70px;
-  background-color: currentColor; /* the icon’s color */
-  -webkit-mask: url("assets/icon-identified.svg") no-repeat center / contain;
-  mask: url("assets/icon-identified.svg") no-repeat center / contain;
-}
-
-.legend-icon.icon-politics {
-  display: inline-block;
-  width: 70px;
-  height: 70px;
-  background-color: currentColor; /* the icon’s color */
-  -webkit-mask: url("assets/icon-politics.svg") no-repeat center / contain;
-  mask: url("assets/icon-politics.svg") no-repeat center / contain;
 }
 
 .legend-icon.icon-men {
@@ -714,21 +733,21 @@ main,
   display: inline-block;
   width: 70px;
   height: 70px;
-  background-color: currentColor; /* the icon’s color */
+  background-color: currentColor;
   -webkit-mask: url("assets/icon-children.svg") no-repeat center / contain;
   mask: url("assets/icon-children.svg") no-repeat center / contain;
 }
 
 /* legend button default (ensure white icons when not active) */
-.legend-btn,
+/* .legend-btn,
 #identified,
 #politics,
 #men,
 #women,
 #children {
   color: #ffffff;
-}
-.filter-politics .identified,
+} */
+/* .filter-politics .identified,
 .filter-politics .politics,
 .filter-politics .men,
 .filter-politics .women,
@@ -738,9 +757,8 @@ main,
 }
 .filter-politics .politics.gallery-item {
   display: block;
-}
-/* .filter-identified .identified, */
-.filter-identified .politics,
+} */
+/* .filter-identified .politics,
 .filter-identified .men,
 .filter-identified .women,
 .filter-identified .children,
@@ -754,7 +772,6 @@ main,
 .filter-children .politics,
 .filter-children .men,
 .filter-children .women,
-/* .filter-children .children, */
 .filter-children .gallery-item {
   display: none;
 }
@@ -764,7 +781,6 @@ main,
 
 .filter-men .identified,
 .filter-men .politics,
-/* .filter-men .men, */
 .filter-men .women,
 .filter-men .children,
 .filter-men .gallery-item {
@@ -776,51 +792,37 @@ main,
 .filter-women .politics,
 .filter-women .identified,
 .filter-women .men,
-/* .filter-women .women, */
 .filter-women .children,
 .filter-women .gallery-item {
   display: none;
 }
 .filter-women .women.gallery-item {
-  display: block;
+  display: block;*/
+
+/* .legend-btn {
+  color: red;
+} */
+
+/* default (inactive) button color */
+.legend-btn {
+  color: #ffffff;
 }
 
-/* Active-state colors (set on the button; .legend-icon uses currentColor for its mask) */
-
-#politics.active {
+/* active button color — icons inherit via currentColor */
+.legend-btn.active,
+button.legend-btn.active {
   color: #e5d3b5;
 }
 
-#identified.active {
-  color: #e5d3b5;
-}
-#men.active {
-  color: #e5d3b5;
-}
-#women.active {
-  color: #e5d3b5;
-}
-#children.active {
-  color: #e5d3b5;
+/* fallback / extra specificity for icon element if needed */
+button#children.active .legend-icon.icon-children,
+button#men.active .legend-icon.icon-men,
+button#women.active .legend-icon.icon-women,
+button#identified.active .legend-icon.icon-identified,
+button#politics.active .legend-icon.icon-politics {
+  background-color: currentColor;
 }
 
-.carousel-image-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* margin: 0 16px; */
-}
-
-.carousel-image-collection {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  overflow: hidden;
-}
-
-/* Optional: smaller screens — reduce min-height so footer doesn't appear too low */
 @media (max-width: 640px) {
   .landing {
     min-height: 56vh;
@@ -871,6 +873,29 @@ main,
   .landing-cta {
     margin-top: 1rem;
     gap: 0.5rem;
+  }
+}
+/* small responsive tweaks */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-image-collection,
+  .carousel-image-container img {
+    transition: none;
+  }
+}
+
+/* Responsive: make select smaller on tight widths */
+@media (max-width: 640px) {
+  #filter {
+    min-width: 120px;
+    padding-right: 34px;
+    font-size: 13px;
+  }
+}
+
+/* reduce the offset on small screens */
+@media (max-width: 640px) {
+  #gallery {
+    --gallery-top-offset: 40px;
   }
 }
 

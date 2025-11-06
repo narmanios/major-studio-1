@@ -16,11 +16,12 @@
 
 </head>
 
+
+
 <body>
 
     <section id="landing" class="landing">
         <div class="landing-inner">
-            <!-- replaced landing-panels container with responsive grid -->
             <div class="landing-panels grid grid-cols-1 md:grid-cols-2 items-center gap-">
                 <div class="landing-left">
                     <div id="landing-logo">
@@ -30,9 +31,8 @@
                             of
                             Early America
                         </div>
-                        <!-- changed: wrap buttons so we can move them independently -->
                         <div class="landing-cta">
-                            <!-- changed id: match main.js listener (enter-btn) -->
+
                             <a href="gallery.html"><button id="enter-btn" class="enter-btn"
                                     type="button">Explore</button></a>
                             <button id="readmore-btn" class="read-btn" type="button">Read More</button>
@@ -45,106 +45,58 @@
             </div>
         </div>
 
-        <!-- <div id="project-overlay" class="project-overlay hidden" role="dialog" aria-modal="true"
-            aria-labelledby="project-overlay-title">
-            <div class="project-panel p-6 max-w-5xl mx-auto">
-                <div class="project-grid grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="panel-image flex items-center justify-center">
-                        <img src="assets/william-bache.jpg" alt="Portrait" />
-                        <img src="assets/map.jpg" alt="Portrait" />
-
-                    </div>
-                    <div class="panel-content">
-
-                        <h2 id="project-overlay-title">About</h2>
-                        <p>Silhouette Art of Early America is a data visualization project inspired by the
-                            work of William Bache, an early 19th century artist who used a device called a
-                            physiognotrace to
-                            create
-                            nearly 2,000 silhouette portraits. Traveling from Philadelphia to New Orleans and into the
-                            Caribbean,
-                            Bache captured a wide cross section of American society from politicians, to artisans and
-                            merchants to men and women and
-                            people of African descent. His silhouettes were digitized by the
-                            Smithsonian’s
-                            National
-                            Portrait Gallery, and offers a glimpse into the lives of everyday people in early
-                            American
-                            history.</p>
-
-                        <p>This project transforms those silhouettes into interactive data. Who sat for him, both
-                            identified and unidentified, including some of the founding fathers' of the United States
-                            can be explored and examined. These silhouettes tell as story of the identity and
-                            representation in
-                            early America. Viewers can filter the collection by gender and identification status,
-                            inviting
-                            viewers to explore these portraits not just as images, but as entries into a larger
-                            narrative about the past.</p>
-
-                        <p>
-                            For full collection records, <a href="https://americanart.si.edu" target="_blank"
-                                rel="noopener">visit the Smithsonian
-                                American Art Museum</a>.
-                        </p>
-
-                    </div>
-                </div>
-                <div class="project-actions panel-footer flex justify-end p-4">
-                    <button id="project-overlay-close" class="enter-btn">Close</button>
-                </div>
-            </div>
-        </div> -->
 
 
-        <!-- ...existing code... -->
         <div id="project-overlay" class="project-overlay hidden" role="dialog" aria-modal="true"
             aria-labelledby="project-overlay-title">
-            <div class="project-panel p-6 max-w-5xl mx-auto">
-                <div class="project-grid">
-                    <!-- LEFT: portrait above paragraph text -->
+            <div id="horizontal-container" class="project-panel project-grid p-6 max-w-5xl mx-auto">
+                <div id="vertical-container" class="wb-image">
+                    <img src="assets/william-bache.jpg" alt="William Bache portrait" class="wb-img" />
+                    <!-- </div> -->
+
                     <div class="panel-content">
-                        <img src="assets/william-bache.jpg" alt="William Bache portrait" class="wb-img" />
                         <h2 id="project-overlay-title">About William Bache</h2>
                         <p>
                             Silhouette Art of Early America is a data visualization project inspired by the
-                            work of William Bache, an early 19th century artist who used a device called a
-                            physiognotrace to
-                            create
-                            nearly 2,000 silhouette portraits. Traveling throughout the eastern seaboard of the United
+                            work of William Bache, an early 19th century artist who
+                            created
+                            nearly 2,000 silhouette portraits. These delicate cut-paper profiles capture both likeness
+                            and mystery offering
+                            a unique glimpse into early American identity and artistry. Traveling
+                            throughout the eastern seaboard of the United
                             States and to the
                             Caribbean and Cuba,
-                            Bache captured a wide cross section of American society from politicians, to artisans and
-                            merchants to men and women and
-                            people of African descent. His silhouettes were digitized by the
-                            Smithsonian’s
-                            National
-                            Portrait Gallery, and offers a glimpse into the lives of everyday people in early
-                            American
-                            history.</p>
+                            Bache captured American society from politicians,
+                            everyday men, women, and children. Inexpensive to create these sihouettes were kept as
+                            mementos,
+                            placed inside a locket, added to a family album or just shared with family members. </p>
 
-                        <p></p>
+                        <p>This project transforms these silhouettes into interactive data, highlighting both named and
+                            unidentified
+                            figures across gender that can be
+                            explored, filtered, and traced. Like many similar silhouette
+                            artisans', one of the techniques used involved carefully tracing a person's profile using a
+                            device called a physiognotrace. The outlines and ‘tracing’ of these profiles is visualized
+                            here.
+                            Any combination of silhouettes can be selected and explored.
+                            This project invites one to explore these portraits not just as silhouettes but as a window
+                            into the image of early America.</p>
 
-                        <p>This project transforms those silhouettes into interactive data. A selection of any number of
-                            silhouettes can be made, viewed as a collection and explored through the tracing of
-                            their outlines. The outlines of the silhouettes highlight the outlines that William Bache
-                            made as he created these art pieces of his sitters. Viewers can also filter the collection
-                            by gender. This project invites one to explore these portraits not just as silhouettes but
-                            as a window into the image of early America and its past.</p>
-
-                    </div>
-
-                    <!-- RIGHT: map -->
-                    <div class="panel-image" aria-hidden="false">
-                        <img src="assets/map.jpg" alt="Map showing collection locations" class="overlay-map" />
                     </div>
                 </div>
 
-                <div class="project-actions panel-footer">
-                    <button id="project-overlay-close" class="enter-btn">Close</button>
+                <div>
+                    <div id="device" class="panel-image" aria-hidden="false">
+                        <img src="assets/physiognotrace.jpg" alt="Physiognotrace" class="overlay-img" />
+                    </div>
+
+                    <div class="project-actions panel-footer">
+                        <button id="project-overlay-close" class="enter-btn">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- ...existing code... -->
+        </div>
 
 
 
@@ -153,6 +105,40 @@
                 Data visualization and design by Neven Armanios. Silhouette visualization by Thiago Herson.</p>
         </div>
     </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var overlay = document.getElementById("project-overlay");
+            var openBtn = document.getElementById("readmore-btn");
+            var closeBtn = document.getElementById("project-overlay-close");
+
+            if (!overlay || !openBtn) return;
+
+            function openOverlay(e) {
+                if (e) e.preventDefault();
+                overlay.classList.remove("hidden");
+                overlay.setAttribute("aria-hidden", "false");
+            }
+            function closeOverlay() {
+                overlay.classList.add("hidden");
+                overlay.setAttribute("aria-hidden", "true");
+            }
+
+            openBtn.addEventListener("click", openOverlay);
+            if (closeBtn) closeBtn.addEventListener("click", closeOverlay);
+
+            // click outside panel to close
+            overlay.addEventListener("click", function (e) {
+                if (e.target === overlay) closeOverlay();
+            });
+
+            // ESC to close
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") closeOverlay();
+            });
+        });
+    </script>
+
 
     <script type="module" src="main.js"></script>
 

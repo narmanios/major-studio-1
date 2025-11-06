@@ -6,14 +6,12 @@
 
 https://narmanios.github.io/major-studio-1/SilhouetteArt/index.html
 
-Silhouette Art of Early America is a data visualization project inspired by the work of William Bache, an early 19th century artist who used a device called a physiognotrace to create nearly 2,000 silhouette portraits.
-
-This project transforms those silhouettes into interactive data. A selection of any number of silhouettes can be made, viewed as a collection and explored through the tracing of their outlines. The outlines of the silhouettes highlight the outlines that William Bache made as he created these art pieces of his sitters. Viewers can also filter the collection by gender. This project invites one to explore these portraits not just as silhouettes but as a window into the image of early America and its past.
+'Silhouette Art of Early America' is a data visualization inspired by the work of William Bache. It explores almost 2,000 of his silhouettes. Inexpensive to create his sitters could keep them as mementos, share with family or place inside a locket. The sitters include unidentified as well as named men, women and children. Like many similar silhouette artisans', one of the techniques used involved carefully tracing a person's profile using a device called a physiognotrace. The outlines and ‘tracing’ of these profiles is visualized in this project. Any combination of silhouettes can be selected and explored.
 
 ![Homescreen](screenshots/landing.jpg)
 <br />
 
-![Interior gallery page](screenshots/interior.jpg)
+![Interior gallery page](screenshots/gallery.jpg)
 
 ![Collection gallery page](screenshots/collection.jpg)
 
