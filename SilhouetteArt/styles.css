@@ -1,5 +1,5 @@
-/* Cleaned: keep resets + project-specific overrides. Layout (grid/spacing/sticky bars) is handled with Tailwind utilities in HTML. */
-* {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -82,11 +82,10 @@ main,
   height: auto;
   padding-right: 4px;
 }
-.view-btn span {
+/* .view-btn span {
   display: inline-block;
   width: 20px;
-  padding-right: ;
-}
+} */
 
 /* selected state for gallery/cols */
 .gallery-item.selected,
@@ -558,9 +557,9 @@ main,
 :root {
   --overlay-width: min(900px, 94vw);
   --left-col: 60%;
-  /* --map-max: 560px; */
+  --map-max: 560px;
   --device-max: 320px;
-  /* --panel-gap: 20px; */
+  --panel-gap: 20px;
   --text-max: 46rem;
   --muted-text: rgba(255, 255, 255, 0.9);
   --heading: rgba(255, 255, 255, 0.95);
@@ -737,72 +736,6 @@ main,
   -webkit-mask: url("assets/icon-children.svg") no-repeat center / contain;
   mask: url("assets/icon-children.svg") no-repeat center / contain;
 }
-
-/* legend button default (ensure white icons when not active) */
-/* .legend-btn,
-#identified,
-#politics,
-#men,
-#women,
-#children {
-  color: #ffffff;
-} */
-/* .filter-politics .identified,
-.filter-politics .politics,
-.filter-politics .men,
-.filter-politics .women,
-.filter-politics .children,
-.filter-politics .gallery-item {
-  display: none;
-}
-.filter-politics .politics.gallery-item {
-  display: block;
-} */
-/* .filter-identified .politics,
-.filter-identified .men,
-.filter-identified .women,
-.filter-identified .children,
-.filter-identified .gallery-item {
-  display: block;
-}
-.filter-identified .identified.gallery-item {
-  display: none;
-}
-.filter-children .identified,
-.filter-children .politics,
-.filter-children .men,
-.filter-children .women,
-.filter-children .gallery-item {
-  display: none;
-}
-.filter-children .children.gallery-item {
-  display: block;
-}
-
-.filter-men .identified,
-.filter-men .politics,
-.filter-men .women,
-.filter-men .children,
-.filter-men .gallery-item {
-  display: none;
-}
-.filter-men .men.gallery-item {
-  display: block;
-}
-.filter-women .politics,
-.filter-women .identified,
-.filter-women .men,
-.filter-women .children,
-.filter-women .gallery-item {
-  display: none;
-}
-.filter-women .women.gallery-item {
-  display: block;*/
-
-/* .legend-btn {
-  color: red;
-} */
-
 /* default (inactive) button color */
 .legend-btn {
   color: #ffffff;
