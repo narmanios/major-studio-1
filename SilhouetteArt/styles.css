@@ -62,6 +62,22 @@ main,
   background-size: 16px 16px;
 }
 
+.create-btn {
+  padding: 10px 18px;
+  background-color: rgba(98, 98, 98, 0.35);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.65rem;
+  font-weight: 600;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+
 .view-btn {
   padding: 10px 18px;
   background-color: rgba(98, 98, 98, 0.35);
@@ -358,6 +374,44 @@ main,
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* floating bottom-center scroll card */
+.scroll-card {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%) translateY(100%);
+  opacity: 0;
+  transition: transform 0.28s ease, opacity 0.28s ease;
+  background: rgba(12, 12, 12, 0.92);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+  z-index: 11000;
+  max-width: calc(100% - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.95rem;
+  pointer-events: auto;
+}
+
+/* visible state */
+.scroll-card.visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* small-screen tweak */
+@media (max-width: 480px) {
+  .scroll-card {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+    bottom: 12px;
+  }
 }
 
 /* Landing overlay (keeps fullscreen behavior) */
@@ -750,6 +804,7 @@ main,
   -webkit-mask: url("assets/icon-men.svg") no-repeat center / contain;
   mask: url("assets/icon-men.svg") no-repeat center / contain;
 }
+
 .legend-icon.icon-women {
   display: inline-block;
   width: 70px;
@@ -757,6 +812,15 @@ main,
   background-color: currentColor; /* the icon’s color */
   -webkit-mask: url("assets/icon-women.svg") no-repeat center / contain;
   mask: url("assets/icon-women.svg") no-repeat center / contain;
+}
+
+@media (min-width: 200px) and (max-width: 400px) {
+  .legend-icon.icon-men,
+  .legend-icon.icon-women,
+  .legend-icon.icon-children {
+    width: 10vw;
+    height: 10vw;
+  }
 }
 
 .legend-icon.icon-children {

@@ -237,6 +237,7 @@
                 gsap.set(next, { opacity: 0, strokeOpacity: 1 });
 
                 const duration = 6.0;
+
                 const eraseStart = 0.05;
                 const eraseSpeed = 2.5;
                 const EPS = L * 3e-4;
@@ -245,7 +246,7 @@
                     const nextIndex = (i + 1) % ds.length;
                     const dNext = ds[nextIndex].d;
                     const filename = ds[nextIndex].id;
-                    updateInfoPanel(filename);
+                    // updateInfoPanel(filename);
 
                     next.setAttribute("d", dNext);
                     const lenNext = next.getTotalLength();

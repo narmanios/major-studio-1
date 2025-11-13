@@ -206,34 +206,7 @@
     if (!items || items.length === 0) {
       grid.innerHTML =
         '<div class="text-white text-center col-span-full py-8 opacity-70">No results found</div>';
-      // update scroll card count when no results
-      const cardElEmpty = document.getElementById("scroll-card");
-      if (cardElEmpty) {
-        const total =
-          silhouettes && silhouettes.length
-            ? silhouettes.length
-            : records.length;
-        const textDiv = cardElEmpty.querySelector(".scroll-card-text");
-        if (textDiv)
-          textDiv.textContent = `0 of ${total.toLocaleString()} silhouettes`;
-      }
-
       return;
-    }
-
-    // Update the floating scroll card with the number of visible thumbnails vs total silhouettes
-    const cardEl = document.getElementById("scroll-card");
-    if (cardEl) {
-      const total =
-        silhouettes && silhouettes.length ? silhouettes.length : records.length;
-      const visible = items.length || 0;
-      const textDiv = cardEl.querySelector(".scroll-card-text");
-      const text = `${visible.toLocaleString()} of ${total.toLocaleString()} silhouettes`;
-      if (textDiv) {
-        textDiv.textContent = text;
-      } else {
-        cardEl.textContent = text;
-      }
     }
 
     const html = items
@@ -272,96 +245,44 @@
     grid.innerHTML = html;
   }
 
-  // (function initScrollCard() {
-  //   // Ensure a scroll card exists (create if missing).
-  //   let card = document.getElementById("scroll-card");
-  //   if (!card) {
-  //     card = document.createElement("div");
-  //     card.id = "scroll-card";
-  //     card.className = "scroll-card";
-  //     card.setAttribute("aria-hidden", "true");
-  //     card.innerHTML = '<div class="scroll-card-text">0 of 0 silhouettes</div>';
-  //     document.body.appendChild(card);
-  //   }
-
-  //   let lastY = window.scrollY || 0;
-  //   let ticking = false;
-  //   const threshold = 80; // don't show for very small scrolls from top
-  //   function onScroll() {
-  //     if (!ticking) {
-  //       window.requestAnimationFrame(() => {
-  //         const y = window.scrollY || 0;
-  //         if (y < threshold) {
-  //           card.classList.remove("visible");
-  //           card.setAttribute("aria-hidden", "true");
-  //         } else if (y > lastY + 2) {
-  //           // scrolling down -> show
-  //           card.classList.add("visible");
-  //           card.setAttribute("aria-hidden", "false");
-  //         } else if (y < lastY - 2) {
-  //           // scrolling up -> hide
-  //           card.classList.remove("visible");
-  //           card.setAttribute("aria-hidden", "true");
-  //         }
-  //         lastY = y;
-  //         ticking = false;
-  //       });
-  //       ticking = true;
-  //     }
-  //   }
-
-  //   window.addEventListener("scroll", onScroll, { passive: true });
-  //   // initialize state
-  //   onScroll();
-  // })();
-
+  // ----------------------------
+  // Scrolling card
+  // ----------------------------
   (function initScrollCard() {
-    // Only enable on gallery page (do not add to index.html)
-    if (
-      !document.getElementById("gallery") &&
-      !/gallery\.html$/i.test(location.pathname)
-    )
-      return;
+    const card = document.getElementById("scroll-card");
+    if (!card) return;
+    let lastY = window.scrollY || 0;
+    let ticking = false;
+    const threshold = 80; // don't show for very small scrolls from top
 
-    // Ensure a scroll card exists (create if missing)
-    let card = document.getElementById("scroll-card");
-    if (!card) {
-      card = document.createElement("div");
-      card.id = "scroll-card";
-      card.className = "scroll-card";
-      card.innerHTML = '<div class="scroll-card-text">0 of 0 silhouettes</div>';
-      document.body.appendChild(card);
-    }
-
-    // Show it by default
-    card.classList.add("visible");
-    card.setAttribute("aria-hidden", "false");
-
-    // Hide when the user scrolls (keeps listening so filter clicks can show it again)
-    const threshold = 20;
-    let hiddenByScroll = false;
-    function onScrollHide() {
-      const y = window.scrollY || 0;
-      if (y > threshold && !hiddenByScroll) {
-        card.classList.remove("visible");
-        card.setAttribute("aria-hidden", "true");
-        hiddenByScroll = true;
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const y = window.scrollY || 0;
+          if (y < threshold) {
+            card.classList.remove("visible");
+            card.setAttribute("aria-hidden", "true");
+          } else if (y > lastY + 2) {
+            // scrolling down
+            card.classList.add("visible");
+            card.setAttribute("aria-hidden", "false");
+          } else if (y < lastY - 2) {
+            // scrolling up
+            card.classList.remove("visible");
+            card.setAttribute("aria-hidden", "true");
+          }
+          lastY = y;
+          ticking = false;
+        });
+        ticking = true;
       }
     }
-    window.addEventListener("scroll", onScrollHide, { passive: true });
 
-    // When user toggles legend icons, show the card again (unless they scroll afterward)
-    const legendBtns = Array.from(
-      document.querySelectorAll(".legend-btn, #men, #women, #children")
-    );
-    legendBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        card.classList.add("visible");
-        card.setAttribute("aria-hidden", "false");
-        hiddenByScroll = false;
-      });
-    });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    // optionally initialize state
+    onScroll();
   })();
+
   // ----------------------------
   // Selection handling
   // ----------------------------

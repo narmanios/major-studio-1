@@ -206,7 +206,34 @@
     if (!items || items.length === 0) {
       grid.innerHTML =
         '<div class="text-white text-center col-span-full py-8 opacity-70">No results found</div>';
+      // update scroll card count when no results
+      const cardElEmpty = document.getElementById("scroll-card");
+      if (cardElEmpty) {
+        const total =
+          silhouettes && silhouettes.length
+            ? silhouettes.length
+            : records.length;
+        const textDiv = cardElEmpty.querySelector(".scroll-card-text");
+        if (textDiv)
+          textDiv.textContent = `0 of ${total.toLocaleString()} silhouettes`;
+      }
+
       return;
+    }
+
+    // Update the floating scroll card with the number of visible thumbnails vs total silhouettes
+    const cardEl = document.getElementById("scroll-card");
+    if (cardEl) {
+      const total =
+        silhouettes && silhouettes.length ? silhouettes.length : records.length;
+      const visible = items.length || 0;
+      const textDiv = cardEl.querySelector(".scroll-card-text");
+      const text = `${visible.toLocaleString()} of ${total.toLocaleString()} silhouettes`;
+      if (textDiv) {
+        textDiv.textContent = text;
+      } else {
+        cardEl.textContent = text;
+      }
     }
 
     const html = items
@@ -225,8 +252,121 @@
       })
       .join("");
 
+    //////////////////LOAD IMAGES FROM LOCAL THUMBNAILS FOLDER INSTEAD////////////////////
+    // const html = items
+    //   .map((r) => {
+    //     const alt = field(r, "title") || field(r, "name") || "silhouette";
+    //     const fn = field(r, "filename");
+    //     return `
+    //       <div class="gallery-item">
+    //         <img class="gallery-img"
+    //              src="./thumbnails/${r.filename}.jpg"
+    //              alt="${alt.replace(/"/g, "")}"
+    //              data-filename="${fn}"
+    //              loading="lazy">
+    //       </div>
+    //     `;
+    //   })
+    //   .join("");
+
     grid.innerHTML = html;
   }
+
+  // Update the floating scroll card with the number of visible thumbnails vs total silhouettes
+  // const cardEl = document.getElementById("scroll-card");
+  // if (cardEl) {
+  //   const total =
+  //     silhouettes && silhouettes.length ? silhouettes.length : records.length;
+  //   const visible = items.length || 0;
+  //   const textDiv = cardEl.querySelector(".scroll-card-text");
+  //   const text = `${visible.toLocaleString()} of ${total.toLocaleString()} silhouettes`;
+  //   if (textDiv) {
+  //     textDiv.textContent = text;
+  //   } else {
+  //     cardEl.textContent = text;
+  //   }
+  // }
+
+  // ----------------------------
+  // Scrolling card
+  // ----------------------------
+  // (function initScrollCard() {
+  //   const card = document.getElementById("scroll-card");
+  //   if (!card) return;
+  //   let lastY = window.scrollY || 0;
+  //   let ticking = false;
+  //   const threshold = 80; // don't show for very small scrolls from top
+
+  //   function onScroll() {
+  //     if (!ticking) {
+  //       window.requestAnimationFrame(() => {
+  //         const y = window.scrollY || 0;
+  //         if (y < threshold) {
+  //           card.classList.remove("visible");
+  //           card.setAttribute("aria-hidden", "true");
+  //         } else if (y > lastY + 2) {
+  //           // scrolling down
+  //           card.classList.add("visible");
+  //           card.setAttribute("aria-hidden", "false");
+  //         } else if (y < lastY - 2) {
+  //           // scrolling up
+  //           card.classList.remove("visible");
+  //           card.setAttribute("aria-hidden", "true");
+  //         }
+  //         lastY = y;
+  //         ticking = false;
+  //       });
+  //       ticking = true;
+  //     }
+  //   }
+
+  //   window.addEventListener("scroll", onScroll, { passive: true });
+  //   // optionally initialize state
+  //   onScroll();
+  // })();
+
+  (function initScrollCard() {
+    // Ensure a scroll card exists (create if missing).
+    let card = document.getElementById("scroll-card");
+    if (!card) {
+      card = document.createElement("div");
+      card.id = "scroll-card";
+      card.className = "scroll-card";
+      card.setAttribute("aria-hidden", "true");
+      card.innerHTML = '<div class="scroll-card-text">0 of 0 silhouettes</div>';
+      document.body.appendChild(card);
+    }
+
+    let lastY = window.scrollY || 0;
+    let ticking = false;
+    const threshold = 80; // don't show for very small scrolls from top
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const y = window.scrollY || 0;
+          if (y < threshold) {
+            card.classList.remove("visible");
+            card.setAttribute("aria-hidden", "true");
+          } else if (y > lastY + 2) {
+            // scrolling down -> show
+            card.classList.add("visible");
+            card.setAttribute("aria-hidden", "false");
+          } else if (y < lastY - 2) {
+            // scrolling up -> hide
+            card.classList.remove("visible");
+            card.setAttribute("aria-hidden", "true");
+          }
+          lastY = y;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    // initialize state
+    onScroll();
+  })();
 
   // ----------------------------
   // Selection handling
@@ -283,18 +423,6 @@
     });
   }
 
-  function buildCaption(rec) {
-    if (!rec) return "";
-    const parts = [];
-    if (field(rec, "title")) parts.push(field(rec, "title"));
-    if (field(rec, "name")) parts.push(field(rec, "name"));
-    if (field(rec, "date")) parts.push(field(rec, "date"));
-    if (field(rec, "indexed_dates")) parts.push(field(rec, "indexed_dates"));
-    if (field(rec, "place")) parts.push(field(rec, "place"));
-    if (field(rec, "creditLine")) parts.push(field(rec, "creditLine"));
-    return parts.join(" — ");
-  }
-
   // ----------------------------
   // View Collection (3-up carousel)
   // ----------------------------
@@ -307,23 +435,11 @@
       const selected = $all(".gallery-item.selected img");
       if (selected.length === 0) return;
 
+      // Build slide objects with optional record metadata + silhouette overlay.
       const slides = selected.map((img) => {
         const filename = img.dataset.filename || "";
-        // try filename, then thumbnail src
-        let record = null;
-        if (filename) {
-          record =
-            records.find((r) => field(r, "filename") === filename) || null;
-        }
-        if (!record) {
-          record =
-            records.find((r) => String(r.thumbnail) === String(img.src)) ||
-            null;
-        }
-        const outline =
-          record && field(record, "filename")
-            ? "outlines/" + field(record, "filename") + ".png"
-            : null;
+        const record = records.find((r) => r.filename === filename);
+        const outline = filename ? "outlines/" + filename + ".png" : null;
         return {
           src: img.src,
           alt: img.alt || "",
@@ -365,14 +481,18 @@
         html += `<figure class="carousel-image-container">
           <img src="${s.src}" alt="${s.alt || ""}" class="carousel-img">`;
 
+        // Optional silhouette overlay image (if available).
         if (s.silhouetteUrl) {
           html += `<img src="${s.silhouetteUrl}" class="silo-img" alt="">`;
         }
 
-        // simplified caption: use buildCaption to ensure any available metadata shows
+        // Optional metadata caption (title/date/place).
         if (s.record) {
-          const captionText = buildCaption(s.record);
-          html += `<figcaption class="carousel-caption">${captionText}</figcaption>`;
+          html += `<figcaption class="carousel-caption">
+            ${s.record.title || s.record.name || ""}<br>
+            ${s.record.date || s.record.indexed_dates || ""}<br>
+            ${s.record.places || s.record.indexed_places || ""}
+          </figcaption>`;
         }
         html += "</figure>";
       }
