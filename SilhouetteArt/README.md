@@ -27,6 +27,6 @@ https://narmanios.github.io/major-studio-1/SilhouetteArt/index.html
 
 https://huggingface.co/datasets/RevolutionCrossroads/si_us_revolutionary_era_collections/sql-console/_jKV43s
 
-#### Thanks to Thiago Herson, The News School: Parsons School of Design, for assistance with data collection and silhouette outline creation.
+#### Thanks to Thiago Herson, The New School: Parsons School of Design, for assistance with data collection and silhouette outline creation.
 
 https://huggingface.co/datasets/visualizedata/revolutionary_silhouettes/tree/main/json
