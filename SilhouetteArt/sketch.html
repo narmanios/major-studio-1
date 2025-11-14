@@ -110,6 +110,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MorphSVGPlugin.min.js"></script>
 
     <script>
+
+
+
         window.addEventListener("load", async () => {
             const stage = document.getElementById("stage");
             const fitGroup = document.getElementById("fitGroup");
@@ -242,11 +245,14 @@
                 const eraseSpeed = 2.5;
                 const EPS = L * 3e-4;
 
+                // ...existing code...
                 function cycle() {
                     const nextIndex = (i + 1) % ds.length;
                     const dNext = ds[nextIndex].d;
                     const filename = ds[nextIndex].id;
-                    // updateInfoPanel(filename);
+
+                    // update info panel for the silhouette we are about to animate
+                    updateInfoPanel(filename);
 
                     next.setAttribute("d", dNext);
                     const lenNext = next.getTotalLength();

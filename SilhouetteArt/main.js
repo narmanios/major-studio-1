@@ -384,39 +384,58 @@
     if (!morphBtn) return;
     morphBtn.addEventListener("click", () => {
       const selectedImgs = $all(".gallery-item.selected img");
-      if (selectedImgs.length === 0) return; // nothing chosen
+      if (selectedImgs.length === 0) return;
 
       const filenames = selectedImgs.map(
         (img) => img.dataset.filename || img.src
       );
-
-      // Persist selection so sketch page can read it.
+      // persist (fallback)
       localStorage.setItem("morphSelection", JSON.stringify(filenames));
 
-      // Open drawing/trace UI in an overlay.
+      // open sketch overlay (iframe) and send data after it loads
       openSketchOverlay("sketch.html");
     });
   }
 
-  // Creates an overlay with an <iframe> to the sketch tool.
   function openSketchOverlay(url) {
     if (!lightbox) return;
 
     lightbox.innerHTML = `
-      <button class="close-btn" aria-label="Close overlay">Close</button>
-      <div class="carousel-outer" role="dialog" aria-modal="true">
-        <iframe src="${url}" title="Sketch" style="width:100%;height:80vh;border:0;" loading="lazy"></iframe>
-      </div>
-    `;
+    <button class="close-btn" aria-label="Close overlay">Close</button>
+    <div class="carousel-outer" role="dialog" aria-modal="true">
+      <iframe id="sketch-iframe" src="${url}" title="Sketch" style="width:100%;height:80vh;border:0;" loading="lazy"></iframe>
+    </div>
+  `;
     lightbox.classList.remove("hidden");
 
-    // Close and clean up overlay.
+    const iframe = document.getElementById("sketch-iframe");
+    if (iframe) {
+      // send current selection after iframe finishes loading
+      iframe.addEventListener(
+        "load",
+        () => {
+          try {
+            const payload = JSON.parse(
+              localStorage.getItem("morphSelection") || "[]"
+            );
+            iframe.contentWindow.postMessage(
+              { type: "morphSelection", payload },
+              "*"
+            );
+          } catch (e) {
+            // ignore
+          }
+        },
+        { once: true }
+      );
+    }
+
+    // Close handler
     $(".close-btn", lightbox)?.addEventListener("click", () => {
       lightbox.classList.add("hidden");
       lightbox.innerHTML = "";
     });
   }
-
   // ----------------------------
   // View Collection (3-up carousel)
   // ----------------------------

@@ -6,14 +6,16 @@
 body {
   margin: 0;
   padding: 24px;
-  background-image: url("assets/tile.png");
+  /* background-image: url("assets/tile.png"); */
+  background-color: white;
+
   background-repeat: repeat;
   background-position: top left;
 }
 
 /* remove later */
-.bg-\[\#222222\] {
-  background-color: transparent;
+.bg {
+  background-color: white;
 }
 
 #sticky-header {
@@ -106,7 +108,7 @@ main,
 /* selected state for gallery/cols */
 .gallery-item.selected,
 .col.selected {
-  outline: 3px solid rgb(255, 231, 46); /* Tailwind blue-600 equivalent */
+  outline: 3px solid rgb(190, 0, 0); /* Tailwind blue-600 equivalent */
   z-index: 2;
 }
 
@@ -114,7 +116,7 @@ main,
 .large-gallery {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55); /* dimmer */
+  background: rgba(255, 255, 255, 0.55); /* dimmer */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -397,6 +399,7 @@ main,
   text-align: center;
   font-size: 0.95rem;
   pointer-events: auto;
+  z-index: 9000; was 11000
 }
 
 /* visible state */
