@@ -6,7 +6,7 @@
 body {
   margin: 0;
   padding: 24px;
-  /* background-image: url("assets/tile.png"); */
+  background-image: url("assets/tile.png");
   background-color: white;
 
   background-repeat: repeat;
